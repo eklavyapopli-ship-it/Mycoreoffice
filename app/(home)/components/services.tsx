@@ -72,17 +72,13 @@ export default function ProductsPage({ limit }: any) {
 
       if (!res.ok) throw new Error("Failed");
 
-      const data = await res.json();
-      if (data.message === "suspect") {
-        router.push("/thank-you");
-      } else {
+  
         setSuccess("Enquiry sent successfully!");
         setName("");
         setEmail("");
         setPhone("");
         setMessage("");
-        router.push("/thankyou");
-      }
+  
 
       setTimeout(() => {
         setOpen(false);

@@ -31,12 +31,7 @@ export default function Hero() {
 
       const data = await res.json();
 
-      if (data.message === "suspect") {
-        router.push("/thank-you");
-      } else {
-        setForm({ name: "", email: "", phone: "", message: "" });
-        router.push("/thankyou");
-      }
+     setForm({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       alert("Something went wrong");
     } finally {
