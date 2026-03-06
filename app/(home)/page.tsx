@@ -1,8 +1,15 @@
 import React from 'react'
+import Hero from './components/Hero'
+import AboutPage from './components/About'
+import Features from './components/Features'
 
 const page = () => {
   return (
-    <div>page</div>
+  <>
+  <Hero/>
+  <AboutPage/>
+  <Features/>
+  </>
   )
 }
 

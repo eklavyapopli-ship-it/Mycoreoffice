@@ -3,11 +3,11 @@ import { montserrat } from "@/lib/fontS";
 import Link from "next/link";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Building2, Users, Lightbulb } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import Image from "next/image";
+
 
 export default function Footer() {
   return (
-    <footer className=" text-white" id="contact">
+    <footer className=" text-white bg-black" id="contact">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -125,8 +125,7 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-white">
                   <p className="text-white font-medium mb-1">Address</p>
-                  Room 164-165, SSCBS (University of Delhi), 
-                  KN Katju Marg, Sector 16, Rohini, Delhi – 110089
+                  
                 </div>
               </div>
               
@@ -134,8 +133,8 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-red-500" />
                 <div className="text-sm">
                   <p className="text-white font-medium">Contact</p>
-                  <Link href="tel:+919577227744" className="text-white hover:text-white transition-colors">
-                    +91 95772 27744
+                  <Link href="tel:+918920743180" className="text-white hover:text-white transition-colors">
+                    +91 89207 43180
                   </Link>
                 </div>
               </div>
@@ -144,24 +143,24 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-red-500" />
                 <div className="text-sm">
                   <p className="text-white font-medium">Email</p>
-                  <Link href="mailto: MyCoreOffice@sscbsdu.ac.in" className="text-white hover:text-white transition-colors">
-                       MyCoreOffice@sscbsdu.ac.in
+                  <Link href="mailto: MyCoreOffice@ " className="text-white hover:text-white transition-colors">
+                  
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Working Hours */}
-            <div className=" rounded-lg p-4 bg-black">
-              <h4 className="text-white font-semibold mb-2 text-sm">Working Hours</h4>
-              <p className="text-white text-sm">Monday – Friday</p>
-              <p className="text-white text-sm">9:00 AM – 6:00 PM</p>
+            <div className=" rounded-lg p-4 bg-white">
+              <h4 className="text-black font-semibold mb-2 text-sm">Working Hours</h4>
+              <p className="text-black text-sm">Monday – Friday</p>
+              <p className="text-black text-sm">9:00 AM – 6:00 PM</p>
             </div>
 
             {/* Social Media */}
             <div>
               <h4 className="text-white font-semibold mb-3 text-sm">Follow Us</h4>
-              <div className="flex gap-3">
+              <div className="flex gap-3 place-content-center">
                 <Link
                   href="https://facebook.com"
                   target="_blank"
@@ -190,17 +189,7 @@ export default function Footer() {
                 >
                   <Instagram className="w-5 h-5 text-white hover:text-white" />
                 </Link>
-                <a
-                  href="https://www.f6s.com/ MyCoreOffice/about"
-                  target="_blank"
-                  className="p-2 rounded-lg   hover:bg-gray-600 transition-colors"
-                >
-                  <Image height={80} width={80}
-                    src="/f6s.png"
-                    alt="F6S Logo"
-                    className="h-5 w-5 object-contain"
-                  />
-                </a>
+         
               </div>
             </div>
 
@@ -221,7 +210,7 @@ export default function Footer() {
           <div className="text-center mb-8">
             <h3 className="text-white font-bold text-2xl mb-3 flex items-center justify-center gap-2">
               <MapPin className="w-6 h-6 text-red-600" />
-              Visit Our Innovation Hub
+              Visit MyCoreOffice
             </h3>
             <p className="text-white max-w-2xl mx-auto">
               Located in the heart of Delhi&apos;s educational district, our state of the art incubation facility 
@@ -230,7 +219,7 @@ export default function Footer() {
           </div>
           <div className="w-full h-fit md:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-300 bg-gray-50">
         
-            <a href="https://maps.app.goo.gl/gnJX9KyYDPnV4AmD6"><img src="https://media. MyCoreOffice.in/map MyCoreOffice.png"  alt=" MyCoreOffice" /></a>
+            <a href="https://maps.app.goo.gl/gnJX9KyYDPnV4AmD6"><img src="https://media.siif.in/map.png"  alt=" MyCoreOffice" /></a>
           </div>
           
           {/* Location Features */}
@@ -249,11 +238,11 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-200 bg-gray-50">
+      <div className=" border-gray-200 ">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-center text-white">
-              © {new Date().getFullYear()} SSCBS Innovation & Incubation Foundation. All Rights Reserved.
+              © {new Date().getFullYear()} MyCoreOffice | All Rights Reserved.
             </div>
             <div className="flex gap-6 text-sm">
               <a href="/privacy" className="text-white hover:text-white transition-colors">
