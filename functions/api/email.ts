@@ -28,7 +28,7 @@ await client.sendMail({
         to: env.TO_SEND,
         from: "New Enquiry",
         subject: "New Enquiry",
-        body: `Hey Quick Office 24, You have a new enquiry:
+        body: `Hey MyCoreOffice, You have a new enquiry:
         Name: ${body.name}
         Email: ${body.email}
         Phone:${body.phone}
