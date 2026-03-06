@@ -1,0 +1,235 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+
+type Product = {
+  id: number;
+  name: string;
+  image: string;
+  link: string;
+};
+
+const Products: Product[] = [
+  { id: 1, name: "Delhi", image: "/locations/delhi.jpg", link: "delhi" },
+  { id: 2, name: "Noida", image: "/locations/noida.jpg", link: "noida" },
+  { id: 3, name: "Mumbai", image: "/locations/mumbai.jpg", link: "mumbai" },
+  { id: 4, name: "Gurugram", image: "/locations/gurugram.jpg", link: "gurugram" },
+  { id: 5, name: "Tamil Nadu", image: "/locations/tamilnadu.jpg", link: "tamilnadu" },
+  { id: 6, name: "Punjab", image: "/locations/punjab.jpg", link: "punjab" },
+  { id: 7, name: "Bangalore", image: "/locations/banglore.jpg", link: "banglore" },
+  { id: 8, name: "Gujarat", image: "/locations/gujarat.jpg", link: "gujarat" },
+  { id: 9, name: "Kerala", image: "/locations/kerela.png", link: "kerela" },
+  { id: 10, name: "Telangana", image: "/locations/Hyd.png", link: "telangana" },
+];
+
+export default function ProductsPage({ limit }: any) {
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+
+  // lead form states
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const openEnquiry = (msg: string) => {
+    setMessage(msg);
+    setOpen(true);
+  };
+
+  /* ---------------- WHATSAPP ---------------- */
+  const sendToWhatsApp = () => {
+    const url = `https://wa.me/+919311514517?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+    setOpen(false);
+  };
+
+  /* ---------------- DATABASE ---------------- */
+  const sendToDatabase = async () => {
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    if (!name || !email || !phone || !message) {
+      setLoading(false);
+      setError("All fields are required");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, message }),
+      });
+
+      if (!res.ok) throw new Error("Failed");
+
+      const data = await res.json();
+      if (data.message === "suspect") {
+        router.push("/thank-you");
+      } else {
+        setSuccess("Enquiry sent successfully!");
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+        router.push("/thankyou");
+      }
+
+      setTimeout(() => {
+        setOpen(false);
+        setSuccess("");
+      }, 1500);
+    } catch (err: any) {
+      setError("Server error. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const limitedProducts = showAll ? Products : Products.slice(0, limit);
+  const toggleText = showAll ? "See Less" : "See More";
+
+  return (
+    <>
+      <div className={` h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:p-10" id="product`}>
+        <h1 className="text-3xl mb-12 text-center text-red-900 font-bold">
+          Virtual Office Across India
+        </h1>
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {limitedProducts.map((product) => (
+            <div
+              key={product.id}
+              className="group relative rounded-md overflow-hidden flex flex-col bg-white shadow-lg hover:shadow-2xl transition duration-500"
+            >
+              <div className="relative h-[300px] overflow-hidden rounded-md">
+                <Image
+                  priority
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                {/* SEND ENQUIRY BUTTON ON DESKTOP HOVER */}
+                <button
+                  onClick={() =>
+                    openEnquiry(`Hey! I want to enquire about Virtual Office in ${product.name}`)
+                  }
+                  className="hidden md:flex absolute bottom-4 rounded-full left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2.5  font-semibold transition-opacity opacity-0 group-hover:opacity-100"
+                >
+                  Send Enquiry
+                </button>
+              </div>
+
+              {/* Card Content */}
+              <div className="p-6 flex flex-col flex-1 justify-between">
+                <h2 className="text-lg font-semibold mb-2 text-gray-900">
+                  Virtual Office in {product.name}
+                </h2>
+                <p className="text-sm text-gray-500 mb-4">
+                  Premium virtual office with excellent connectivity and modern amenities.
+                </p>
+
+                {/* SEND ENQUIRY BUTTON VISIBLE ON MOBILE */}
+                <button
+                  onClick={() =>
+                    openEnquiry(`Hey! I want to enquire about Virtual Office in ${product.name}`)
+                  }
+                  className="md:hidden w-full bg-red-950  text-white py-2.5 rounded-sm font-semibold transition"
+                >
+                  Send Enquiry
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* SEE MORE BUTTON */}
+        <div className="flex justify-center mt-12">
+          <div
+            className="text-xl font-semibold text-black cursor-pointer relative group"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {toggleText}
+            <div className="absolute scale-x-0 group-hover:scale-x-100 -bottom-1 left-0 right-0 h-1 origin-left rounded-full bg-black duration-300 ease-out"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* POPUP FORM */}
+      {open && (
+        <div className="fixed inset-0 flex items-end md:items-center justify-center bg-black/40 z-50 px-4">
+          <div className="bg-white text-black w-full md:w-[420px] p-5 rounded-t-2xl md:rounded-2xl shadow-lg">
+            <h3 className="text-lg font-semibold mb-3">Send Enquiry</h3>
+
+            <input
+              placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full border border-gray-200 rounded-lg p-2 mb-2"
+            />
+            <input
+              placeholder="Email"
+              value={email}
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full border border-gray-200 rounded-lg p-2 mb-2"
+            />
+            <input
+              maxLength={10}
+              minLength={10}
+              placeholder="Phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full border border-gray-200 rounded-lg p-2 mb-2"
+            />
+            <textarea
+              maxLength={50}
+              minLength={5}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={3}
+              className="w-full border border-gray-200 rounded-lg p-2 mb-3 resize-none"
+            />
+
+            {error && <p className="text-red-600 text-sm mb-2">{error}</p>}
+            {success && <p className="text-green-600 text-sm mb-2">{success}</p>}
+
+            <div className="flex gap-3">
+              <button
+                onClick={sendToDatabase}
+                disabled={loading}
+                className="w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-lg"
+              >
+                {loading ? "Sending..." : "Send Enquiry"}
+              </button>
+              <button
+                onClick={sendToWhatsApp}
+                className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg"
+              >
+                WhatsApp
+              </button>
+              <button
+                onClick={() => setOpen(false)}
+                className="w-full border py-2 rounded-lg"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

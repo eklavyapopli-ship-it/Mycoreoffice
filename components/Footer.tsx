@@ -28,39 +28,14 @@ export default function Footer() {
     MyCoreOffice
   </h1>
 </Link>
-              <p className="text-gray-200 text-sm mt-2 text-center md:text-justify md:leading-relaxed">
-                Empowering Innovation, Nurturing Startups.  MyCoreOffice is a premier incubation center 
+              <p className="text-gray-200 text-sm mt-2 text-center text-justify md:leading-relaxed">
+                Empowering Innovation, Nurturing Startups.  MyCoreOffice is a premier virtual office provider
                 fostering entrepreneurial excellence and driving technological advancement.
               </p>
             </div>
             
             {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-4">
-              <div className="text-center">
-                <div className=" font-bold text-xl text-gray-300">80</div>
-                <div className="text-xs text-gray-400">Startups</div>
-              </div>
-              <div className="text-center">
-                <div className=" font-bold text-xl text-gray-300">20</div>
-                <div className="text-xs text-gray-400">Startups Funded</div>
-              </div>
-              <div className="text-center">
-                <div className=" font-bold text-xl text-gray-300">₹2.65Cr+</div>
-                <div className="text-xs text-gray-400">Funding</div>
-              </div>
-               <div className="text-center">
-                <div className=" font-bold text-xl text-gray-300">13</div>
-                <div className="text-xs text-gray-400">Mentors</div>
-              </div>
-               <div className="text-center">
-                <div className=" font-bold text-xl text-gray-300">300</div>
-                <div className="text-xs text-gray-400">Jobs Created</div>
-              </div>
-              <div className="text-center">
-                <div className=" font-bold text-xl text-gray-300">15</div>
-                <div className="text-xs text-gray-400">Eco System Partners</div>
-              </div>
-            </div>
+         
           </div>
 
           {/* For Entrepreneurs */}
@@ -176,14 +151,14 @@ export default function Footer() {
                   <Twitter className="w-5 h-5 text-white hover:text-white" />
                 </Link>
                 <Link
-                  href="https://www.linkedin.com/company/sscbs-innovation-and-incubation-foundation- MyCoreOffice/?originalSubdomain=in"
+                  href="/"
                   target="_blank"
                   className="p-2 rounded-lg   hover:bg-blue-500 transition-colors"
                 >
                   <Linkedin className="w-5 h-5 text-white hover:text-white" />
                 </Link>
                 <Link
-                  href="https://www.instagram.com/si_incubation_foundation/"
+                  href="/"
                   target="_blank"
                   className="p-2 rounded-lg   hover:bg-pink-500 transition-colors"
                 >
@@ -205,36 +180,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Map Section */}
-        <div className="mt-16 pt-12 border-t border-gray-200">
-          <div className="text-center mb-8">
-            <h3 className="text-white font-bold text-2xl mb-3 flex items-center justify-center gap-2">
-              <MapPin className="w-6 h-6 text-red-600" />
-              Visit MyCoreOffice
-            </h3>
-            <p className="text-white max-w-2xl mx-auto">
-              Located in the heart of Delhi&apos;s educational district, our state of the art incubation facility 
-              provides the perfect environment for startups to grow and thrive.
-            </p>
-          </div>
-          <div className="w-full h-fit md:h-96 rounded-2xl overflow-hidden shadow-lg border border-gray-300 bg-gray-50">
-        
-            <a href="https://maps.app.goo.gl/gnJX9KyYDPnV4AmD6"><img src="https://media.siif.in/map.png"  alt=" MyCoreOffice" /></a>
-          </div>
-          
-          {/* Location Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div className="text-center p-4   rounded-lg">
-              <div className="text-white text-xs">Rithala Metro Station</div>
-            </div>
-            <div className="text-center p-4   rounded-lg">
-              <div className="text-white text-xs">SSCBS, University of Delhi</div>
-            </div>
-            <div className="text-center p-4   rounded-lg">
-              <div className="text-white text-xs">On-campus parking facility</div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Bottom Bar */}

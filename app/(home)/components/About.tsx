@@ -42,11 +42,11 @@ export default function AboutPage() {
           
         </div>
         <div className="text-justify">
-          <h2 className="text-3xl md:text-4xl text-red-800  mb-4 text-center md:text-start">
+          <h2 className="text-3xl md:text-4xl text-red-800  mb-4 text-start">
            About Us
           </h2>
 
-          <h3 className="text-xl text-red-800  mb-4 text-center md:text-start">
+          <h3 className="text-xl text-red-800  mb-4 text-start">
             MyCoreOffice
           </h3>
 

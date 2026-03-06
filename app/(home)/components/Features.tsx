@@ -11,7 +11,7 @@ const features = [
   },
   {
     title: "Join Our Community",
-    desc: "By joining MyCoreOffices, you gain access to a vibrant business community including networking opportunities.",
+    desc: "By joining MyCoreOffice, you gain access to a vibrant business community including networking opportunities.",
   },
   {
     title: "World Class Facility",

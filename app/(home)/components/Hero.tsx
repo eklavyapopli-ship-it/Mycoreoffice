@@ -46,7 +46,7 @@ export default function Hero() {
   };
 
   return (
-    <main className="relative w-full md:h-screen pt-5 flex items-center justify-center">
+    <main className="relative w-full md:h-screen  h-[70vh] pt-5 flex items-center justify-center">
 
       {/* Background Image */}
       <Image
@@ -60,7 +60,7 @@ export default function Hero() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/55" />
 
       {/* Hero Content */}
       <div className="relative z-10 text-white text-center px-6 max-w-3xl">
@@ -70,7 +70,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-6 text-white">
-MyCoreOffices provides reliable and affordable virtual office solutions designed to help businesses establish a professional presence without the cost of a physical workspace.
+MyCoreOffice provides reliable and affordable virtual office solutions designed to help businesses establish a professional presence without the cost of a physical workspace.
         </p>
 
         {/* Buttons */}
