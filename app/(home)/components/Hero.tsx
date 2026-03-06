@@ -45,7 +45,7 @@ export default function Hero() {
 
       {/* Background Image */}
       <Image
-        src="/hero.jpg"
+        src="/hero_bg.jpg"
         alt="Office Space"
         fill
         priority
