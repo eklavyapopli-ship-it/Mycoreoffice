@@ -24,10 +24,10 @@ const Features = () => {
     <section className={`relative pb-40 md:pb-20 ${montserrat.className}`}>
       
       {/* Top Section */}
-      <div className="bg-red-950 text-white flex items-center justify-center px-6 py-20 text-justify">
-        <h1 className="max-w-7xl md:text-3xl text-2xl">
-          All MyCoreOffice locations come with great facilities and first-class
-          support teams, ensuring your happiness and productivity every day.
+      <div className="bg-red-950 text-white flex items-center justify-center px-6 py-20 ">
+        <h1 className="max-w-7xl md:text-3xl text-xl text-justify">
+          All Office locations come with great and facilities and first class
+          support teams, ensuring happiness and productivity every day.
         </h1>
       </div>
 
