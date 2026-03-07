@@ -1,6 +1,8 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { SmoothScrollerProvider } from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -95,10 +97,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <SmoothScrollerProvider>
         <Navbar/>
         {children}
         <Footer/>
-
+</SmoothScrollerProvider>
       </body>
       
     </html>

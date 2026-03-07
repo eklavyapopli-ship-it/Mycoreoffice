@@ -2,10 +2,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Loader2 } from "lucide-react";
-import { useRouter } from "next/navigation";
-
+import { motion } from "framer-motion";
+import Link from "next/link";
 export default function Hero() {
-  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
   const [openForm, setOpenForm] = useState(false);
 
@@ -58,7 +58,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/55" />
 
       {/* Hero Content */}
-      <div className="relative z-10 text-white text-center px-6 max-w-3xl">
+      <motion.div
+       initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: false }}
+      className="relative z-10 text-white text-center px-6 max-w-3xl">
 
         <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
           Virtual Offices For Everyone
@@ -77,13 +82,13 @@ MyCoreOffice provides reliable and affordable virtual office solutions designed 
             Send Enquiry
           </button>
 
-          <button
+          <Link href="#virtual-office"
             className="border  px-6 py-3 rounded-md font-medium  cursor-pointer "
           >
             Explore
-          </button>
+          </Link>
         </div>
-      </div>
+      </motion.div>
 
       {/* Toast / Modal Form */}
       {openForm && (

@@ -92,7 +92,12 @@ export default function About() {
   };
 
   return (
-    <section className={`max-w-7xl mx-auto px-6 pt-20 ${montserrat.className}`}>
+    <motion.section 
+     initial={{ opacity: 0, y:50 }}
+      whileInView={{ opacity:1, y:0}}
+      transition={{ duration: 1 }}
+      viewport={{ once: false }}
+    className={`max-w-7xl mx-auto px-6 pt-20 ${montserrat.className}`}>
       <Toaster position="top-right" />
 
       {/* PRODUCT 1 */}
@@ -230,7 +235,7 @@ export default function About() {
         )}
       </AnimatePresence>
       
-    </section>
+    </motion.section>
   );
 }
 

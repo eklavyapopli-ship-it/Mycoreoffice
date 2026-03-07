@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { montserrat } from "@/lib/fontS";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Objective = () => {
   const [visible, setvisible] = useState("hidden");
@@ -18,7 +19,12 @@ const Objective = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 px-6">
         
         {/* Left Side - Heading & Content */}
-        <div className="md:w-1/2 text-white">
+        <motion.div
+            initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: false}}
+        className="md:w-1/2 text-white">
           <h2 className="text-3xl mb-6">
             MyCoreOffice: Business Objective
           </h2>
@@ -46,10 +52,15 @@ const Objective = () => {
 MyCoreOffice offers serviced offices and coworking spaces designed to enhance productivity and collaboration. In Hyderabad, HITEC City and Gachibowli are prime locations for businesses in the IT sector. Our serviced offices in these areas provide a professional environment with all the amenities you need to succeed. For those looking for coworking spaces, Bangalore's vibrant districts of Whitefield and Electronic City are perfect for networking and innovation. These spaces are equipped with high-speed internet, meeting rooms, and communal areas to foster collaboration. Monthly networking events offer opportunities to connect with local business communities and explore new opportunities
           </p>
           <div onClick={()=>{settingVisible()}} className="mt-5 p-3 rounded-sm hover:bg-white hover:text-black cursor-pointer border w-fit">{toggleText}</div>
-        </div>
+        </motion.div>
 
         {/* Right Side - Image */}
-        <div className="md:w-1/2 w-full relative h-72 md:h-[520px]  rounded-md overflow-hidden shadow-lg">
+        <motion.div 
+            initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1}}
+      transition={{ duration: 1 }}
+      viewport={{ once: false}}
+        className="md:w-1/2 w-full relative h-72 md:h-[520px]  rounded-md overflow-hidden shadow-lg">
           <Image
             src="/office1.jpg" // replace with your image path
             alt="Business Objective"
@@ -57,7 +68,7 @@ MyCoreOffice offers serviced offices and coworking spaces designed to enhance pr
             className="object-cover"
             priority
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

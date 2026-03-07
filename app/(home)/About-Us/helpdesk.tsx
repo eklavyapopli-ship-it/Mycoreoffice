@@ -7,7 +7,7 @@ export default function Helpdesk(){
    <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
+          transition={{ duration: 1, delay: 0.7 }}
           className="text-center mt-16 max-w-7xl  mx-auto mb-10"
         >
           <div className=" rounded-xl p-8 lg:p-12 shadow-xl ">

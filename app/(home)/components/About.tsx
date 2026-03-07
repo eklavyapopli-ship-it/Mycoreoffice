@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { montserrat } from "@/lib/fontS";
 export default function AboutPage() {
@@ -9,7 +9,12 @@ export default function AboutPage() {
       
       <section className="max-w-7xl mx-auto px-6 pb-10  grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
-                <div className="grid grid-cols-2 gap-4">
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: false }}
+                 className="grid grid-cols-2 gap-4">
 <div className="relative h-60 col-span-2 rounded-lg overflow-hidden shadow-lg">
             <Image
             priority
@@ -40,8 +45,13 @@ export default function AboutPage() {
           </div>
 
           
-        </div>
-        <div className="text-justify">
+        </motion.div>
+        <motion.div
+        initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: false }}
+         className="text-justify">
           <h2 className="text-3xl md:text-4xl text-red-800  mb-4 text-start">
            About Us
           </h2>
@@ -59,7 +69,7 @@ export default function AboutPage() {
           </p>
 
         
-        </div>
+        </motion.div>
 
         {/* RIGHT IMAGE COLLAGE */}
         

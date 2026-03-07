@@ -57,8 +57,8 @@ const handleSubmit = async (e: React.FormEvent) => {
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+      viewport={{ once: false }}
       className="max-w-7xl mx-auto px-6 py-16 text-black flex flex-col md:flex-row items-center gap-10" id="applynow"
     >
       {/* Left: Image */}
@@ -68,7 +68,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       <motion.div
         initial={{ x: 50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
         className="flex-1 bg-white w-full "
       >
         <h2 className="text-3xl font-bold text-gray-900 mb-6">Enquiry</h2>
@@ -138,7 +138,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <motion.div
         initial={{ x: -50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
         className="flex-1 "
       >
        <img src="/hero_bg.jpg" className="rounded-md" alt="" />

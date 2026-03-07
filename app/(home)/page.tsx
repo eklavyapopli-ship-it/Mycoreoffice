@@ -7,7 +7,7 @@ import FAQSection from './components/FAQ'
 import Objective from './components/Objective'
 import Categories from './components/Categories'
 import Hero2 from './components/hero2'
-
+import { SmoothScrollerProvider } from '@/components/SmoothScroll'
 const page = () => {
   return (
   <>
