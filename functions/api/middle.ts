@@ -29,7 +29,7 @@ if (body.message?.length > 1000) {
 
 
   try {
-const send = await fetch("/api/email",{
+const send = await fetch("https://mycoreoffice.pages.dev/api/email",{
     method:"POST",
 
         headers: { "content-type": "application/json" , "apiKey":env.MAIN_KEY},
