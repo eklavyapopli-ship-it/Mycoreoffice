@@ -20,7 +20,7 @@ export default function Navbar() {
       href:"/About"
     },
 
-
+{ name: "Virtual Offices", href: "/#virtual-office" },
 
     {
       name: "Services",
@@ -30,7 +30,7 @@ export default function Navbar() {
       ],
     },
 
-    { name: "New Enquiry", href: "/Enquiry" },
+    
     { name: "Contact", href: "/Contact" },
   ];
 

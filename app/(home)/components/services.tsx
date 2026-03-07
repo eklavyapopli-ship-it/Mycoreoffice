@@ -94,7 +94,7 @@ export default function ProductsPage({ limit }: any) {
 
   return (
     <>
-      <div className={`${montserrat.className} h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:py-10" id="virtual-offces`}>
+      <div className={`${montserrat.className} h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:py-10"`}  id="virtual-office">
         <h1 className="text-3xl mb-12 text-center text-red-900 font-bold">
           Virtual Office Across India
         </h1>

@@ -69,7 +69,7 @@ export default function Footer() {
               </Link>
             </nav>
             <Link
-              href="/#virtual-offices"
+              href="/#virtual-office"
               className="inline-flex items-center justify-center gap-2 bg-white hover:bg-red-900 hover:text-white px-4 py-3 rounded-lg text-black font-medium text-sm transition-colors w-full"
             >
               <span>Explore Virtual Offices</span>
