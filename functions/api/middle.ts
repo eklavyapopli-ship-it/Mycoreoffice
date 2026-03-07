@@ -32,7 +32,7 @@ if (body.message?.length > 1000) {
 const send = await fetch("/api/email",{
     method:"POST",
 
-        headers: { "Content-Type": "application/json" , "apiKey":env.MAIN_KEY},
+        headers: { "content-type": "application/json" , "apiKey":env.MAIN_KEY},
         body:JSON.stringify({
             name:body.name,
             email:body.email,
