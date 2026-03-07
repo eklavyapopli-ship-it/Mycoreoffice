@@ -63,7 +63,7 @@ export default function ProductsPage({ limit }: any) {
     }
 
     try {
-      const res = await fetch("/api/email", {
+      const res = await fetch("/api/middle", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, message }),

@@ -1,24 +1,12 @@
-import { QodeMLClient } from "email-sdk";
+
 export async function onRequestPost({ request, env }: any) {
 
-if (!request.headers.get("content-type")?.includes("application/json")) {
+
+
+
+  if (!request.headers.get("content-type")?.includes("application/json")) {
     return new Response(JSON.stringify({ message: "Invalid content type" }), { status: 415 });
   }
-  if(!request.headers.get("apiKey")?.includes(env.MAIN_KEY)){
-     return new Response(JSON.stringify({ message: "Invalid api key " }), { status: 403 });
-  }
-  const client = new QodeMLClient({
-    host: "smtp.gmail.com",
-    port: 587, 
-    method: "PLAIN",
-    username: env.EMAIL_FROM,
-    password: env.PASS,
-    useSsl: true,
-    apiKey: env.QODEML_API,
-}); 
-
-
-  
 
 const body = await request.json();
 
@@ -41,19 +29,19 @@ if (body.message?.length > 1000) {
 
 
   try {
-await client.sendMail({
-        to: env.TO_SEND,
-        from: "New Enquiry",
-        subject: "New Enquiry",
-        body: `Hey MyCoreOffice, You have a new enquiry:
-        Name: ${body.name}
-        Email: ${body.email}
-        Phone:${body.phone}
-        Query:${body.queryType}
-        Message: ${body.message}
-        `,
-      isHtml: false,
-    })
+const send = await fetch("/api/email",{
+    method:"POST",
+
+        headers: { "Content-Type": "application/json" , "apiKey":env.MAIN_KEY},
+        body:JSON.stringify({
+            name:body.name,
+            email:body.email,
+            phone:body.phone,
+            queryType:body.queryType,
+            message:body.message
+        })
+ 
+})
 
 
     return new Response(JSON.stringify({ ok: true ,message:"good"}), );
