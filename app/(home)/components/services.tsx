@@ -140,7 +140,7 @@ export default function ProductsPage({ limit }: any) {
                   onClick={() =>
                     openEnquiry(`Hey! I want to enquire about Virtual Office in ${product.name}`)
                   }
-                  className="md:hidden w-full bg-red-950  text-white py-2.5 rounded-sm font-semibold transition"
+                  className="md:hidden w-full bg-red-950  text-white py-2.5 rounded-sm transition"
                 >
                   Send Enquiry
                 </button>
@@ -204,23 +204,24 @@ export default function ProductsPage({ limit }: any) {
               <button
                 onClick={sendToDatabase}
                 disabled={loading}
-                className="w-full bg-gray-600 hover:bg-gray-700 text-white py-2 rounded-lg"
+                className="w-full bg-black  text-white py-2 rounded-lg"
               >
                 {loading ? "Sending..." : "Send Enquiry"}
               </button>
               <button
                 onClick={sendToWhatsApp}
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg"
+                className="w-full bg-green-500 hover:bg-green-700 text-white py-2 rounded-lg"
               >
                 WhatsApp
               </button>
-              <button
+             
+            </div>
+             <button
                 onClick={() => setOpen(false)}
-                className="w-full border py-2 rounded-lg"
+                className="w-full border border-gray-200 mt-1 py-2 rounded-lg"
               >
                 Close
               </button>
-            </div>
           </div>
         </div>
       )}
