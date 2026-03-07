@@ -7,7 +7,7 @@ export default function AboutPage() {
     <main className={`${montserrat.className} mt-10 text-black " id="about`}>
       {/* ABOUT SECTION */}
       
-      <section className="max-w-7xl mx-auto px-6 pb-20  grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <section className="max-w-7xl mx-auto px-6 pb-10  grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
                 <div className="grid grid-cols-2 gap-4">
 <div className="relative h-60 col-span-2 rounded-lg overflow-hidden shadow-lg">

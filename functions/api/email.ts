@@ -32,6 +32,7 @@ await client.sendMail({
         Name: ${body.name}
         Email: ${body.email}
         Phone:${body.phone}
+        Query:${body.queryType}
         Message: ${body.message}
         `,
       isHtml: false,

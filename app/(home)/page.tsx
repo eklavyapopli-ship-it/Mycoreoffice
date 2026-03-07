@@ -12,7 +12,7 @@ const page = () => {
   <Hero/>
   <AboutPage/>
   <Features/>
-  <ProductsPage limit={6}/>
+  <ProductsPage limit={8}/>
   <Objective/>
   <FAQSection/>
   </>

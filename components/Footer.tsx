@@ -1,7 +1,7 @@
 "use client";
 import { montserrat } from "@/lib/fontS";
 import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Building2, Users, Lightbulb } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Building2, Users, Lightbulb, UserPlus } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 
@@ -28,14 +28,21 @@ export default function Footer() {
     MyCoreOffice
   </h1>
 </Link>
-              <p className="text-gray-200 text-sm mt-2 text-center text-justify md:leading-relaxed">
-                Empowering Innovation, Nurturing Startups.  MyCoreOffice is a premier virtual office provider
+              <p className="text-gray-200 text-sm mt-5 text-justify md:leading-relaxed">
+                Empowering Innovation, Nurturing Startups.  MyCoreOffice is a virtual office provider
                 fostering entrepreneurial excellence and driving technological advancement.
               </p>
             </div>
             
-            {/* Quick Stats */}
-         
+      
+                     {/* Working Hours */}
+            <div className=" rounded-lg p-4 bg-white">
+              <h4 className="text-black font-semibold mb-2 text-sm">Working Hours</h4>
+              <p className="text-black text-sm">Monday – Friday</p>
+              <p className="text-black text-sm">9:00 AM – 6:00 PM</p>
+            </div>
+    
+            
           </div>
 
           {/* For Entrepreneurs */}
@@ -61,6 +68,12 @@ export default function Footer() {
                 Apply for Incubation
               </Link>
             </nav>
+            <Link
+              href="/#virtual-offices"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-red-900 hover:text-white px-4 py-3 rounded-lg text-black font-medium text-sm transition-colors w-full"
+            >
+              <span>Explore Virtual Offices</span>
+            </Link>
           </div>
 
           {/* Community & Network */}
@@ -82,8 +95,19 @@ export default function Footer() {
               <a href="/start-job" className="block text-white hover:text-white transition-colors text-sm">
                 Job Portal
               </a>
+              <a href="/start-job" className="block text-white hover:text-white transition-colors text-sm">
+                GST Related Services
+              </a>
             </nav>
-
+ {/* WhatsApp CTA */}
+            <Link
+              href="https://wa.me/918920743180"
+              target="_blank"
+              className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-3 rounded-lg text-white font-medium text-sm transition-colors w-full"
+            >
+              <FaWhatsapp size={18} />
+              <span>Connect on WhatsApp</span>
+            </Link>
    
           </div>
 
@@ -118,23 +142,18 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-red-500" />
                 <div className="text-sm">
                   <p className="text-white font-medium">Email</p>
-                  <Link href="mailto: MyCoreOffice@ " className="text-white hover:text-white transition-colors">
-                  
+                  <Link href="mailto:shivanirajput2711@gmail.com" className="text-white hover:text-white transition-colors">
+                  shivanirajput2711@gmail.com
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Working Hours */}
-            <div className=" rounded-lg p-4 bg-white">
-              <h4 className="text-black font-semibold mb-2 text-sm">Working Hours</h4>
-              <p className="text-black text-sm">Monday – Friday</p>
-              <p className="text-black text-sm">9:00 AM – 6:00 PM</p>
-            </div>
+
 
             {/* Social Media */}
             <div>
-              <h4 className="text-white font-semibold mb-3 text-sm">Follow Us</h4>
+              <h4 className="text-white place-items-end   text-sm  text-center"> Follow Us </h4>
               <div className="flex gap-3 place-content-center">
                 <Link
                   href="https://facebook.com"
@@ -168,15 +187,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* WhatsApp CTA */}
-            <Link
-              href="https://wa.me/919577227744"
-              target="_blank"
-              className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-3 rounded-lg text-white font-medium text-sm transition-colors w-full"
-            >
-              <FaWhatsapp size={18} />
-              <span>Connect on WhatsApp</span>
-            </Link>
+           
           </div>
         </div>
 

@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
-
+import { montserrat } from "@/lib/fontS";
 type Product = {
   id: number;
   name: string;
@@ -18,14 +17,13 @@ const Products: Product[] = [
   { id: 4, name: "Gurugram", image: "/locations/gurugram.jpg", link: "gurugram" },
   { id: 5, name: "Tamil Nadu", image: "/locations/tamilnadu.jpg", link: "tamilnadu" },
   { id: 6, name: "Punjab", image: "/locations/punjab.jpg", link: "punjab" },
-  { id: 7, name: "Bangalore", image: "/locations/banglore.jpg", link: "banglore" },
   { id: 8, name: "Gujarat", image: "/locations/gujarat.jpg", link: "gujarat" },
   { id: 9, name: "Kerala", image: "/locations/kerela.png", link: "kerela" },
+  { id: 7, name: "Bangalore", image: "/locations/banglore.jpg", link: "banglore" },
   { id: 10, name: "Telangana", image: "/locations/Hyd.png", link: "telangana" },
 ];
 
 export default function ProductsPage({ limit }: any) {
-  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
@@ -46,7 +44,7 @@ export default function ProductsPage({ limit }: any) {
 
   /* ---------------- WHATSAPP ---------------- */
   const sendToWhatsApp = () => {
-    const url = `https://wa.me/+919311514517?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/+918920743180?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
     setOpen(false);
   };
@@ -92,21 +90,21 @@ export default function ProductsPage({ limit }: any) {
   };
 
   const limitedProducts = showAll ? Products : Products.slice(0, limit);
-  const toggleText = showAll ? "See Less" : "See More";
+  const toggleText = showAll ? "See Less" : "See More Areas";
 
   return (
     <>
-      <div className={` h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:p-10" id="product`}>
+      <div className={`${montserrat.className} h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:py-10" id="virtual-offces`}>
         <h1 className="text-3xl mb-12 text-center text-red-900 font-bold">
           Virtual Office Across India
         </h1>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {limitedProducts.map((product) => (
             <div
               key={product.id}
-              className="group relative rounded-md overflow-hidden flex flex-col bg-white shadow-lg hover:shadow-2xl transition duration-500"
+              className="group relative rounded-md overflow-hidden flex flex-col shadow-md bg-white  hover:shadow-2xl transition duration-500"
             >
               <div className="relative h-[300px] overflow-hidden rounded-md">
                 <Image
@@ -122,18 +120,18 @@ export default function ProductsPage({ limit }: any) {
                   onClick={() =>
                     openEnquiry(`Hey! I want to enquire about Virtual Office in ${product.name}`)
                   }
-                  className="hidden md:flex absolute bottom-4 rounded-full left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2.5  font-semibold transition-opacity opacity-0 group-hover:opacity-100"
+                  className="hidden md:flex absolute bottom-4 rounded-full left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2.5   transition-opacity opacity-0 group-hover:opacity-100"
                 >
                   Send Enquiry
                 </button>
               </div>
 
               {/* Card Content */}
-              <div className="p-6 flex flex-col flex-1 justify-between">
+              <div className="py-6 px-2 flex flex-col flex-1 justify-between ">
                 <h2 className="text-lg font-semibold mb-2 text-gray-900">
                   Virtual Office in {product.name}
                 </h2>
-                <p className="text-sm text-gray-500 mb-4">
+                <p className="text-xs text-gray-500 mb-4">
                   Premium virtual office with excellent connectivity and modern amenities.
                 </p>
 
@@ -154,11 +152,11 @@ export default function ProductsPage({ limit }: any) {
         {/* SEE MORE BUTTON */}
         <div className="flex justify-center mt-12">
           <div
-            className="text-xl font-semibold text-black cursor-pointer relative group"
+            className="text-md p-3  rounded-md hover:bg-red-900 hover:text-white text-black border cursor-pointer relative group"
             onClick={() => setShowAll(!showAll)}
           >
             {toggleText}
-            <div className="absolute scale-x-0 group-hover:scale-x-100 -bottom-1 left-0 right-0 h-1 origin-left rounded-full bg-black duration-300 ease-out"></div>
+            
           </div>
         </div>
       </div>

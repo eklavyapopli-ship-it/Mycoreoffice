@@ -1,19 +1,19 @@
 import { montserrat } from "@/lib/fontS"
-
+import { HandHelping, Omega, User2, Earth } from "lucide-react"
 const features = [
-  {
+  {icon:HandHelping,
     title: "Support Team",
     desc: "Dedicated support staff to assist you and your guests, from reception services to back-office functions such as IT.",
   },
-  {
+  {icon:Omega,
     title: "Carbon Neutral Offices",
     desc: "Our offices are designed with sustainability in mind and are carbon neutral, maintaining high environmental standards.",
   },
-  {
+  {icon:User2,
     title: "Join Our Community",
     desc: "By joining MyCoreOffice, you gain access to a vibrant business community including networking opportunities.",
   },
-  {
+  {icon:Earth,
     title: "World Class Facility",
     desc: "Premium workspace infrastructure designed to provide comfort, productivity, and a professional environment.",
   },
@@ -32,7 +32,7 @@ const Features = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="bg-white h-32"></div>
+      <div className="bg-white h-32 md:mt-6 "></div>
 
       {/* Cards */}
       <div className="md:absolute md:left-1/2 md:top-[80%] lg:top-[60%] md:-translate-x-1/2 md:-translate-y-1/2 w-full max-w-7xl mx-auto px-6 md:px-0 -mt-16 md:mt-0">
@@ -42,6 +42,7 @@ const Features = () => {
               key={i}
               className="bg-white shadow-xl rounded-md p-6 text-center hover:shadow-2xl transition"
             >
+              <h1><item.icon className="h-10 w-10 bg-gray-100 p-2 rounded-tl-lg rounded-br-lg text-black"/></h1>
               <h3 className="text-lg text-justify font-semibold text-gray-900 mb-3">
                 {item.title}
               </h3>

@@ -31,7 +31,7 @@ export default function Navbar() {
     },
 
     { name: "New Enquiry", href: "/Enquiry" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/Contact" },
   ];
 
   const socials = [
