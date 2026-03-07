@@ -50,7 +50,7 @@ export default function AboutPage() {
         initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
-      viewport={{ once: false }}
+      viewport={{ once: true }}
          className="text-justify">
           <h2 className="text-3xl md:text-4xl text-red-800  mb-4 text-start">
            About Us
