@@ -1,12 +1,7 @@
 import { QodeMLClient } from "email-sdk";
 export async function onRequestPost({ request, env }: any) {
-    const origin = request.headers.get("origin");
-  if (origin !== "https://mycoreoffice-test.humkind.in") {
-    return new Response(
-      JSON.stringify({ error: "Forbidden origin" }),
-      { status: 403 }
-    );
-  }
+
+
   const client = new QodeMLClient({
     host: "smtp.gmail.com",
     port: 587, 
