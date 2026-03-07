@@ -4,8 +4,8 @@ import { montserrat } from "@/lib/fontS";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Eye, Target, Users, Award, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
-import Link from "next/link";
+import { Target, Users, Award, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
+
 const images = [
     "/office1.jpg",
     "/office2.jpg",
@@ -20,7 +20,7 @@ export default function WhoAreWe() {
   // Auto change every 4 seconds
   useEffect(() => {
     if (!isPlaying) return;
-   setIndex((prev) => (prev + 1) % images.length);
+   setIndex((prev) => (prev) % images.length);
    
   }, [isPlaying]);
 
@@ -60,30 +60,30 @@ export default function WhoAreWe() {
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="flex items-center justify-between bg-black/60 backdrop-blur-sm rounded-lg p-3">
                   <div className="flex items-center gap-2">
-                    <button
-                      onClick={prevImage}
+                    <div
+                      onClick={prevImage} 
                       className="p-2 text-white/80 hover:text-white hover:bg-white/20 rounded-lg transition-all"
                     >
                       <ChevronLeft className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={() => setIsPlaying(!isPlaying)}
+                    </div>
+                    <div
+                      onClick={() => setIsPlaying(!isPlaying)} 
                       className="p-2 text-white/80 hover:text-white hover:bg-white/20 rounded-lg transition-all"
                     >
                       {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                    </button>
-                    <button
-                      onClick={nextImage}
+                    </div>
+                    <div
+                      onClick={nextImage} 
                       className="p-2 text-white/80 hover:text-white hover:bg-white/20 rounded-lg transition-all"
                     >
                       <ChevronRight className="w-4 h-4" />
-                    </button>
+                    </div>
                   </div>
                   
                   {/* Dots indicator */}
                   <div className="flex gap-1">
                     {images.map((_, i) => (
-                      <button
+                      <div
                         key={i}
                         onClick={() => setIndex(i)}
                         className={`w-2 h-2 rounded-full transition-all ${
