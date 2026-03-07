@@ -15,7 +15,7 @@ const Objective = () => {
   }
   const toggleText = visible=="hidden"?"Read More +":"Read Less -"
   return (
-    <section className={`${montserrat.className} w-full bg-red-950 py-16`}>
+    <section className={`${montserrat.className} w-full bg-red-950 py-16`} id="objective">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 px-6">
         
         {/* Left Side - Heading & Content */}

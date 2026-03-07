@@ -15,7 +15,7 @@ const Products: Product[] = [
 
 const Categories = () => {
   return (
-    <section className={`relative pb-20 bg-red-950  ${montserrat.className}`}>
+    <section className={`relative pb-20 bg-red-950  ${montserrat.className}`} id="browse">
      
       {/* Top Section */}
       <div className=" text-white max-w-7xl flex flex-col mx-auto items-center h-fit justify-center px-6 pt-10 ">

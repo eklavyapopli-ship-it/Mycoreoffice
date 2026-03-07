@@ -52,20 +52,20 @@ export default function Footer() {
               For Entrepreneurs
             </h1>
             <nav className="space-y-3">
-              <Link href="/incubatees" className="block text-white hover:text-white transition-colors text-sm">
-                Incubatees
+              <Link href="/#virtual-office" className="block text-white hover:text-white transition-colors text-sm">
+               Virtual Offices
               </Link>
-              <Link href="/services" className="block text-white hover:text-white transition-colors text-sm">
-                Incubation Services
+              <Link href="/#virtual-office" className="block text-white hover:text-white transition-colors text-sm">
+               Co-Working Spaces
               </Link>
-              <Link href="/mentor" className="block text-white hover:text-white transition-colors text-sm">
-                Mentorship Program
+              <Link href="/#virtual-office" className="block text-white hover:text-white transition-colors text-sm">
+               Meeting Rooms
               </Link>
-              <Link href="/courses" className="block text-white hover:text-white transition-colors text-sm">
-                Training & Courses
+              <Link href="/#browse" className="block text-white hover:text-white transition-colors text-sm">
+                Browse
               </Link>
-              <Link href="/New_Proposals" className="block text-white hover:text-white transition-colors text-sm">
-                Apply for Incubation
+              <Link href="/#objective" className="block text-white hover:text-white transition-colors text-sm">
+                Objective
               </Link>
             </nav>
             <Link
@@ -83,21 +83,22 @@ export default function Footer() {
               Community
             </h1>
             <nav className="space-y-3">
-              <Link href="/About" className="block text-white hover:text-white transition-colors text-sm">
+              <Link href="/About-Us" className="block text-white hover:text-white transition-colors text-sm">
                 About  MyCoreOffice
               </Link>
-              <Link href="/life- MyCoreOffice" className="block text-white hover:text-white transition-colors text-sm">
+              <Link href="/About-Us" className="block text-white hover:text-white transition-colors text-sm">
                 Life at  MyCoreOffice
               </Link>
-              <Link href="/career" className="block text-white hover:text-white transition-colors text-sm">
-                Careers
-              </Link>
-              <Link href="/start-job" className="block text-white hover:text-white transition-colors text-sm">
-                Job Portal
-              </Link>
-              <Link href="/start-job" className="block text-white hover:text-white transition-colors text-sm">
+                <Link href="/" className="block text-white hover:text-white transition-colors text-sm">
                 GST Related Services
               </Link>
+              <Link href="/" className="block text-white hover:text-white transition-colors text-sm">
+                Company Registration
+              </Link>
+              <Link href="/" className="block text-white hover:text-white transition-colors text-sm">
+                Job Portal
+              </Link>
+            
             </nav>
  {/* WhatsApp CTA */}
             <Link
