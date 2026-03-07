@@ -1,5 +1,12 @@
 import { QodeMLClient } from "email-sdk";
 export async function onRequestPost({ request, env }: any) {
+    const origin = request.headers.get("origin");
+  if (origin !== "https://mycoreoffice.pages.dev") {
+    return new Response(
+      JSON.stringify({ error: "Forbidden origin" }),
+      { status: 403 }
+    );
+  }
   const client = new QodeMLClient({
     host: "smtp.gmail.com",
     port: 587, 
@@ -16,6 +23,7 @@ export async function onRequestPost({ request, env }: any) {
   }
 
 const body = await request.json();
+
 if (!body.name || body.name.length > 100) {
   return new Response(JSON.stringify({ message: "Invalid name" }), { status: 400 });
 }
