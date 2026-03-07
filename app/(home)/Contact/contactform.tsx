@@ -81,7 +81,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             onChange={handleChange}
             placeholder="Name"
             required
-            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
           <input
             type="email"
@@ -90,7 +90,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             onChange={handleChange}
             placeholder="Email"
             required
-            className="border w-full border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="border w-full border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
           </div>
           <input
@@ -100,21 +100,23 @@ const handleSubmit = async (e: React.FormEvent) => {
             onChange={handleChange}
             placeholder="Phone"
             required
-            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
+          <label className="text-sm flex flex-col">
+            <h1 className="px-1 text-gray-700">Select Query Type</h1>
           <select
             name="queryType"
             value={formData.queryType}
             onChange={handleChange}
             required
-            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           >
-            <option value="">Select Query Type</option>
             <option value="General">General</option>
             <option value="Support">Support</option>
             <option value="Collaboration">Collaboration</option>
             <option value="Others">Others</option>
           </select>
+          </label>
           <textarea
             name="message"
             value={formData.message}
@@ -122,11 +124,11 @@ const handleSubmit = async (e: React.FormEvent) => {
             placeholder="Comment or Message"
             required
             rows={2}
-            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           ></textarea>
           <button
             type="submit"
-            className="text-black hover:bg-red-900 hover:text-white border px-6 py-3 rounded-lg shadow-md transition transform hover:shadow-2xl"
+            className="text-black hover:bg-red-900 hover:text-white  px-6 py-3 rounded-md shadow-sm border transition transform hover:shadow-2xl"
           >
             Submit
           </button>
@@ -139,7 +141,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         transition={{ duration: 0.8 }}
         className="flex-1 "
       >
-       <img src="/office1.jpg" className="rounded-md" alt="" />
+       <img src="/hero_bg.jpg" className="rounded-md" alt="" />
          
       </motion.div>
     </motion.section>

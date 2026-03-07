@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
 import { montserrat } from "@/lib/fontS"
+import Link from "next/link"
 export default function Helpdesk(){
          return (
    <motion.div
@@ -17,10 +18,10 @@ export default function Helpdesk(){
               Join our incubation programs and leverage our comprehensive 
               support services to turn your innovative ideas into successful businesses.
             </p>
-            <a href="/Contact">
+            <Link href="/Contact">
             <button className="bg-white text-red-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
               Get Started Today
-            </button></a>
+            </button></Link>
           </div>
         </motion.div>
          )

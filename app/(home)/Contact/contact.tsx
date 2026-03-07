@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react"
-
+import Link from "next/link"
 import { josefinSans } from "@/lib/fontS"
 
 const Contact = () => {
@@ -12,19 +12,19 @@ const Contact = () => {
             </div>
             <div className={`${josefinSans.className} grid md:grid-cols-3 grid-cols-1 border-t mt-6 p-10`}>
     <div>
-        <div className="flex place-items-start gap-2 font-medium text-lg"><div className="p-1 border rounded-full m-1"><Phone className="text-emerald-600  p-1"/></div><h1>Call Us <div>     <a href="tel:+918920743180" className="font-thin text-sm hover:underline hover:text-blue-600 block">+91 89207 43180</a><span className="text-sm font-thin">Customer support · Mon–Sat: 10:00 – 6:00
+        <div className="flex place-items-start gap-2 font-medium text-lg"><div className="p-1 bg-gray-100 rounded-full m-1"><Phone className="text-emerald-600  p-1"/></div><h1>Call Us <div>     <Link href="tel:+918920743180" className="font-thin text-sm hover:underline hover:text-blue-600 block">+91 89207 43180</Link><span className="text-sm font-thin">Customer support · Mon–Sat: 10:00 – 6:00
 </span></div></h1>
    </div>
   
     </div>
     <div>
-        <div className="flex place-items-start gap-2 font-medium text-lg"><div className="p-1 border rounded-full m-1"><Mail className="text-blue-600  p-1"/></div><h1>Email Us <div>     <a href="mailto:shivanirajput2711@gmail.com" className="font-thin text-sm hover:underline hover:text-blue-600 block">shivanirajput2711@gmail.com</a><span className="text-sm font-thin">General questions and program enquiries
+        <div className="flex place-items-start gap-2 font-medium text-lg"><div className="p-1 bg-gray-100 rounded-full m-1"><Mail className="text-blue-600  p-1"/></div><h1>Email Us <div>     <Link href="mailto:shivanirajput2711@gmail.com" className="font-thin text-sm hover:underline hover:text-blue-600 block">shivanirajput2711@gmail.com</Link><span className="text-sm font-thin">General questions and program enquiries
 </span></div></h1>
    </div>
   
     </div>
      <div>
-        <div className="flex place-items-start gap-2 font-medium text-lg"><div className="p-1 border rounded-full m-1"><MapPin className="text-red-600  p-1"/></div><h1>Visit Us<div><span className="text-sm font-thin">Main office location
+        <div className="flex place-items-start gap-2 font-medium text-lg"><div className="p-1 bg-gray-100 rounded-full m-1"><MapPin className="text-red-600  p-1"/></div><h1>Visit Us<div><span className="text-sm font-thin">Main office location
 </span></div></h1>
    </div>
   

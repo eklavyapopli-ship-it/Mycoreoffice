@@ -37,7 +37,7 @@ export default function Footer() {
       
                      {/* Working Hours */}
             <div className=" rounded-lg p-4 bg-white">
-              <h4 className="text-black font-semibold mb-2 text-sm">Working Hours</h4>
+              <h1 className="text-black font-semibold mb-2 text-sm">Working Hours</h1>
               <p className="text-black text-sm">Monday – Friday</p>
               <p className="text-black text-sm">9:00 AM – 6:00 PM</p>
             </div>
@@ -47,10 +47,10 @@ export default function Footer() {
 
           {/* For Entrepreneurs */}
           <div className="space-y-6">
-            <h3 className="text-white font-bold text-lg flex items-center gap-2">
+            <h1 className="text-white font-semibold text-lg flex items-center gap-2">
               <Lightbulb className="w-5 h-5 text-red-500" />
               For Entrepreneurs
-            </h3>
+            </h1>
             <nav className="space-y-3">
               <Link href="/incubatees" className="block text-white hover:text-white transition-colors text-sm">
                 Incubatees
@@ -78,10 +78,10 @@ export default function Footer() {
 
           {/* Community & Network */}
           <div className="space-y-6">
-            <h3 className="text-white font-bold text-lg flex items-center gap-2">
+            <h1 className="text-white font-bold text-lg flex items-center gap-2">
               <Users className="w-5 h-5 text-red-500" />
               Community
-            </h3>
+            </h1>
             <nav className="space-y-3">
               <Link href="/About" className="block text-white hover:text-white transition-colors text-sm">
                 About  MyCoreOffice
@@ -92,18 +92,18 @@ export default function Footer() {
               <Link href="/career" className="block text-white hover:text-white transition-colors text-sm">
                 Careers
               </Link>
-              <a href="/start-job" className="block text-white hover:text-white transition-colors text-sm">
+              <Link href="/start-job" className="block text-white hover:text-white transition-colors text-sm">
                 Job Portal
-              </a>
-              <a href="/start-job" className="block text-white hover:text-white transition-colors text-sm">
+              </Link>
+              <Link href="/start-job" className="block text-white hover:text-white transition-colors text-sm">
                 GST Related Services
-              </a>
+              </Link>
             </nav>
  {/* WhatsApp CTA */}
             <Link
               href="https://wa.me/918920743180"
               target="_blank"
-              className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-3 rounded-lg text-white font-medium text-sm transition-colors w-full"
+              className="inline-flex items-center justify-center gap-2 bg-green-700  px-4 py-3 rounded-lg text-white font-medium text-sm transition-colors w-full"
             >
               <FaWhatsapp size={18} />
               <span>Connect on WhatsApp</span>
@@ -113,10 +113,10 @@ export default function Footer() {
 
           {/* Contact & Location */}
           <div className="space-y-6">
-            <h3 className="text-white font-bold text-lg flex items-center gap-2">
+            <h1 className="text-white font-bold text-lg flex items-center gap-2">
               <Building2 className="w-5 h-5 text-red-500" />
               Get in Touch
-            </h3>
+            </h1>
             
             {/* Contact Info */}
             <div className="space-y-4">
@@ -153,17 +153,17 @@ export default function Footer() {
 
             {/* Social Media */}
             <div>
-              <h4 className="text-white place-items-end   text-sm  text-center"> Follow Us </h4>
+              <h1 className="text-white place-items-end   text-sm  text-center"> Follow Us </h1>
               <div className="flex gap-3 place-content-center">
                 <Link
-                  href="https://facebook.com"
+                  href="https://facebook.com" aria-label="Twitter"
                   target="_blank"
                   className="p-2 rounded-lg   hover:bg-blue-600 transition-colors"
                 >
                   <Facebook className="w-5 h-5 text-white hover:text-white" />
                 </Link>
                 <Link
-                  href="https://twitter.com"
+                  href="https://twitter.com" aria-label="Twitter"
                   target="_blank"
                   className="p-2 rounded-lg   hover:bg-sky-500 transition-colors"
                 >
@@ -171,14 +171,14 @@ export default function Footer() {
                 </Link>
                 <Link
                   href="/"
-                  target="_blank"
+                  target="_blank" aria-label="Twitter"
                   className="p-2 rounded-lg   hover:bg-blue-500 transition-colors"
                 >
                   <Linkedin className="w-5 h-5 text-white hover:text-white" />
                 </Link>
                 <Link
                   href="/"
-                  target="_blank"
+                  target="_blank" aria-label="Twitter"
                   className="p-2 rounded-lg   hover:bg-pink-500 transition-colors"
                 >
                   <Instagram className="w-5 h-5 text-white hover:text-white" />
@@ -201,15 +201,15 @@ export default function Footer() {
               © {new Date().getFullYear()} MyCoreOffice | All Rights Reserved.
             </div>
             <div className="flex gap-6 text-sm">
-              <a href="/privacy" className="text-white hover:text-white transition-colors">
+              <Link href="/privacy" className="text-white hover:text-white transition-colors">
                 Privacy Policy
-              </a>
-              <a href="/terms" className="text-white hover:text-white transition-colors">
+              </Link>
+              <Link href="/terms" className="text-white hover:text-white transition-colors">
                 Terms of Service
-              </a>
-              <a href="/sitemap.xml" className="text-white hover:text-white transition-colors">
+              </Link>
+              <Link href="/sitemap.xml" className="text-white hover:text-white transition-colors">
                 Sitemap
-              </a>
+              </Link>
             </div>
           </div>
         </div>

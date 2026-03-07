@@ -102,9 +102,9 @@ export default function Navbar() {
           {/* Social Icons */}
           <li className="flex space-x-4 ml-4">
             {socials.map(({ href, icon: Icon }, i) => (
-              <a key={i} href={href} target="_blank">
+              <Link key={i} href={href} target="_blank" aria-label="Twitter">
                 <Icon className="w-5 h-5 hover:text-red-800 transition" />
-              </a>
+              </Link>
             ))}
           </li>
         </ul>
@@ -165,9 +165,9 @@ export default function Navbar() {
 
           <div className="flex space-x-4 pt-4">
             {socials.map(({ href, icon: Icon }, i) => (
-              <a key={i} href={href} target="_blank">
+              <Link key={i} href={href} target="_blank">
                 <Icon className="w-5 h-5 hover:text-red-800 transition" />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
