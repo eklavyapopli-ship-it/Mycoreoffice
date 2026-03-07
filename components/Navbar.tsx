@@ -17,7 +17,7 @@ export default function Navbar() {
 
     {
       name: "About Us",
-      href:"/about"
+      href:"/About-Us"
     },
 
 { name: "Virtual Offices", href: "/#virtual-office" },
