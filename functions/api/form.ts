@@ -16,7 +16,7 @@ if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
   return new Response(JSON.stringify({ message: "Invalid email" }), { status: 400 });
 }
 
-if (body.message?.length > 50) {
+if (body.message?.length > 200) {
   return new Response(JSON.stringify({ message: "Message too long" }), { status: 400 });
 }
   try {
