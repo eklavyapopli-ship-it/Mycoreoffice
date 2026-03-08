@@ -8,6 +8,7 @@ import Objective from './components/Objective'
 import Categories from './components/Categories'
 import Hero2 from './components/hero2'
 import { domAnimation, LazyMotion } from "framer-motion";
+import Reviews from './components/Reviews'
 const page = () => {
   return (
     <>
@@ -19,6 +20,7 @@ const page = () => {
         <Objective />
         <FAQSection />
         <Categories />
+        <Reviews/>
         <Hero2 />
       </LazyMotion>
     </>

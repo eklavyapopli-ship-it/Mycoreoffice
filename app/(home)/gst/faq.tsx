@@ -4,14 +4,14 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is a virtual office?",
+    question: "Do I need a GST Registration Consultant?",
     answer:
-      "A virtual office is a service that allows you to use a professional business address without physically operating from that location. It enables businesses to register for services such as Company Registration and GST Registration using the virtual office address. This helps business owners save significantly on costs while maintaining a credible professional presence.",
+      "You can register yourself, but engaging a GST Registration Consultant in Noida ensures that it is being done correctly, saves your time, and avoids you investing in costly errors.",
   },
   {
-    question: "What are the benefits of using a virtual office?",
+    question: "How long does online GST registration take?",
     answer:
-      "A virtual office provides your business with a prime location address at a cost-effective price. It eliminates expenses related to office rent, security deposits, maintenance, and utilities that are typically associated with a traditional office setup.",
+      "After all documents are prepared, it normally takes between 3–7 working days. A consultant can help speed up the process and prevent delays.",
   },
   {
     question: "Can I take GST Registration on a virtual office address?",
@@ -22,6 +22,16 @@ const faqs = [
     question: "What documents will be provided for GST Registration?",
     answer:
       "All necessary documents required for GST registration are provided, including a No Objection Certificate (NOC) from the landlord, a valid rent agreement, and the latest electricity or utility bill of the premises.",
+  },
+  {
+    question: "Will a GST audit consultant correct mistakes in my returns?",
+    answer:
+      "Yes! A GST Audit Consultant in Noida can actually review your returns correctly, gather any mistakes, and correct them so you won't be penalized or in violation of the law. It's having your work checked by someone who's specialized for your peace of mind.",
+  },
+  {
+    question: "What is the cost of a GST Registration Consultant",
+    answer:
+      "It varies based on the services you need and the type of business you have. Professional consultants always maintain open, flat-rate fees for the registration, audit, and filing of the returns, so you will never be surprised.",
   },
 ];
 
@@ -55,7 +65,7 @@ export default function FAQSection() {
 
                 <span
                 >
-                  {openIndex!=null? <ChevronUp className="w-5 h-5 text-red-900" />:<ChevronDown className="w-5 h-5 text-red-900" />}
+                {openIndex!=null? <ChevronUp className="w-5 h-5 text-red-900" />:<ChevronDown className="w-5 h-5 text-red-900" />}
                 </span>
               </button>
 

@@ -23,8 +23,8 @@ export default function Navbar() {
     {
       name: "Services",
       dropdown: [
-        { name: "GST", href: "/" },
-        { name: "Company Registration", href: "/" },
+        { name: "GST", href: "/gst" },
+        { name: "Company Registration", href: "/company-registration" },
       ],
     },
 

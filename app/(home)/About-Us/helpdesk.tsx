@@ -11,7 +11,7 @@ export default function Helpdesk() {
           Ready to Transform Your Idea?
         </h1>
         <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto text-black">
-          Join our incubation programs and leverage our comprehensive
+          Contact and leverage our comprehensive
           support services to turn your innovative ideas into successful businesses.
         </p>
         <Link href="/Contact">
