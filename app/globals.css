@@ -2,7 +2,9 @@
 
 
 
-
+*{
+  scroll-behavior: smooth;
+}
 
 body {
   background: white;
