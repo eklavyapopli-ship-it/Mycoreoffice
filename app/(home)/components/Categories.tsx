@@ -1,5 +1,4 @@
 import { montserrat } from "@/lib/fontS"
-import { HandHelping, Omega, User2, Earth } from "lucide-react"
 import Image from "next/image";
 type Product = {
   id: number;
@@ -37,7 +36,7 @@ const Categories = () => {
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                    {/* SEND ENQUIRY BUTTON ON DESKTOP HOVER */}
+           
                     <button
                      
                       className="hidden md:flex absolute bottom-4 rounded-full left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2.5   transition-opacity opacity-0 group-hover:opacity-100"
@@ -46,7 +45,7 @@ const Categories = () => {
                     </button>
                   </div>
     
-                  {/* Card Content */}
+          
                   <div className="py-6 px-2 flex flex-col flex-1 justify-between ">
                     <h1 className="text-lg font-semibold mb-2">
                  {product.name}
@@ -55,7 +54,7 @@ const Categories = () => {
                       Premium virtual office with excellent connectivity and modern amenities.
                     </p>
     
-                    {/* SEND ENQUIRY BUTTON VISIBLE ON MOBILE */}
+                  
                     <button
                       
                       className="md:hidden w-full bg-white  text-black py-2.5 rounded-sm transition"
@@ -69,10 +68,6 @@ const Categories = () => {
 
       </div>
 
-      {/* Bottom Section */}
-
-
-      {/* Cards */}
 
 
     </section>

@@ -29,7 +29,7 @@ export default function Hero() {
       });
 
          if (!res.ok) {
-        // try to read error message if your API returns JSON errors
+
         let msg = "Failed";
         try {
           const data = await res.json();
@@ -54,7 +54,7 @@ export default function Hero() {
   return (
     <main className="relative w-full md:h-screen  h-[70vh] pt-5 flex items-center justify-center">
       <Toaster position="top-right" />
-      {/* Background Image */}
+
       <Image
         src="/hero_bg.jpg"
         alt="Office Space"
@@ -66,10 +66,10 @@ export default function Hero() {
         className="object-cover"
       />
 
-      {/* Overlay */}
+  
       <div className="absolute inset-0 bg-black/55" />
 
-      {/* Hero Content */}
+     
       <motion.div
        initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function Hero() {
 MyCoreOffice provides reliable and affordable virtual office solutions designed to help businesses establish a professional presence without the cost of a physical workspace.
         </p>
 
-        {/* Buttons */}
+
         <div className="mt-8 md:flex-row flex flex-col  justify-center gap-4">
           <button
             onClick={() => setOpenForm(true)}
@@ -102,7 +102,7 @@ MyCoreOffice provides reliable and affordable virtual office solutions designed 
         </div>
       </motion.div>
 
-      {/* Toast / Modal Form */}
+
       {openForm && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
 

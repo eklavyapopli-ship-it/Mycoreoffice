@@ -18,7 +18,7 @@ const Objective = () => {
     <section className={`${montserrat.className} w-full bg-red-950 py-16`} id="objective">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 px-6">
         
-        {/* Left Side - Heading & Content */}
+     
         <motion.div
             initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -33,7 +33,7 @@ const Objective = () => {
             meeting rooms and virtual offices across India. Our meeting rooms are
             available in strategic locations, providing professional settings for
             presentations, interviews, and team meetings. Whether you need a
-            meeting room in Mumbai's Bandra-Kurla Complex or Bangalore's Whitefield,
+            meeting room in Mumbai's Bandra Kurla Complex or Bangalore's Whitefield,
             <strong> MyCoreOffice</strong> ensures that you have access to top-notch
             facilities. Additionally, our virtual offices provide a prestigious
             business address and mail handling services, allowing you to establish
@@ -54,7 +54,7 @@ MyCoreOffice offers serviced offices and coworking spaces designed to enhance pr
           <div onClick={()=>{settingVisible()}} className="mt-5 p-3 rounded-sm hover:bg-white hover:text-black cursor-pointer border w-fit">{toggleText}</div>
         </motion.div>
 
-        {/* Right Side - Image */}
+
         <motion.div 
             initial={{ opacity: 0 }}
       whileInView={{ opacity: 1}}
@@ -62,7 +62,7 @@ MyCoreOffice offers serviced offices and coworking spaces designed to enhance pr
       viewport={{ once: false}}
         className="md:w-1/2 w-full relative h-72 md:h-[520px]  rounded-md overflow-hidden shadow-lg">
           <Image
-            src="/office1.jpg" // replace with your image path
+            src="/office1.jpg" 
             alt="Business Objective"
             fill
             className="object-cover"

@@ -13,7 +13,7 @@ template:" %s "  },
   description:
     "MyCoreOffice provides virtual office services, GST registration addresses, business addresses, mail handling, and office solutions across all Indian states and cities.",
   keywords: [
-    // Core Keywords
+
     "virtual office",
     "virtual office in india",
     "virtual office for gst",
@@ -25,7 +25,7 @@ template:" %s "  },
     "virtual office for companies",
     "gst registration address",
 
-    // Major Cities
+
     "virtual office in delhi",
     "virtual office in mumbai",
     "virtual office in bengaluru",
@@ -36,7 +36,7 @@ template:" %s "  },
     "virtual office in gurgaon",
     "virtual office in noida",
 
-    // All Indian States
+
     "virtual office in andhra pradesh",
     "virtual office in arunachal pradesh",
     "virtual office in assam",
@@ -66,7 +66,7 @@ template:" %s "  },
     "virtual office in uttarakhand",
     "virtual office in west bengal",
 
-    // Union Territories
+    
     "virtual office in delhi ncr",
     "virtual office in chandigarh",
     "virtual office in jammu and kashmir",
@@ -77,7 +77,7 @@ template:" %s "  },
     "virtual office in daman and diu",
     "virtual office in lakshadweep",
 
-    // Business Intent Keywords
+
     "gst address without office",
     "business registration address",
     "mail handling service india",

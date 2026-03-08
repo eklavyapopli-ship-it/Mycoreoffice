@@ -44,7 +44,7 @@ export default function ProductsPage({ limit }: any) {
     setOpen(true);
   };
 
-  /* ---------------- WHATSAPP ---------------- */
+
   const sendToWhatsApp = () => {
     const url = `https://wa.me/+918920743180?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
@@ -71,7 +71,6 @@ export default function ProductsPage({ limit }: any) {
       });
 
            if (!res.ok) {
-        // try to read error message if your API returns JSON errors
         let msg = "Failed";
         try {
           const data = await res.json();
@@ -133,7 +132,7 @@ export default function ProductsPage({ limit }: any) {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                {/* SEND ENQUIRY BUTTON ON DESKTOP HOVER */}
+    
                 <button
                   onClick={() =>
                     openEnquiry(`Hey! I want to enquire about Virtual Office in ${product.name}`)
@@ -144,7 +143,7 @@ export default function ProductsPage({ limit }: any) {
                 </button>
               </div>
 
-              {/* Card Content */}
+        
               <div className="py-6 px-2 flex flex-col flex-1 justify-between ">
                 <h1 className="text-lg font-semibold mb-2 text-gray-900">
                   Virtual Office in {product.name}
@@ -153,7 +152,7 @@ export default function ProductsPage({ limit }: any) {
                   Premium virtual office with excellent connectivity and modern amenities.
                 </p>
 
-                {/* SEND ENQUIRY BUTTON VISIBLE ON MOBILE */}
+              
                 <button
                   onClick={() =>
                     openEnquiry(`Hey! I want to enquire about Virtual Office in ${product.name}`)
@@ -167,7 +166,7 @@ export default function ProductsPage({ limit }: any) {
           ))}
         </div>
 
-        {/* SEE MORE BUTTON */}
+
         <div className="flex justify-center mt-12">
           <div
             className="text-md p-3  rounded-md hover:bg-red-900 hover:text-white text-black border cursor-pointer relative group"

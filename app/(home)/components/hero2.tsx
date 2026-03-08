@@ -25,7 +25,6 @@ export default function Hero2() {
       });
 
       if (!res.ok) {
-        // try to read error message if your API returns JSON errors
         let msg = "Failed";
         try {
           const data = await res.json();
@@ -47,7 +46,7 @@ export default function Hero2() {
 
   return (
     <main className="relative z-999 w-full h-full text-black md:h-[70vh] pt-5">
-      {/* Background Image */} 
+
       <Image
         src="/office1.jpg"
         alt="Office Space"
@@ -60,11 +59,11 @@ export default function Hero2() {
 
       /* <div className="absolute inset-0 bg-black/30" />
 
-      {/* Content */}
+
       <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full items-center">
           
-          {/* Left Content */}
+
           <div className="text-white">
             <h1 className="text-4xl  md:text-5xl font-semibold text-center md:text-start leading-tight">
               Know More About Virtual Offices in India
@@ -77,7 +76,7 @@ export default function Hero2() {
             </p>
           </div>
 
-          {/* Right Form */}
+
           <div className="bg-white rounded-xl shadow-xl p-8 w-full max-w-md mb-2 ml-auto">
             <h1 className="text-2xl font-semibold text-gray-900">
               Request a callback

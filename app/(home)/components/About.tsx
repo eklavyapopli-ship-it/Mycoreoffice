@@ -5,10 +5,10 @@ import { montserrat } from "@/lib/fontS";
 export default function AboutPage() {
   return (
     <main className={`${montserrat.className} mt-10 text-black " id="about`}>
-      {/* ABOUT SECTION */}
+
       
       <section className="max-w-7xl mx-auto px-6 pb-10  grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* LEFT CONTENT */}
+
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -75,12 +75,12 @@ export default function AboutPage() {
         
         </motion.div>
 
-        {/* RIGHT IMAGE COLLAGE */}
+
         
 
       </section>
 
-      {/* STATS SECTION */}
+
     
       
     </main>

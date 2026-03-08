@@ -17,7 +17,7 @@ export default function WhoAreWe() {
   const [index, setIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
-  // Auto change every 4 seconds
+
   useEffect(() => {
     if (!isPlaying) return;
    setIndex((prev) => (prev) % images.length);
@@ -36,7 +36,7 @@ export default function WhoAreWe() {
     <section className={`${montserrat.className} min-h-screen bg-gradient-to-br from-gray-50 to-white`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16  items-end">
-          {/* Left side animated slideshow */}
+          
           <div className="order-2 lg:order-1 ">
             <div className="relative h-[400px]  md:h-[500px] lg:h-[600px] rounded-md overflow-hidden bg-gray-100 shadow-2xl border border-gray-200">
               <AnimatePresence mode="wait">
