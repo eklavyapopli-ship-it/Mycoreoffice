@@ -143,7 +143,7 @@ MyCoreOffice provides reliable and affordable virtual office solutions designed 
               />
 
               <textarea
-                rows={3}
+                rows={2}
                 placeholder="Message"
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}

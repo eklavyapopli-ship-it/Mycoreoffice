@@ -199,7 +199,7 @@ export default function About() {
                 />
                 <textarea maxLength={50} minLength={5}
                   className="w-full border border-gray-400 px-4 py-2 rounded-md"
-                  rows={3}
+                  rows={2}
                   value={data.message}
                   onChange={(e) =>
                     setData({ ...data, message: e.target.value })

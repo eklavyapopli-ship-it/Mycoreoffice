@@ -128,7 +128,7 @@ export default function Hero2() {
                   Message (optional)
                 </label>
                 <textarea maxLength={50} minLength={5}
-                  rows={3}
+                  rows={2}
                   value={form.message}
   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Tell us your requirement"

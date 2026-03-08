@@ -135,7 +135,7 @@ export default function ProductsPage({ limit }: any) {
     
                 <button
                   onClick={() =>
-                    openEnquiry(`Hey! I want to enquire about Virtual Office in ${product.name}`)
+                    openEnquiry(`I want to enquire about Virtual Office in ${product.name}`)
                   }
                   className="hidden md:flex absolute bottom-4 rounded-full left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2.5   transition-opacity opacity-0 group-hover:opacity-100"
                 >
@@ -155,7 +155,7 @@ export default function ProductsPage({ limit }: any) {
               
                 <button
                   onClick={() =>
-                    openEnquiry(`Hey! I want to enquire about Virtual Office in ${product.name}`)
+                    openEnquiry(`I want to enquire about Virtual Office in ${product.name}`)
                   }
                   className="md:hidden w-full bg-red-950  text-white py-2.5 rounded-sm transition"
                 >
@@ -210,7 +210,7 @@ export default function ProductsPage({ limit }: any) {
               minLength={5}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              rows={3}
+              rows={2}
               className="w-full border border-gray-200 rounded-lg p-2 mb-3 resize-none"
             />
 
