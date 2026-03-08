@@ -127,7 +127,7 @@ export default function Navbar() {
           {navItems.map((item) =>
             item.dropdown ? (
               <div key={item.name}>
-                <button
+                <button aria-label="menu"
                   onClick={() =>
                     setMobileDropdown(
                       mobileDropdown === item.name ? null : item.name
