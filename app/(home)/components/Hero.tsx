@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Loader2 } from "lucide-react";
-import { motion } from "framer-motion";
 import { toast, Toaster } from "react-hot-toast";
 import Link from "next/link";
 export default function Hero() {
@@ -70,11 +69,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/55" />
 
      
-      <motion.div
-       initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      viewport={{ once: false }}
+      <div
+
       className="relative z-10 text-white text-center px-6 max-w-3xl">
 
         <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
@@ -100,7 +96,7 @@ MyCoreOffice provides reliable and affordable virtual office solutions designed 
             Explore
           </Link>
         </div>
-      </motion.div>
+      </div>
 
 
       {openForm && (
