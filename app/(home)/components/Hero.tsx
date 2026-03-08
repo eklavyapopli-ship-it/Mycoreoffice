@@ -22,7 +22,7 @@ export default function Hero() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/middle", {
+      const res = await fetch("/api/form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

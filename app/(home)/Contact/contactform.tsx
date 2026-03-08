@@ -32,7 +32,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   setStatus("Submitting...");
 
   try {
-    const res = await fetch("/api/middle", {
+    const res = await fetch("/api/form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
