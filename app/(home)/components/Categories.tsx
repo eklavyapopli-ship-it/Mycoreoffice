@@ -26,13 +26,13 @@ const Categories = () => {
                   key={product.id}
                   className="group relative  overflow-hidden flex flex-col shadow-md bg-black/40 text-white  hover:shadow-2xl transition duration-500"
                 >
-                  <div className="relative h-[300px] overflow-hidden">
-                    <Image
+                  <div className="relative h-fit overflow-hidden">
+                    <img
                      fetchPriority="high"
             loading="lazy"
                       src={product.image}
                       alt={product.name}
-                      fill
+                      
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />

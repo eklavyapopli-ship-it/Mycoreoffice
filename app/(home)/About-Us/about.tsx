@@ -132,7 +132,7 @@ export default function About() {
         price="Starting from Just Rs. 899/- Per Month"
         description="We provide professional office spaces for Company registration at prime location across pan India at affordable prices."
         question="Do you need office space for Company registration?"
-        image="/office4.jpg"
+        image="/office4.webp"
         icons={[
           { icon: FileClock, text: "Fastest Documentation" },
           { icon: BadgeIndianRupee, text: "Lowest Price Guaranteed" },

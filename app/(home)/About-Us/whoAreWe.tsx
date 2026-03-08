@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { Target, Users, Award, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 
 const images = [
-  "/office4.jpg",
+  "/office4.webp",
   "/office2.webp",
   "/office3.webp",
   "/HP_1.webp"

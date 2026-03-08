@@ -120,14 +120,13 @@ setOpen(false);
               key={product.id}
               className="group relative rounded-md overflow-hidden flex flex-col shadow-md bg-white  hover:shadow-2xl transition duration-500"
             >
-              <div className="relative h-[300px] overflow-hidden rounded-md">
-                <Image
-                fill
+              <div className="relative h-fit overflow-hidden rounded-md">
+                <img
                   src={product.image}
                   alt={product.name}
                   fetchPriority="high"
             loading="lazy"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-contain h-auto w-full transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
     
@@ -142,7 +141,7 @@ setOpen(false);
               </div>
 
         
-              <div className="py-6 px-2 flex flex-col flex-1 justify-between ">
+              <div className="py-6 px-2 flex flex-col flex-1  justify-end">
                 <h1 className="text-lg font-semibold mb-2 text-gray-900">
                   Virtual Office in {product.name}
                 </h1>

@@ -14,7 +14,7 @@ export default function AboutPage() {
             <Image
               fetchPriority="high"
               loading="lazy"
-              src="/office4.jpg"
+              src="/office4.webp"
               alt="img1"
               fill
               className="object-cover"
