@@ -129,6 +129,7 @@ export default function ProductsPage({ limit }: any) {
                   src={product.image}
                   alt={product.name}
                   fill
+                  loading="lazy"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
