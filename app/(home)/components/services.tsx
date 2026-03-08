@@ -125,7 +125,7 @@ export default function ProductsPage({ limit }: any) {
             >
               <div className="relative h-[300px] overflow-hidden rounded-md">
                 <Image
-                  priority
+                fill
                   src={product.image}
                   alt={product.name}
                   fetchPriority="high"
