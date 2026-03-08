@@ -5,7 +5,7 @@ if (!request.headers.get("content-type")?.includes("application/json")) {
     return new Response(JSON.stringify({ message: "Invalid content type" }), { status: 415 });
   }
   if(!request.headers.get("apiKey")?.includes(env.MAIN_KEY)){
-     return new Response(JSON.stringify({ message: "Invalid api key " }), { status: 403 });
+     return new Response(JSON.stringify({ message: "Access Forbidden" }), { status: 403 });
   }
 
 
