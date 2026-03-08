@@ -14,13 +14,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1 space-y-6">
             <div className="place-items-center">
-              {/* <Image 
-                src="/Logo1.webp"
-                alt=" MyCoreOffice Logo"
-                width={180}
-                height={90}
-                className="object-contain mb-4"
-              /> */}
+            
               <Link href="/">
   <h1
     className={`${montserrat.className}  text-3xl tracking-wide  text-white`}

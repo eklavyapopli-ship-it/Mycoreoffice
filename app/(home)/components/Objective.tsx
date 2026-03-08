@@ -66,7 +66,8 @@ MyCoreOffice offers serviced offices and coworking spaces designed to enhance pr
             alt="Business Objective"
             fill
             className="object-cover"
-            priority
+            fetchPriority="high"
+            loading="lazy"
           />
         </motion.div>
       </div>

@@ -60,6 +60,7 @@ export default function Hero() {
         alt="Office Space"
         fill
         fetchPriority="high"
+            loading="lazy"
         sizes="100vw"
         quality={75}
         className="object-cover"

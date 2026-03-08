@@ -285,9 +285,10 @@ function ProductBlock({
 
       <div className={reverse ? "md:order-1" : ""}>
         <Image
-        priority
           src={`${image}`}
           alt={title}
+          fetchPriority="high"
+          loading="lazy"
           width={600}
           height={300}
           className="rounded-md object-cover"

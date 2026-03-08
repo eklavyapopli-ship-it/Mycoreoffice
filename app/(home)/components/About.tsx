@@ -17,7 +17,8 @@ export default function AboutPage() {
                  className="grid grid-cols-2 gap-4">
 <div className="relative h-60 col-span-2 rounded-lg overflow-hidden shadow-lg">
             <Image
-            priority
+            fetchPriority="high"
+            loading="lazy"
               src="/office1.jpg"
               alt="img1"
               fill
@@ -26,7 +27,9 @@ export default function AboutPage() {
           </div>
           <div className="relative h-56 rounded-lg overflow-hidden shadow-lg">
             <Image
-            priority
+           fetchPriority="high"
+            loading="lazy"
+
               src="/office2.jpg"
               alt="img2"
               fill
@@ -36,7 +39,8 @@ export default function AboutPage() {
 
           <div className="relative h-56 rounded-lg overflow-hidden shadow-lg">
             <Image
-            priority
+            fetchPriority="high"
+            loading="lazy"
               src="/office3.jpg"
               alt="img3"
               fill

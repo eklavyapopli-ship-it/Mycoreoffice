@@ -29,7 +29,8 @@ const Categories = () => {
                 >
                   <div className="relative h-[300px] overflow-hidden">
                     <Image
-                      priority
+                     fetchPriority="high"
+            loading="lazy"
                       src={product.image}
                       alt={product.name}
                       fill
