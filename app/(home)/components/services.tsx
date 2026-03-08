@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { montserrat } from "@/lib/fontS";
+import { toast, Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 type Product = {
   id: number;
@@ -69,7 +70,16 @@ export default function ProductsPage({ limit }: any) {
         body: JSON.stringify({ name, email, phone, message }),
       });
 
-      if (!res.ok) throw new Error("Failed");
+           if (!res.ok) {
+        // try to read error message if your API returns JSON errors
+        let msg = "Failed";
+        try {
+          const data = await res.json();
+          msg = data?.error || data?.message || msg;
+           toast.error(msg);
+        } catch {}
+        throw new Error(msg);
+      }
 
   
         setSuccess("Enquiry sent successfully!");
@@ -77,7 +87,7 @@ export default function ProductsPage({ limit }: any) {
         setEmail("");
         setPhone("");
         setMessage("");
-  
+        toast.success("Enquiry sent successfully");
 
       setTimeout(() => {
         setOpen(false);
@@ -101,6 +111,7 @@ export default function ProductsPage({ limit }: any) {
       transition={{ duration: 1 }}
       viewport={{ once: false }}
       className={`${montserrat.className} h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:py-10"`}  id="virtual-office">
+              <Toaster position="top-right" />
         <h1 className="text-3xl mb-12 text-center text-red-900 font-bold">
           Virtual Office Across India
         </h1>
@@ -170,7 +181,7 @@ export default function ProductsPage({ limit }: any) {
       {/* POPUP FORM */}
       {open && (
         <div className="fixed inset-0 flex items-end md:items-center justify-center bg-black/40 z-50 px-4">
-          <div className="bg-white text-black w-full md:w-[420px] p-5 rounded-t-2xl md:rounded-2xl shadow-lg">
+          <div className="bg-white text-black w-full md:w-[420px] p-5  rounded-md shadow-lg">
             <h3 className="text-lg font-semibold mb-3">Send Enquiry</h3>
 
             <input

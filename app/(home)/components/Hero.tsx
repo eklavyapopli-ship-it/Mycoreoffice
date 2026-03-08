@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast, Toaster } from "react-hot-toast";
 import Link from "next/link";
 export default function Hero() {
 
@@ -27,11 +28,21 @@ export default function Hero() {
         body: JSON.stringify(form),
       });
 
-      if (!res.ok) throw new Error("Failed");
+         if (!res.ok) {
+        // try to read error message if your API returns JSON errors
+        let msg = "Failed";
+        try {
+          const data = await res.json();
+          msg = data?.error || data?.message || msg;
+           toast.error(msg);
+        } catch {}
+        throw new Error(msg);
+      }
 
       const data = await res.json();
 
      setForm({ name: "", email: "", phone: "", message: "" });
+      toast.success("Enquiry sent successfully");
     } catch (error) {
       alert("Something went wrong");
     } finally {
@@ -42,7 +53,7 @@ export default function Hero() {
 
   return (
     <main className="relative w-full md:h-screen  h-[70vh] pt-5 flex items-center justify-center">
-
+      <Toaster position="top-right" />
       {/* Background Image */}
       <Image
         src="/hero_bg.jpg"
@@ -94,7 +105,7 @@ MyCoreOffice provides reliable and affordable virtual office solutions designed 
       {openForm && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
 
-          <div className="bg-white rounded-xl shadow-xl p-8 w-full max-w-md">
+          <div className="bg-white rounded-sm shadow-xl p-8 w-full max-w-md">
 
             <h2 className="text-xl font-semibold text-gray-900">
               Request a Callback

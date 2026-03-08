@@ -7,6 +7,30 @@ if (!request.headers.get("content-type")?.includes("application/json")) {
   if(!request.headers.get("apiKey")?.includes(env.MAIN_KEY)){
      return new Response(JSON.stringify({ message: "Invalid api key " }), { status: 403 });
   }
+
+
+
+  
+
+const body = await request.json();
+
+if (!body.name || body.name.length > 50) {
+  return new Response(JSON.stringify({ message: "Name too long" }), { status: 400 });
+}
+
+if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
+  return new Response(JSON.stringify({ message: "Invalid email" }), { status: 400 });
+}
+
+if (body.message?.length > 50) {
+  return new Response(JSON.stringify({ message: "Message too long" }), { status: 400 });
+}
+  try {
+
+  } catch {
+    return new Response(JSON.stringify({ message: "Invalid JSON body" }), { status: 400 });
+  }
+
   const client = new QodeMLClient({
     host: "smtp.gmail.com",
     port: 587, 
@@ -16,30 +40,6 @@ if (!request.headers.get("content-type")?.includes("application/json")) {
     useSsl: true,
     apiKey: env.QODEML_API,
 }); 
-
-
-  
-
-const body = await request.json();
-
-if (!body.name || body.name.length > 100) {
-  return new Response(JSON.stringify({ message: "Invalid name" }), { status: 400 });
-}
-
-if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
-  return new Response(JSON.stringify({ message: "Invalid email" }), { status: 400 });
-}
-
-if (body.message?.length > 1000) {
-  return new Response(JSON.stringify({ message: "Message too long" }), { status: 400 });
-}
-  try {
-
-  } catch {
-    return new Response(JSON.stringify({ message: "Invalid JSON body" }), { status: 400 });
-  }
-
-
   try {
 await client.sendMail({
         to: env.TO_SEND,

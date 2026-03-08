@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast, Toaster } from "react-hot-toast";
-import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { montserrat } from "@/lib/fontS";
 import {
@@ -24,7 +23,7 @@ type EnquiryData = {
 };
 
 export default function About() {
-  const router = useRouter()
+
     const [loading, setLoading] = useState(false);
   const submitEnquiry = async () => {
   if (!data.name || !data.phone) {
@@ -46,6 +45,7 @@ export default function About() {
         try {
           const data = await res.json();
           msg = data?.error || data?.message || msg;
+           toast.error(msg);
         } catch {}
         throw new Error(msg);
       }
@@ -172,33 +172,33 @@ export default function About() {
             <motion.div
               initial={{ y: 40 }}
               animate={{ y: 0 }}
-              className="bg-white rounded-xl shadow-xl p-6 w-full max-w-md"
+              className="bg-white rounded-md shadow-xl p-6 w-full max-w-md"
             >
               <h3 className="text-xl font-semibold mb-4 text-black">Send Enquiry</h3>
 
               <div className="space-y-3 text-black">
                 <input
                   placeholder="Name"
-                  className="w-full border px-4 py-2 rounded-md"
+                  className="w-full border border-gray-400 px-4 py-2 rounded-sm"
                    value={data.name}
   onChange={(e) => setData({ ...data, name: e.target.value })}
                 />
                 <input
                   placeholder="Email"
                   type="email"
-                  className="w-full border px-4 py-2 rounded-md"
+                  className="w-full border border-gray-400 px-4 py-2 rounded-md"
                    value={data.email}
   onChange={(e) => setData({ ...data, email: e.target.value })}
                   
                 />
                 <input 
                   placeholder="Phone" minLength={10} maxLength={10}
-                  className="w-full border px-4 py-2 rounded-md"
+                  className="w-full border border-gray-400 px-4 py-2 rounded-md"
                  value={data.phone}
   onChange={(e) => setData({ ...data, phone: e.target.value })}
                 />
                 <textarea maxLength={50} minLength={5}
-                  className="w-full border px-4 py-2 rounded-md"
+                  className="w-full border border-gray-400 px-4 py-2 rounded-md"
                   rows={3}
                   value={data.message}
                   onChange={(e) =>
@@ -223,13 +223,14 @@ export default function About() {
                  WhatsApp  <MessageCircle className="h-4 w-5"/>
                 </button>
 
-                <button
-                  className="flex-1 border py-2 rounded-md border-black text-black"
+                
+              </div>
+              <button
+                  className="flex-1 w-full mt-1 border py-2 rounded-md border-gray-400 text-black"
                   onClick={() => setOpen(false)}
                 >
                   Close
                 </button>
-              </div>
             </motion.div>
           </motion.div>
         )}
