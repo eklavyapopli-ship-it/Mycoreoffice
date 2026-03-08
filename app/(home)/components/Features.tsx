@@ -1,19 +1,18 @@
-import { montserrat } from "@/lib/fontS"
-import { HandHelping, Omega, User2, Earth } from "lucide-react"
+
 const features = [
-  {icon:HandHelping,
+  {
     title: "Support Team",
     desc: "Dedicated support staff to assist you and your guests, from reception services to back-office functions such as IT.",
   },
-  {icon:Omega,
+  {
     title: "Carbon Neutral Offices",
     desc: "Our offices are designed with sustainability in mind and are carbon neutral, maintaining high environmental standards.",
   },
-  {icon:User2,
+  {
     title: "Join Our Community",
     desc: "By joining MyCoreOffice, you gain access to a vibrant business community including networking opportunities.",
   },
-  {icon:Earth,
+  {
     title: "World Class Facility",
     desc: "Premium workspace infrastructure designed to provide comfort, productivity, and a professional environment.",
   },
@@ -21,7 +20,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className={`relative pb-40 md:pb-20 ${montserrat.className}`}>
+    <section className={`relative pb-40 md:pb-20  `}>
       
       
       <div className="bg-red-950 text-white flex items-center justify-center px-6 py-20 ">
@@ -42,7 +41,7 @@ const Features = () => {
               key={i}
               className="bg-white shadow-xl rounded-md p-6 text-center hover:shadow-2xl transition"
             >
-              <h1><item.icon className="h-10 w-10 bg-gray-100 p-2 rounded-tl-lg rounded-br-lg text-black"/></h1>
+           
               <h1 className="text-lg text-justify font-semibold text-gray-900 mb-3">
                 {item.title}
               </h1>

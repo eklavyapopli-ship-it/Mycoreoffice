@@ -1,4 +1,4 @@
-import { montserrat } from "@/lib/fontS"
+
 import Image from "next/image";
 type Product = {
   id: number;
@@ -14,7 +14,7 @@ const Products: Product[] = [
 
 const Categories = () => {
   return (
-    <section className={`relative pb-20 bg-red-950  ${montserrat.className}`} id="browse">
+    <section className={`relative pb-20 bg-red-950   `} id="browse">
      
       {/* Top Section */}
       <div className=" text-white max-w-7xl flex flex-col mx-auto items-center h-fit justify-center px-6 pt-10 ">

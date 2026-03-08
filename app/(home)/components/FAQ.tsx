@@ -1,7 +1,5 @@
-"use client";
-
+"use client"
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
@@ -41,12 +39,8 @@ export default function FAQSection() {
           const isOpen = openIndex === index;
 
           return (
-            <motion.div
+            <div
               key={index}
-              layout
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
               className="border border-black/10 rounded-xl overflow-hidden w-full bg-white"
             >
               <button
@@ -59,30 +53,24 @@ export default function FAQSection() {
                   {faq.question}
                 </span>
 
-                <motion.span
-                  animate={{ rotate: isOpen ? 180 : 0 }}
-                  transition={{ duration: 0.25 }}
+                <span
                 >
                   <ChevronDown className="w-5 h-5 text-red-900" />
-                </motion.span>
+                </span>
               </button>
 
-              <AnimatePresence initial={false}>
+
                 {isOpen && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  <div
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-5 text-black/80 text-sm md:text-base leading-relaxed">
                       {faq.answer}
                     </div>
-                  </motion.div>
+                  </div>
                 )}
-              </AnimatePresence>
-            </motion.div>
+       
+            </div>
           );
         })}
       </div>

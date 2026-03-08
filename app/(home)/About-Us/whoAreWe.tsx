@@ -1,16 +1,16 @@
 // components/WhoAreWe.tsx
-"use client";
-import { montserrat } from "@/lib/fontS";
-import { motion, AnimatePresence } from "framer-motion";
+"use client"
+ 
+import * as motion from "framer-motion"
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Target, Users, Award, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 
 const images = [
-    "/office1.jpg",
-    "/office2.jpg",
-    "/office3.jpg",
-    "/HP_1.webp"
+  "/office4.jpg",
+  "/office2.webp",
+  "/office3.webp",
+  "/HP_1.webp"
 ];
 
 export default function WhoAreWe() {
@@ -20,8 +20,8 @@ export default function WhoAreWe() {
 
   useEffect(() => {
     if (!isPlaying) return;
-   setIndex((prev) => (prev) % images.length);
-   
+    setIndex((prev) => (prev) % images.length);
+
   }, [isPlaying]);
 
   const nextImage = () => {
@@ -33,14 +33,14 @@ export default function WhoAreWe() {
   };
 
   return (
-    <section className={`${montserrat.className} min-h-screen bg-gradient-to-br from-gray-50 to-white`}>
+    <section className={`  min-h-screen bg-gradient-to-br from-gray-50 to-white`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16  items-end">
-          
+
           <div className="order-2 lg:order-1 ">
             <div className="relative h-[400px]  md:h-[500px] lg:h-[600px] rounded-md overflow-hidden bg-gray-100 shadow-2xl border border-gray-200">
-              <AnimatePresence mode="wait">
-                <motion.div
+       
+                <motion.motion.div
                   key={images[index]}
                   initial={{ opacity: 0, scale: 1.1 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -55,52 +55,51 @@ export default function WhoAreWe() {
                     alt={`MyCoreOffice Bootcamp ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
-                </motion.div>
-              </AnimatePresence>
-              
+                </motion.motion.div>
+        
+
               {/* Image Controls */}
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="flex items-center justify-between bg-black/60 backdrop-blur-sm rounded-lg p-3">
                   <div className="flex items-center gap-2">
                     <div
-                      onClick={prevImage} 
+                      onClick={prevImage}
                       className="p-2 text-white/80 hover:text-white hover:bg-white/20 rounded-lg transition-all"
                     >
                       <ChevronLeft className="w-4 h-4" />
                     </div>
                     <div
-                      onClick={() => setIsPlaying(!isPlaying)} 
+                      onClick={() => setIsPlaying(!isPlaying)}
                       className="p-2 text-white/80 hover:text-white hover:bg-white/20 rounded-lg transition-all"
                     >
                       {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                     </div>
                     <div
-                      onClick={nextImage} 
+                      onClick={nextImage}
                       className="p-2 text-white/80 hover:text-white hover:bg-white/20 rounded-lg transition-all"
                     >
                       <ChevronRight className="w-4 h-4" />
                     </div>
                   </div>
-                  
+
                   {/* Dots indicator */}
                   <div className="flex gap-1">
                     {images.map((_, i) => (
                       <div
                         key={i}
                         onClick={() => setIndex(i)}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          i === index ? 'bg-white' : 'bg-white/50'
-                        }`}
+                        className={`w-2 h-2 rounded-full transition-all ${i === index ? 'bg-white' : 'bg-white/50'
+                          }`}
                       />
                     ))}
                   </div>
-                  
+
                   <div className="text-white/80 text-sm font-medium">
                     {index + 1} / {images.length}
                   </div>
                 </div>
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full opacity-60 blur-xl"></div>
               {/* <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-emerald-100 rounded-full opacity-60 blur-xl"></div> */}
@@ -110,26 +109,26 @@ export default function WhoAreWe() {
           {/* Right side content */}
           <div className="order-1 lg:order-2 space-y-8">
             <div className="space-y-6">
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl  text-gray-900 leading-tight">
                 Who Are{" "}
                 <span className="text-red-900">We?</span>
               </h1>
-              
-              
+
+
             </div>
 
             <div className="prose prose-lg text-gray-600 space-y-6 leading-relaxed text-justify">
               <p>
                 MyCoreOffice provide professional office spaces for Company registration at prime location across pan India at affordable prices. Whether you need a registered address, a collaborative workspace, or a professional setup for expansion, we strive to be a dependable partner in your business journey.
               </p>
-              
+
               <p>
-                
+
               </p>
-              
+
               <p>
-                We collectively provide aspiring innovators set up new ventures and create 
+                We collectively provide aspiring innovators set up new ventures and create
                 sustainable businesses that generate revenues and drive social transformation.
               </p>
             </div>
@@ -142,11 +141,11 @@ export default function WhoAreWe() {
                 </div>
                 <h1 className="text-2xl font-bold text-white">Our Vision</h1>
               </div>
-              
+
               <p className="text-gray-50 leading-relaxed">
-                We aim to serve as a vibrant and sustainable resource catalyst to support 
-                and nurture creativity, innovation and entrepreneurship among students. 
-                Our goal is to become a center of excellence that fosters synergy between 
+                We aim to serve as a vibrant and sustainable resource catalyst to support
+                and nurture creativity, innovation and entrepreneurship among students.
+                Our goal is to become a center of excellence that fosters synergy between
                 academia and industry, providing one of the most enabling ecosystems in the country.
               </p>
             </div>
@@ -162,7 +161,7 @@ export default function WhoAreWe() {
                   <p className="text-gray-600 text-xs">Industry domain experts nationwide</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-3 p-4 bg-white rounded-md shadow-sm border border-gray-100">
                 <div className="w-10 h-10  rounded-lg flex items-center justify-center">
                   <Award className="w-5 h-5 text-red-900" />
@@ -174,7 +173,7 @@ export default function WhoAreWe() {
               </div>
             </div>
 
-           
+
           </div>
         </div>
       </div>

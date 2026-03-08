@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { montserrat } from "@/lib/fontS";
+ 
 import { toast, Toaster } from "react-hot-toast";
-import { motion } from "framer-motion";
+import * as motion from "framer-motion"
 type Product = {
   id: number;
   name: string;
@@ -104,12 +104,12 @@ export default function ProductsPage({ limit }: any) {
 
   return (
     <>
-      <motion.div
+      <motion.motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
       viewport={{ once: false }}
-      className={`${montserrat.className} h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:py-10"`}  id="virtual-office">
+      className={`  h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:py-10"`}  id="virtual-office">
               <Toaster position="top-right" />
         <h1 className="text-3xl mb-12 text-center text-red-900 font-bold">
           Virtual Office Across India
@@ -176,7 +176,7 @@ export default function ProductsPage({ limit }: any) {
             
           </div>
         </div>
-      </motion.div>
+      </motion.motion.div>
 
       {/* POPUP FORM */}
       {open && (

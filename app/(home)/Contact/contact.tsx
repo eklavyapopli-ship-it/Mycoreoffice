@@ -1,6 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
-import { josefinSans } from "@/lib/fontS"
 
 const Contact = () => {
   return (
@@ -10,7 +9,7 @@ const Contact = () => {
             <div className="text-2xl text-red-900">Need help? Let's Talk.</div>
             <div className="text-gray-500 text-sm">Reach MyCoreOffice through any of the channels below.</div>
             </div>
-            <div className={`${josefinSans.className} grid md:grid-cols-3 grid-cols-1 border-t mt-6 p-10`}>
+            <div className={`grid md:grid-cols-3 grid-cols-1 border-t mt-6 p-10`}>
     <div>
         <div className="flex place-items-start gap-2 font-medium text-lg"><div className="p-1 bg-gray-100 rounded-full m-1"><Phone className="text-emerald-600  p-1"/></div><h1>Call Us <div>     <Link href="tel:+918920743180" className="font-thin text-sm hover:underline hover:text-blue-600 block">+91 89207 43180</Link><span className="text-sm font-thin">Customer support · Mon–Sat: 10:00 – 6:00
 </span></div></h1>

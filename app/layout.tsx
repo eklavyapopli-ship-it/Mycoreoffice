@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { SmoothScrollerProvider } from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
+import { Suspense } from "react";
+import { montserrat } from "@/lib/fontS";
 
 export const metadata: Metadata = {
    title:{
@@ -96,12 +98,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={` ${montserrat.className}`}>
         <SmoothScrollerProvider>
+          <Suspense>
         <Navbar/>
         {children}
         <Footer/>
+        </Suspense>
 </SmoothScrollerProvider>
+
       </body>
       
     </html>

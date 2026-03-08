@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { navFont, brandFont, montserrat } from "@/lib/fontS";
 import { useState, useEffect } from "react";
-import { Linkedin, Instagram, Menu, X, ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 
@@ -37,9 +35,9 @@ export default function Navbar() {
   const socials = [
     {
       href: "",
-      icon: Linkedin,
+      icon: "/linkedin.svg",
     },
-    { href: "", icon: Instagram },
+    { href: "", icon: "/instagram.svg" },
   ];
 
   useEffect(() => {
@@ -49,12 +47,12 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href;
 
   return (
- <nav className={`${navFont.className} w-full bg-white text-black border-b border-gray-100 sticky top-0 z-50`}>
+ <nav className={` w-full bg-white text-black border-b border-gray-100 sticky top-0 z-50`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
         {/* Logo */}
 <Link href="/">
   <h1
-    className={`${montserrat.className}  text-3xl tracking-wide  text-red-900`}
+    className={`   text-3xl tracking-wide  text-red-900`}
   >
     MyCoreOffice
   </h1>
@@ -67,7 +65,9 @@ export default function Navbar() {
               <li key={item.name} className="relative group">
                 <div className="flex items-center cursor-pointer hover:text-red-800">
                   {item.name}
-                  <ChevronDown className="ml-1 w-4 h-4" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path  fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg>
                 </div>
 
                 {/* Dropdown */}
@@ -103,7 +103,7 @@ export default function Navbar() {
           <li className="flex space-x-4 ml-4">
             {socials.map(({ href, icon: Icon }, i) => (
               <Link key={i} href={href} target="_blank" aria-label="Twitter">
-                <Icon className="w-5 h-5 hover:text-red-800 transition" />
+                <img src={Icon} className="w-5 h-5 hover:text-red-800 transition" />
               </Link>
             ))}
           </li>
@@ -115,7 +115,9 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             className="p-2 border rounded-md"
           >
-            {mobileOpen ? <X /> : <Menu />}
+            {mobileOpen ? "X" : <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
+  <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+</svg>}
           </button>
         </div>
       </div>
@@ -135,7 +137,9 @@ export default function Navbar() {
                   className="flex justify-between w-full py-2 font-semibold"
                 >
                   {item.name}
-                  <ChevronDown className="w-4 h-4" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg>
                 </button>
 
                 {mobileDropdown === item.name && (
@@ -166,7 +170,7 @@ export default function Navbar() {
           <div className="flex space-x-4 pt-4">
             {socials.map(({ href, icon: Icon }, i) => (
               <Link key={i} href={href} target="_blank">
-                <Icon className="w-5 h-5 hover:text-red-800 transition" />
+                <img src={Icon} className="w-5 h-5 hover:text-red-800 transition" />
               </Link>
             ))}
           </div>
