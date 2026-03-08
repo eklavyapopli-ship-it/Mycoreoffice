@@ -87,11 +87,9 @@ export default function ProductsPage({ limit }: any) {
         setPhone("");
         setMessage("");
         toast.success("Enquiry sent successfully");
-
-      setTimeout(() => {
-        setOpen(false);
+setOpen(false);
         setSuccess("");
-      }, 1500);
+     
     } catch (err: any) {
       setError("Server error. Please try again later.");
     } finally {
