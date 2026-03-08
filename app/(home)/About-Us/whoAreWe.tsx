@@ -138,7 +138,7 @@ export default function WhoAreWe() {
                 <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
                   <Target className="w-5 h-5 text-black" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Our Vision</h3>
+                <h1 className="text-2xl font-bold text-white">Our Vision</h1>
               </div>
               
               <p className="text-gray-50 leading-relaxed">
@@ -156,7 +156,7 @@ export default function WhoAreWe() {
                   <Users className="w-5 h-5 text-red-900" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">Expert Network</h4>
+                  <h1 className="font-semibold text-gray-900 text-sm">Expert Network</h1>
                   <p className="text-gray-600 text-xs">Industry domain experts nationwide</p>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function WhoAreWe() {
                   <Award className="w-5 h-5 text-red-900" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">Comprehensive Support</h4>
+                  <h1 className="font-semibold text-gray-900 text-sm">Comprehensive Support</h1>
                   <p className="text-gray-600 text-xs">From ideation to marketplace</p>
                 </div>
               </div>

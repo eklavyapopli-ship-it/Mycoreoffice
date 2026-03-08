@@ -59,7 +59,7 @@ export default function Hero() {
         src="/hero_bg.jpg"
         alt="Office Space"
         fill
-        priority
+        fetchPriority="high"
         sizes="100vw"
         quality={75}
         className="object-cover"
@@ -107,9 +107,9 @@ MyCoreOffice provides reliable and affordable virtual office solutions designed 
 
           <div className="bg-white rounded-sm shadow-xl p-8 w-full max-w-md">
 
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h1 className="text-xl font-semibold text-gray-900">
               Request a Callback
-            </h2>
+            </h1>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4 text-black">
 

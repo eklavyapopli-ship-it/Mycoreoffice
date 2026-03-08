@@ -43,9 +43,9 @@ const Features = () => {
               className="bg-white shadow-xl rounded-md p-6 text-center hover:shadow-2xl transition"
             >
               <h1><item.icon className="h-10 w-10 bg-gray-100 p-2 rounded-tl-lg rounded-br-lg text-black"/></h1>
-              <h3 className="text-lg text-justify font-semibold text-gray-900 mb-3">
+              <h1 className="text-lg text-justify font-semibold text-gray-900 mb-3">
                 {item.title}
-              </h3>
+              </h1>
               <p className="text-sm text-justify text-gray-600 leading-relaxed">
                 {item.desc}
               </p>

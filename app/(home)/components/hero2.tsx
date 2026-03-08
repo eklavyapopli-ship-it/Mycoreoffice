@@ -79,9 +79,9 @@ export default function Hero2() {
 
           {/* Right Form */}
           <div className="bg-white rounded-xl shadow-xl p-8 w-full max-w-md mb-2 ml-auto">
-            <h2 className="text-2xl font-semibold text-gray-900">
+            <h1 className="text-2xl font-semibold text-gray-900">
               Request a callback
-            </h2>
+            </h1>
 
            <form onSubmit={handleSubmit} className="mt-6 space-y-4 text-black">
 

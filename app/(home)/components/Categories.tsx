@@ -47,9 +47,9 @@ const Categories = () => {
     
                   {/* Card Content */}
                   <div className="py-6 px-2 flex flex-col flex-1 justify-between ">
-                    <h2 className="text-lg font-semibold mb-2">
+                    <h1 className="text-lg font-semibold mb-2">
                  {product.name}
-                    </h2>
+                    </h1>
                     <p className="text-xs text-gray-300 mb-4">
                       Premium virtual office with excellent connectivity and modern amenities.
                     </p>

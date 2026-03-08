@@ -145,9 +145,9 @@ export default function ProductsPage({ limit }: any) {
 
               {/* Card Content */}
               <div className="py-6 px-2 flex flex-col flex-1 justify-between ">
-                <h2 className="text-lg font-semibold mb-2 text-gray-900">
+                <h1 className="text-lg font-semibold mb-2 text-gray-900">
                   Virtual Office in {product.name}
-                </h2>
+                </h1>
                 <p className="text-xs text-gray-500 mb-4">
                   Premium virtual office with excellent connectivity and modern amenities.
                 </p>
@@ -182,7 +182,7 @@ export default function ProductsPage({ limit }: any) {
       {open && (
         <div className="fixed inset-0 flex items-end md:items-center justify-center bg-black/40 z-50 px-4">
           <div className="bg-white text-black w-full md:w-[420px] p-5  rounded-md shadow-lg">
-            <h3 className="text-lg font-semibold mb-3">Send Enquiry</h3>
+            <h1 className="text-lg font-semibold mb-3">Send Enquiry</h1>
 
             <input
               placeholder="Name"

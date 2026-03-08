@@ -11,9 +11,9 @@ export default function Helpdesk(){
           className="text-center mt-16 max-w-7xl  mx-auto mb-10"
         >
           <div className=" rounded-xl p-8 lg:p-12 shadow-xl ">
-            <h2 className={`text-3xl lg:text-4xl font-bold mb-4 ${montserrat.className} text-black`}>
+            <h1 className={`text-3xl lg:text-4xl font-bold mb-4 ${montserrat.className} text-black`}>
               Ready to Transform Your Idea?
-            </h2>
+            </h1>
             <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto text-black">
               Join our incubation programs and leverage our comprehensive 
               support services to turn your innovative ideas into successful businesses.

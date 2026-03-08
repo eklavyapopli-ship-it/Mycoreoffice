@@ -52,13 +52,13 @@ export default function AboutPage() {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
          className="text-justify">
-          <h2 className="text-3xl md:text-4xl text-red-800  mb-4 text-start">
+          <h1 className="text-3xl md:text-4xl text-red-800  mb-4 text-start">
            About Us
-          </h2>
+          </h1>
 
-          <h3 className="text-xl text-red-800  mb-4 text-start">
+          <h1 className="text-xl text-red-800  mb-4 text-start">
             MyCoreOffice
-          </h3>
+          </h1>
 
           <p className=" leading-relaxed mb-4 text-black">
     We are committed to making professional office solutions accessible to businesses of every size. From virtual offices for GST and company registration to fully equipped coworking spaces, we help entrepreneurs, startups, and growing companies establish a credible presence without unnecessary complexity or cost. Our offerings are designed to support compliance, flexibility, and scalability so you can focus on building your business while we take care of the workspace.
@@ -92,7 +92,7 @@ function StatCard({
 }) {
   return (
     <div className="bg-white rounded-2xl shadow-md p-6 text-center">
-      <h3 className="md:text-3xl text-lg font-bold mb-2">{number}</h3>
+      <h1 className="md:text-3xl text-lg font-bold mb-2">{number}</h1>
       <p className="text-gray-600 text-medium font-medium">{label}</p>
     </div>
   );

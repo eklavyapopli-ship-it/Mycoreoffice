@@ -71,7 +71,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         transition={{ duration: 1 }}
         className="flex-1 bg-white w-full "
       >
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Enquiry</h2>
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">Enquiry</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full ">
             <div className="flex gap-2 md:flex-row flex-col">
           <input

@@ -32,9 +32,9 @@ export default function FAQSection() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">
-      <h2 className="text-3xl font-semibold text-center text-red-900 mb-12">
+      <h1 className="text-3xl font-semibold text-center text-red-900 mb-12">
         Frequently Asked Questions
-      </h2>
+      </h1>
 
       <div className="space-y-5">
         {faqs.map((faq, index) => {

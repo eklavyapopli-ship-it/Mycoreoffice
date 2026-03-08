@@ -174,7 +174,7 @@ export default function About() {
               animate={{ y: 0 }}
               className="bg-white rounded-md shadow-xl p-6 w-full max-w-md"
             >
-              <h3 className="text-xl font-semibold mb-4 text-black">Send Enquiry</h3>
+              <h1 className="text-xl font-semibold mb-4 text-black">Send Enquiry</h1>
 
               <div className="space-y-3 text-black">
                 <input

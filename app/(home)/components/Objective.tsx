@@ -25,9 +25,9 @@ const Objective = () => {
       transition={{ duration: 1 }}
       viewport={{ once: false}}
         className="md:w-1/2 text-white">
-          <h2 className="text-3xl mb-6">
+          <h1 className="text-3xl mb-6">
             MyCoreOffice: Business Objective
-          </h2>
+          </h1>
           <p className="text-sm md:text-base leading-relaxed text-justify">
             For businesses requiring flexibility, <strong>MyCoreOffice</strong> offers
             meeting rooms and virtual offices across India. Our meeting rooms are
