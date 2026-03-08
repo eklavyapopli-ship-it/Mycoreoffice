@@ -50,6 +50,8 @@ export default function WhoAreWe() {
                 >
                   <Image height={80} width={80}
                     src={images[index]}
+                    fetchPriority="high"
+                    loading="lazy"
                     alt={`MyCoreOffice Bootcamp ${index + 1}`}
                     className="w-full h-full object-cover"
                   />

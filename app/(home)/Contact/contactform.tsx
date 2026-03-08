@@ -141,8 +141,9 @@ const handleSubmit = async (e: React.FormEvent) => {
         transition={{ duration: 1 }}
         className="flex-1 "
       >
-       <img src="/hero_bg.jpg" className="rounded-md" alt="" />
-         
+        <div>
+       <Image height={1094} width={730} fetchPriority="high" loading="lazy" src="/hero_bg.jpg" className="rounded-md" alt="" />
+         </div>
       </motion.div>
     </motion.section>
   );
