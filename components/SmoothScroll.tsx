@@ -1,7 +1,8 @@
 "use client"
 
-import { useEffect, createContext, useContext, ReactNode } from "react"
+import { useEffect, createContext, useContext, ReactNode, useRef } from "react"
 import Lenis from "lenis"
+import { usePathname } from "next/navigation"
 
 const SmoothScrollerContext = createContext<Lenis | null>(null)
 
@@ -11,13 +12,18 @@ export const useSmoothScroller = () => {
 
 export const SmoothScrollerProvider = ({ children }: { children: ReactNode }) => {
 
+  const lenisRef = useRef<Lenis | null>(null)
+  const pathname = usePathname()
+
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2,
+      duration: 3,
       smoothWheel: true,
       wheelMultiplier: 0.7,
       lerp: 0.2
     })
+
+    lenisRef.current = lenis
 
     function raf(time: number) {
       lenis.raf(time)
@@ -31,8 +37,15 @@ export const SmoothScrollerProvider = ({ children }: { children: ReactNode }) =>
     }
   }, [])
 
+  // Reset scroll on route change
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true })
+    }
+  }, [pathname])
+
   return (
-    <SmoothScrollerContext.Provider value={null}>
+    <SmoothScrollerContext.Provider value={lenisRef.current}>
       {children}
     </SmoothScrollerContext.Provider>
   )
