@@ -28,7 +28,7 @@ export default function Genesis() {
           
               
               <h2 className="text-4xl  font-bold text-gray-900">
-                <span className="text-red-900">Top GST Registration Consultant</span>
+                <span className="text-sky-900">Top GST Registration Consultant</span>
               </h2>
             </div>
 

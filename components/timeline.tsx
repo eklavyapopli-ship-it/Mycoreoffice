@@ -63,7 +63,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {/* Static timeline line */}
         <div
           style={{ height: height + "px" }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-red-900 [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-blue-900 [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
           {/* Animated progress line */}
           <motion.div

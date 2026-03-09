@@ -30,7 +30,7 @@ export default function FAQSection() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">
-      <h1 className="text-3xl font-semibold text-center text-red-900 mb-12">
+      <h1 className="text-3xl font-semibold text-center text-sky-900 mb-12">
         Frequently Asked Questions
       </h1>
 
@@ -49,13 +49,13 @@ export default function FAQSection() {
                 }
                 className="w-full flex items-center justify-between px-6 py-5 text-left"
               >
-                <span className="text-base md:text-lg font-medium text-red-900">
+                <span className="text-base md:text-lg font-medium text-sky-900">
                   {faq.question}
                 </span>
 
                 <span
                 >
-                  {openIndex!=null? <ChevronUp className="w-5 h-5 text-red-900" />:<ChevronDown className="w-5 h-5 text-red-900" />}
+                  {openIndex!=null? <ChevronUp className="w-5 h-5 text-sky-900" />:<ChevronDown className="w-5 h-5 text-sky-900" />}
                 </span>
               </button>
 

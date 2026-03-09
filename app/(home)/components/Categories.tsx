@@ -1,5 +1,4 @@
 
-import Image from "next/image";
 type Product = {
   id: number;
   name: string;
@@ -14,17 +13,17 @@ const Products: Product[] = [
 
 const Categories = () => {
   return (
-    <section className={`relative pb-20 bg-red-950   `} id="browse">
+    <section className={`relative pb-20 bg-sky-50  `} id="browse">
      
       {/* Top Section */}
-      <div className=" text-white max-w-7xl flex flex-col mx-auto items-center h-fit justify-center px-6 pt-10 ">
+      <div className=" text-black max-w-7xl flex flex-col mx-auto items-center h-fit justify-center px-6 pt-10 ">
      <h1 className="w-full text-3xl py-5">Browse By Categories</h1>
         <div className="grid  grid-cols-1 md:grid-cols-3  gap-6">
             
           {Products.map((product) => (
                 <div
                   key={product.id}
-                  className="group relative  overflow-hidden flex flex-col shadow-md bg-black/40 text-white  hover:shadow-2xl transition duration-500"
+                  className="group relative  overflow-hidden flex flex-col shadow-md  text-white bg-black/80  hover:shadow-2xl transition duration-500"
                 >
                   <div className="relative h-fit overflow-hidden">
                     <img

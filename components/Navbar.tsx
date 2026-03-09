@@ -46,7 +46,7 @@ export default function Navbar() {
         {/* Logo */}
 <Link href="/">
   <h1
-    className={`   text-3xl tracking-wide  text-red-900`}
+    className={`   text-3xl tracking-wide  text-sky-900`}
   >
     MyCoreOffice
   </h1>
@@ -57,7 +57,7 @@ export default function Navbar() {
           {navItems.map((item) =>
             item.dropdown ? (
               <li key={item.name} className="relative group">
-                <div className="flex items-center cursor-pointer hover:text-red-800">
+                <div className="flex items-center cursor-pointer hover:text-blue-800">
                   {item.name}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
   <path  fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -70,7 +70,7 @@ export default function Navbar() {
                     <Link
                       key={sub.name}
                       href={sub.href}
-                      className="block px-4 py-3 hover:bg-red-50 rounded-md  text-sm"
+                      className="block px-4 py-3 hover:bg-blue-50 rounded-md  text-sm"
                     >
                       {sub.name}
                     </Link>
@@ -83,8 +83,8 @@ export default function Navbar() {
                   href={item.href!}
                   className={`transition-colors ${
                     isActive(item.href!)
-                      ? "font-medium text-red-900"
-                      : "hover:text-red-800"
+                      ? "font-medium text-sky-900"
+                      : "hover:text-blue-800"
                   }`}
                 >
                   {item.name}
@@ -147,7 +147,7 @@ export default function Navbar() {
                       <Link
                         key={sub.name}
                         href={sub.href}
-                        className="block py-2 text-sm hover:text-red-800"
+                        className="block py-2 text-sm hover:text-blue-800"
                       >
                         {sub.name}
                       </Link>

@@ -15,7 +15,7 @@ export default function Helpdesk() {
           support services to turn your innovative ideas into successful businesses.
         </p>
         <Link href="/Contact">
-          <button className="bg-white text-red-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button className="bg-white text-sky-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
             Get Started Today
           </button></Link>
       </div>

@@ -270,7 +270,7 @@ function ProductBlock({
         <div className="grid grid-cols-2 gap-4 mt-6">
           {icons.map((item: any, i: number) => (
             <div key={i} className="flex items-center gap-2">
-              <item.icon className="w-5 h-5 text-red-900" />
+              <item.icon className="w-5 h-5 text-sky-900" />
               <span className="text-sm text-black">{item.text}</span>
             </div>
           ))}

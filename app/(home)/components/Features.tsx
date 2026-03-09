@@ -23,7 +23,7 @@ const Features = () => {
     <section className={`relative pb-40 md:pb-20  `}>
       
       
-      <div className="bg-red-950 text-white flex items-center justify-center px-6 py-20 ">
+      <div className="bg-linear-to-r from-cyan-100 via-blue-300 to-blue-400 text-black flex items-center justify-center px-6 py-20 ">
         <h1 className="max-w-7xl md:text-3xl text-xl text-justify">
           All Office locations come with great and facilities and first class
           support teams, ensuring happiness and productivity every day.

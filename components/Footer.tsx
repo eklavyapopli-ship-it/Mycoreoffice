@@ -42,7 +42,7 @@ export default function Footer() {
           {/* For Entrepreneurs */}
           <div className="space-y-6">
             <h1 className="text-white font-semibold text-lg flex items-center gap-2">
-              <Lightbulb className="w-5 h-5 text-red-500" />
+              <Lightbulb className="w-5 h-5 text-blue-500" />
               For Entrepreneurs
             </h1>
             <nav className="space-y-3">
@@ -64,7 +64,7 @@ export default function Footer() {
             </nav>
             <Link
               href="/#virtual-office"
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-red-900 hover:text-white px-4 py-3 rounded-lg text-black font-medium text-sm transition-colors w-full"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-900 hover:text-white px-4 py-3 rounded-lg text-black font-medium text-sm transition-colors w-full"
             >
               <span>Explore Virtual Offices</span>
             </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
           {/* Community & Network */}
           <div className="space-y-6">
             <h1 className="text-white font-bold text-lg flex items-center gap-2">
-              <Users className="w-5 h-5 text-red-500" />
+              <Users className="w-5 h-5 text-blue-500" />
               Community
             </h1>
             <nav className="space-y-3">
@@ -109,14 +109,14 @@ export default function Footer() {
           {/* Contact & Location */}
           <div className="space-y-6">
             <h1 className="text-white font-bold text-lg flex items-center gap-2">
-              <Building2 className="w-5 h-5 text-red-500" />
+              <Building2 className="w-5 h-5 text-blue-500" />
               Get in Touch
             </h1>
             
             {/* Contact Info */}
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-white">
                   <p className="text-white font-medium mb-1">Address</p>
                   
@@ -124,7 +124,7 @@ export default function Footer() {
               </div>
               
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-red-500" />
+                <Phone className="w-5 h-5 text-blue-500" />
                 <div className="text-sm">
                   <p className="text-white font-medium">Contact</p>
                   <Link href="tel:+918920743180" className="text-white hover:text-white transition-colors">
@@ -134,7 +134,7 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-red-500" />
+                <Mail className="w-5 h-5 text-blue-500" />
                 <div className="text-sm">
                   <p className="text-white font-medium">Email</p>
                   <Link href="mailto:shivanirajput2711@gmail.com" className="text-white hover:text-white transition-colors">

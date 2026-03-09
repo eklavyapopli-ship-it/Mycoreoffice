@@ -51,11 +51,11 @@ export default function Hero() {
   };
 
   return (
-    <main className="relative w-full md:h-screen  h-[70vh] pt-5 flex items-center justify-center">
+    <main className="relative w-full md:h-screen h-[70vh] pt-5 flex items-center justify-center">
       <Toaster position="top-right" />
 
       <Image
-        src="/hero_bg.jpg"
+        src="/12079.jpg"
         alt="Office Space"
         fill
         fetchPriority="high"
@@ -65,23 +65,23 @@ export default function Hero() {
       />
 
   
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/60 lg:bg-transparent" />
 
      
       <div
 
-      className="relative z-10 text-white text-center px-6 max-w-3xl">
+      className="relative z-10 text-white lg:text-black px-6 w-full">
 
         <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
           Virtual Offices For Everyone
         </h1>
 
-        <p className="mt-6 text-white text-justify md:text-center">
+        <p className="mt-6 text-lg text-justify font-bold  max-w-2xl">
 MyCoreOffice provides reliable and affordable virtual office solutions designed to help businesses establish a professional presence without the cost of a physical workspace.
         </p>
 
 
-        <div className="mt-8 md:flex-row flex flex-col  justify-center gap-4">
+        <div className="mt-8 md:flex-row flex flex-col  gap-4">
           <button
             onClick={() => setOpenForm(true)}
             className="bg-white  text-black px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition"
@@ -90,7 +90,7 @@ MyCoreOffice provides reliable and affordable virtual office solutions designed 
           </button>
 
           <Link href="#virtual-office"
-            className="border  px-6 py-3 rounded-md font-medium  cursor-pointer "
+            className="border text-center px-6 py-3 rounded-md font-medium  cursor-pointer "
           >
             Explore
           </Link>

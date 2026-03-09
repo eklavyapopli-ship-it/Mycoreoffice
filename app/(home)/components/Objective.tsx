@@ -15,7 +15,7 @@ const Objective = () => {
   }
   const toggleText = visible=="hidden"?"Read More +":"Read Less -"
   return (
-    <section className={`  w-full bg-red-950 py-16`} id="objective">
+    <section className={`  w-full bg-white py-16`} id="objective">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 px-6">
         
      
@@ -24,7 +24,7 @@ const Objective = () => {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
       viewport={{ once: false}}
-        className="md:w-1/2 text-white">
+        className="md:w-1/2 text-black">
           <h1 className="text-3xl mb-6">
             MyCoreOffice: Business Objective
           </h1>
@@ -51,7 +51,7 @@ const Objective = () => {
           <p className={`text-sm md:text-base mt-5 leading-relaxed text-justify ${visible}`}>
 MyCoreOffice offers serviced offices and coworking spaces designed to enhance productivity and collaboration. In Hyderabad, HITEC City and Gachibowli are prime locations for businesses in the IT sector. Our serviced offices in these areas provide a professional environment with all the amenities you need to succeed. For those looking for coworking spaces, Bangalore's vibrant districts of Whitefield and Electronic City are perfect for networking and innovation. These spaces are equipped with high-speed internet, meeting rooms, and communal areas to foster collaboration. Monthly networking events offer opportunities to connect with local business communities and explore new opportunities
           </p>
-          <div onClick={()=>{settingVisible()}} className="mt-5 p-3 rounded-sm hover:bg-white hover:text-black cursor-pointer border w-fit">{toggleText}</div>
+          <div onClick={()=>{settingVisible()}} className="mt-5 p-3 rounded-sm cursor-pointer border w-fit">{toggleText}</div>
         </motion.motion.div>
 
 

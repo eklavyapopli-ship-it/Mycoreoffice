@@ -19,7 +19,7 @@ export function DocumentsRequired() {
         <h2
           className={`text-2xl md:text-4xl font-extrabold text-center mb-12 ${montserrat.className}`}
         >
-          Documents Required for <span className="text-red-900">Registration</span>
+          Documents Required for <span className="text-sky-900">Registration</span>
         </h2>
 
         {/* Grid */}

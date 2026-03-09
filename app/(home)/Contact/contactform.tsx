@@ -121,7 +121,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           ></textarea>
           <button
             type="submit"
-            className="text-black hover:bg-red-900 hover:text-white  px-6 py-3 rounded-md shadow-sm border transition transform hover:shadow-2xl"
+            className="text-black hover:bg-blue-900 hover:text-white  px-6 py-3 rounded-md shadow-sm border transition transform hover:shadow-2xl"
           >
             Submit
           </button>

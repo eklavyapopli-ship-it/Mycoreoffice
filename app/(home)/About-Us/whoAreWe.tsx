@@ -112,7 +112,7 @@ export default function WhoAreWe() {
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl  text-gray-900 leading-tight">
                 Who Are{" "}
-                <span className="text-red-900">We?</span>
+                <span className="text-sky-900">We?</span>
               </h1>
 
 
@@ -134,7 +134,7 @@ export default function WhoAreWe() {
             </div>
 
             {/* Vision Section */}
-            <div className="bg-red-900 p-6 rounded-lg border border-green-100">
+            <div className="bg-blue-900 p-6 rounded-lg border border-green-100">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
                   <Target className="w-5 h-5 text-black" />
@@ -154,7 +154,7 @@ export default function WhoAreWe() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-center gap-3 p-4 bg-white rounded-md shadow-sm border border-gray-100">
                 <div className="w-10 h-10  rounded-lg flex items-center justify-center">
-                  <Users className="w-5 h-5 text-red-900" />
+                  <Users className="w-5 h-5 text-sky-900" />
                 </div>
                 <div>
                   <h1 className="font-semibold text-gray-900 text-sm">Expert Network</h1>
@@ -164,7 +164,7 @@ export default function WhoAreWe() {
 
               <div className="flex items-center gap-3 p-4 bg-white rounded-md shadow-sm border border-gray-100">
                 <div className="w-10 h-10  rounded-lg flex items-center justify-center">
-                  <Award className="w-5 h-5 text-red-900" />
+                  <Award className="w-5 h-5 text-sky-900" />
                 </div>
                 <div>
                   <h1 className="font-semibold text-gray-900 text-sm">Comprehensive Support</h1>

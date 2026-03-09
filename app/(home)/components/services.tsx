@@ -1,244 +1,312 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
- 
+
+import { motion, AnimatePresence } from "framer-motion";
 import { toast, Toaster } from "react-hot-toast";
-import * as motion from "framer-motion"
-type Product = {
-  id: number;
+import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
+import {
+  ShieldCheck,
+  FileClock,
+  BadgeIndianRupee,
+  MapPin,
+  Wifi,
+  Coffee,MessageCircle
+} from "lucide-react";
+import { useState } from "react";
+
+type EnquiryData = {
   name: string;
-  image: string;
-  link: string;
+  email: string;
+  phone: string;
+  message: string;
 };
 
-const Products: Product[] = [
-  { id: 1, name: "Delhi", image: "/locations/delhi.jpg", link: "delhi" },
-  { id: 2, name: "Noida", image: "/locations/noida.jpg", link: "noida" },
-  { id: 3, name: "Mumbai", image: "/locations/mumbai.jpg", link: "mumbai" },
-  { id: 4, name: "Gurugram", image: "/locations/gurugram.jpg", link: "gurugram" },
-  { id: 5, name: "Tamil Nadu", image: "/locations/tamilnadu.jpg", link: "tamilnadu" },
-  { id: 6, name: "Punjab", image: "/locations/punjab.jpg", link: "punjab" },
-  { id: 8, name: "Gujarat", image: "/locations/gujarat.jpg", link: "gujarat" },
-  { id: 9, name: "Kerala", image: "/locations/kerela.png", link: "kerela" },
-  { id: 7, name: "Bangalore", image: "/locations/banglore.jpg", link: "banglore" },
-  { id: 10, name: "Telangana", image: "/locations/Hyd.png", link: "telangana" },
-];
+export default function ServicesSection() {
+  const router = useRouter()
+      const [loading, setLoading] = useState(false);
+  const submitEnquiry = async () => {
+  if (!data.name || !data.phone) {
+    toast.error("Name and phone are required");
+    return;
+  }
 
-export default function ProductsPage({ limit }: any) {
-  const [open, setOpen] = useState(false);
-  const [showAll, setShowAll] = useState(false);
-
-  // lead form states
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-
-  const openEnquiry = (msg: string) => {
-    setMessage(msg);
-    setOpen(true);
-  };
-
-
-  const sendToWhatsApp = () => {
-    const url = `https://wa.me/+918920743180?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-    setOpen(false);
-  };
-
-  /* ---------------- DATABASE ---------------- */
-  const sendToDatabase = async () => {
+  try {
     setLoading(true);
-    setError("");
-    setSuccess("");
+    const res = await fetch("/api/email", {
 
-    if (!name || !email || !phone || !message) {
-      setLoading(false);
-      setError("All fields are required");
-      return;
-    }
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
 
-    try {
-      const res = await fetch("/api/form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, message }),
-      });
-
-           if (!res.ok) {
+      if (!res.ok) {
+        // try to read error message if your API returns JSON errors
         let msg = "Failed";
         try {
           const data = await res.json();
           msg = data?.error || data?.message || msg;
-           toast.error(msg);
         } catch {}
         throw new Error(msg);
       }
+ if(data.message=="suspect"){
+    router.push("/thank-you");
+  }else{
+    toast.success("Enquiry sent successfully");
+    setOpen(false);
+    setLoading(false)
+    setData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "I am interested in your office space services.",
+    });
+      router.push("/thankyou");}
+  } catch (err) {
+    toast.error("Something went wrong. Try again.");
+  }
+};
 
-  
-        setSuccess("Enquiry sent successfully!");
-        setName("");
-        setEmail("");
-        setPhone("");
-        setMessage("");
-        toast.success("Enquiry sent successfully");
-setOpen(false);
-        setSuccess("");
-     
-    } catch (err: any) {
-      setError("Server error. Please try again later.");
-    } finally {
-      setLoading(false);
-    }
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState<EnquiryData>({
+    name: "",
+    email: "",
+    phone: "",
+    message: "I am interested in your office space services.",
+  });
+
+  const openEnquiry = (preset: string) => {
+    setData((prev) => ({
+      ...prev,
+      message: preset,
+    }));
+    setOpen(true);
   };
 
-  const limitedProducts = showAll ? Products : Products.slice(0, limit);
-  const toggleText = showAll ? "See Less" : "See More Areas";
+  const sendWhatsapp = () => {
+    const text = `Hey I am ${data.name}, I want to enquire abt office space.`;
+    window.open(
+      `https://wa.me/+918920743180?text=${encodeURIComponent(text)}`,
+      "_blank"
+    );
+  };
 
   return (
-    <>
-      <motion.motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: false }}
-      className={`  h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:py-10"`}  id="virtual-office">
-              <Toaster position="top-right" />
-        <h1 className="text-3xl mb-12 text-center text-red-900 font-bold">
-          Virtual Office Across India
-        </h1>
+    <section className=" py-10">
+      <Toaster position="top-right" />
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {limitedProducts.map((product) => (
-            <div
-              key={product.id}
-              className="group relative rounded-md overflow-hidden flex flex-col shadow-md bg-white  hover:shadow-2xl transition duration-500"
-            >
-              <div className="relative h-fit overflow-hidden rounded-md">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  fetchPriority="high"
-            loading="lazy"
-                  className="object-contain h-auto w-full transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-    
-                <button
-                  onClick={() =>
-                    openEnquiry(`I want to enquire about Virtual Office in ${product.name}`)
-                  }
-                  className="hidden md:flex absolute bottom-4 rounded-full left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2.5   transition-opacity opacity-0 group-hover:opacity-100"
-                >
-                  Send Enquiry
-                </button>
-              </div>
+      {/* PRODUCT 1 */}
+     <div className="grid grid-cols-1 mx-35 md:grid-cols-4 gap-8">
+  <ProductBlock
+    title="Virtual Offices"
+    link="#virtual-office"
+  image="/desk-address.avif"
+    per = "Per Month"
+    description="We provide professional office spaces for GST registration at prime location across pan India."
+    question="Do you need office space for GST registration?"
+    icons={[
+      { icon: FileClock, text: "Fast Documentation" },
+      { icon: BadgeIndianRupee, text: "Lowest Price" },
+      { icon: ShieldCheck, text: "100% Compliant" },
+      { icon: MapPin, text: "Professional Address" },
+    ]}
+    onEnquiry={() =>
+      openEnquiry("I want to enquire about Office for GST Registration.")
+    }
+  />
 
-        
-              <div className="py-6 px-2 flex flex-col flex-1  justify-end">
-                <h1 className="text-lg font-semibold mb-2 text-gray-900">
-                  Virtual Office in {product.name}
-                </h1>
-                <p className="text-xs text-gray-500 mb-4">
-                  Premium virtual office with excellent connectivity and modern amenities.
-                </p>
+  <ProductBlock
+    title="Prime Office Locations"
+    link="#product"
+    image="/mailing-address.avif"
+    per = "Per Month"
+    description="Professional office spaces for Company registration across India."
+    question="Office space for Company registration?"
+    icons={[
+      { icon: FileClock, text: "Fast Documentation" },
+      { icon: BadgeIndianRupee, text: "Lowest Price" },
+      { icon: ShieldCheck, text: "100% Compliant" },
+      { icon: MapPin, text: "Professional Address" },
+    ]}
+    onEnquiry={() =>
+      openEnquiry("I want to enquire about Office for Company Registration.")
+    }
+  />
 
-              
-                <button
-                  onClick={() =>
-                    openEnquiry(`I want to enquire about Virtual Office in ${product.name}`)
-                  }
-                  className="md:hidden w-full bg-red-950  text-white py-2.5 rounded-sm transition"
-                >
-                  Send Enquiry
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+  <ProductBlock
+    title="Meeting Rooms"
+    link="#coworking"
+    image="/professional-handshakes.avif"
+    per = "Per Month"
+    description="Modern Office Address and Mailing at prime locations pan India."
+    question="Co-working space for your business?"
+    icons={[
+      { icon: Wifi, text: "High Speed Internet" },
+      { icon: BadgeIndianRupee, text: "Affordable Pricing" },
+      { icon: Coffee, text: "Tea/Coffee" },
+      { icon: MapPin, text: "Prime Locations" },
+    ]}
+    onEnquiry={() =>
+      openEnquiry("I want to enquire about Office Address and Mailing.")
+    }
+  />
+  <ProductBlock
+    title="GST and Company Registration"
+    link="#coworking"
+    image="/tax-preparation.avif"
+    per = "Per Month"
+    description="Modern Office Address and Mailing at prime locations pan India."
+    question="Co-working space for your business?"
+    icons={[
+      { icon: Wifi, text: "High Speed Internet" },
+      { icon: BadgeIndianRupee, text: "Affordable Pricing" },
+      { icon: Coffee, text: "Tea/Coffee" },
+      { icon: MapPin, text: "Prime Locations" },
+    ]}
+    onEnquiry={() =>
+      openEnquiry("I want to enquire about Office Address and Mailing.")
+    }
+  />
 
 
-        <div className="flex justify-center mt-12">
-          <div
-            className="text-md p-3  rounded-md hover:bg-red-900 hover:text-white text-black border cursor-pointer relative group"
-            onClick={() => setShowAll(!showAll)}
+</div>
+  
+
+
+      {/* ENQUIRY TOAST */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center"
           >
-            {toggleText}
-            
-          </div>
-        </div>
-      </motion.motion.div>
+            <motion.div
+              initial={{ y: 40 }}
+              animate={{ y: 0 }}
+              className="bg-white rounded-xl shadow-xl p-6 w-full max-w-md"
+            >
+              <h3 className="text-xl font-semibold mb-4 text-black">Send Enquiry</h3>
 
-      {/* POPUP FORM */}
-      {open && (
-        <div className="fixed inset-0 flex items-end md:items-center justify-center bg-black/40 z-50 px-4">
-          <div className="bg-white text-black w-full md:w-[420px] p-5  rounded-md shadow-lg">
-            <h1 className="text-lg font-semibold mb-3">Send Enquiry</h1>
+              <div className="space-y-3 text-black">
+                <input
+                  placeholder="Name"
+                  className="w-full border px-4 py-2 rounded-md"
+                   value={data.name}
+  onChange={(e) => setData({ ...data, name: e.target.value })}
+                />
+                <input
+                  placeholder="Email"
+                  type="email"
+                  className="w-full border px-4 py-2 rounded-md"
+                   value={data.email}
+  onChange={(e) => setData({ ...data, email: e.target.value })}
+                  
+                />
+                <input
+                  placeholder="Phone" minLength={10}
+                  className="w-full border px-4 py-2 rounded-md"
+                 value={data.phone}
+  onChange={(e) => setData({ ...data, phone: e.target.value })}
+                />
+                <textarea maxLength={50} minLength={5}
+                  className="w-full border px-4 py-2 rounded-md"
+                  rows={3}
+                  value={data.message}
+                  onChange={(e) =>
+                    setData({ ...data, message: e.target.value })
+                  }
+                />
+              </div>
 
-            <input
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg p-2 mb-2"
-            />
-            <input
-              placeholder="Email"
-              value={email}
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg p-2 mb-2"
-            />
-            <input
-              maxLength={10}
-              minLength={10}
-              placeholder="Phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="w-full border border-gray-200 rounded-lg p-2 mb-2"
-            />
-            <textarea
-              maxLength={50}
-              minLength={5}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              rows={2}
-              className="w-full border border-gray-200 rounded-lg p-2 mb-3 resize-none"
-            />
+              <div className="mt-5 flex gap-3">
+                <button
+                  className="flex-1 cursor-pointer bg-black text-white py-2 flex gap-2 place-content-center place-items-center rounded-md text-sm"
+                 onClick={submitEnquiry}
 
-            {error && <p className="text-red-600 text-sm mb-2">{error}</p>}
-            {success && <p className="text-green-600 text-sm mb-2">{success}</p>}
+                >
+                  {loading && <Loader2 className="h-4 w-4 animate-spin" />}   Send Enquiry
+                </button>
 
-            <div className="flex gap-3">
-              <button
-                onClick={sendToDatabase}
-                disabled={loading}
-                className="w-full bg-black  text-white py-2 rounded-lg"
-              >
-                {loading ? "Sending..." : "Send Enquiry"}
-              </button>
-              <button
-                onClick={sendToWhatsApp}
-                className="w-full bg-green-500 hover:bg-green-700 text-white py-2 rounded-lg"
-              >
-                WhatsApp
-              </button>
-             
-            </div>
-             <button
-                onClick={() => setOpen(false)}
-                className="w-full border border-gray-200 mt-1 py-2 rounded-lg"
-              >
-                Close
-              </button>
-          </div>
-        </div>
-      )}
-    </>
+                <button
+                  className="flex-1 flex gap-2 place-items-center place-content-center bg-green-500 text-white md:font-bold hover:bg-green-700 cursor-pointer py-2  rounded-md text-sm"
+                  onClick={sendWhatsapp}
+                >
+                 WhatsApp  <MessageCircle className="h-4 w-5"/>
+                </button>
+
+                <button
+                  className="flex-1 border py-2 rounded-md border-black text-black"
+                  onClick={() => setOpen(false)}
+                >
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
+    </section>
+  );
+}
+
+/* PRODUCT BLOCK */
+function ProductBlock({
+  title,
+ image,
+  per,
+  description,
+  question,
+  link,
+  icons,
+  onEnquiry,
+}: any) {
+  const router = useRouter();
+
+  return (
+    <div className="bg-white border border-gray-200 rounded-md p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-h-[560px]">
+      
+      {/* HEADER */}
+      <div className="mb-4 ">
+        <h2 className="text-xl font-semibold text-gray-900 leading-snug">
+          {title}
+        </h2>
+      </div>
+
+  <img src={image} alt={title} />
+
+      {/* VALUE PROPOSITION */}
+      <div className="flex-1">
+        <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+          {description}
+        </p>
+
+    
+      </div>
+ {/* EXTRA DETAILS */}
+      <div className="border-t mt-6 pt-6 space-y-1 text-xs text-gray-600">
+        <p>✔ Valid for GST, MCA & Banking</p>
+        <p>✔ Instant documentation support</p>
+        <p>✔ Pan-India address availability</p>
+      </div>
+      {/* CTA */}
+      <div className="mt-8 grid grid-cols-2 gap-3">
+        <button
+          onClick={onEnquiry}
+          className="bg-black text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-900 transition"
+        >
+          Send Enquiry
+        </button>
+
+        <button
+          onClick={() => router.push(`/${link}`)}
+          className="border border-gray-300 text-gray-900 py-2.5 rounded-lg text-sm font-medium hover:border-black transition"
+        >
+          View Details
+        </button>
+      </div>
+    </div>
   );
 }
