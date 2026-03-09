@@ -27,7 +27,7 @@ if (body.message?.length > 200) {
     return new Response(JSON.stringify({ message: "Invalid JSON body" }), { status: 400 });
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const resend = new Resend(env.RESEND_API_KEY);
   try {
 await resend.emails.send({
         to: env.TO_SEND,
