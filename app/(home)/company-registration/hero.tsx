@@ -51,7 +51,7 @@ export default function Hero() {
   };
 
   return (
-    <main className="relative w-full  h-[60vh] pt-5 flex items-center justify-center">
+    <main className="relative w-full  h-[70vh] pt-5 flex items-center justify-center">
       <Toaster position="top-right" />
 
       <Image
