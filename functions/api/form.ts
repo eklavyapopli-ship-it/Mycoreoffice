@@ -1,4 +1,4 @@
-import { QodeMLClient } from "email-sdk";
+import { Resend } from 'resend';
 export async function onRequestPost({ request, env }: any) {
 if (request.headers.get("content-length") > 1000) {
   return new Response(JSON.stringify({ message: "Details too large" }), { status: 413 });
@@ -27,28 +27,19 @@ if (body.message?.length > 200) {
     return new Response(JSON.stringify({ message: "Invalid JSON body" }), { status: 400 });
   }
 
-  const client = new QodeMLClient({
-    host: "smtp.gmail.com",
-    port: 587, 
-    method: "PLAIN",
-    username: env.EMAIL_FROM,
-    password: env.PASS,
-    useSsl: true,
-    apiKey: env.QODEML_API,
-}); 
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
-await client.sendMail({
+await resend.emails.send({
         to: env.TO_SEND,
-        from: "New Enquiry",
-        subject: "New Enquiry",
-        body: `Hey MyCoreOffice, You have a new enquiry:
-        Name: ${body.name}
-        Email: ${body.email}
-        Phone:${body.phone}
-        Query:${body.queryType}
-        Message: ${body.message}
+        from: "onboarding@resend.dev",
+        subject: `New Enquiry from ${body.name}`,
+        html: `<p>Hey MyCoreOffice, You have a new enquiry</p></br>:
+        Name: ${body.name}</br>
+        Email: ${body.email}</br>
+        Phone:${body.phone}</br>
+        Query:${body.queryType}</br>
+        Message: ${body.message}</br>
         `,
-      isHtml: false,
     })
 
 
