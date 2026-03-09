@@ -33,7 +33,7 @@ await resend.emails.send({
         to: env.TO_SEND,
         from: "onboarding@resend.dev",
         subject: `New Enquiry from ${body.name}`,
-        html: `<p>Hey MyCoreOffice, You have a new enquiry</p></br>:
+        html: `<p>Hey MyCoreOffice, You have a new enquiry</p>:</br>
        <p> Name: ${body.name}</p>
        <p> Email: ${body.email}</p>
         <p>Phone:${body.phone}</p>
