@@ -48,7 +48,7 @@ export default function Hero2() {
     <main className="relative z-999 w-full h-full text-black md:h-[70vh] pt-5">
 
       <Image
-        src="/office4.webp"
+        src="https://media.humkind.in/images/office4.webp"
         alt="Office Space"
         fill
         fetchPriority="high"

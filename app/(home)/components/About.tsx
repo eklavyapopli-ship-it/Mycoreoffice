@@ -14,7 +14,7 @@ export default function AboutPage() {
             <Image
               fetchPriority="high"
               loading="lazy"
-              src="/office4.webp"
+              src="https://media.humkind.in/images/office4.webp"
               alt="img1"
               fill
               className="object-cover"
@@ -25,7 +25,7 @@ export default function AboutPage() {
               fetchPriority="high"
               loading="lazy"
 
-              src="/office2.webp"
+              src="https://media.humkind.in/images/office2.webp"
               alt="img2"
               fill
               className="object-cover"
@@ -36,7 +36,7 @@ export default function AboutPage() {
             <Image
               fetchPriority="high"
               loading="lazy"
-              src="/office3.webp"
+              src="https://media.humkind.in/images/office3.webp"
               alt="img3"
               fill
               className="object-cover"

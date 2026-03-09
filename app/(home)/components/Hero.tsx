@@ -55,7 +55,7 @@ export default function Hero() {
       <Toaster position="top-right" />
 
       <Image
-        src="/12079.jpg"
+        src="https://media.humkind.in/images/12079.jpg"
         alt="Office Space"
         fill
         fetchPriority="high"
