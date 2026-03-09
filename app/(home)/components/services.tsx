@@ -82,7 +82,7 @@ export default function ServicesSection() {
   };
 
   const sendWhatsapp = () => {
-    const text = `Hey I am ${data.name}, I want to enquire abt office space.`;
+    const text = `${data.message}`;
     window.open(
       `https://wa.me/+918920743180?text=${encodeURIComponent(text)}`,
       "_blank"
@@ -109,7 +109,7 @@ export default function ServicesSection() {
       { icon: MapPin, text: "Professional Address" },
     ]}
     onEnquiry={() =>
-      openEnquiry("I want to enquire about Office for GST Registration.")
+      openEnquiry("I want to enquire about Virtual Offices.")
     }
   />
 
@@ -127,7 +127,7 @@ export default function ServicesSection() {
       { icon: MapPin, text: "Professional Address" },
     ]}
     onEnquiry={() =>
-      openEnquiry("I want to enquire about Office for Company Registration.")
+      openEnquiry("I want to enquire about Prime Office Locations")
     }
   />
 
@@ -136,7 +136,7 @@ export default function ServicesSection() {
     link="#coworking"
     image="/professional-handshakes.avif"
     per = "Per Month"
-    description="Modern Office Address and Mailing at prime locations pan India."
+    description="Modern Meeting Rooms and Mailing at prime locations pan India."
     question="Co-working space for your business?"
     icons={[
       { icon: Wifi, text: "High Speed Internet" },
@@ -145,7 +145,7 @@ export default function ServicesSection() {
       { icon: MapPin, text: "Prime Locations" },
     ]}
     onEnquiry={() =>
-      openEnquiry("I want to enquire about Office Address and Mailing.")
+      openEnquiry("I want to enquire about Meeting Rooms")
     }
   />
   <ProductBlock
@@ -162,7 +162,7 @@ export default function ServicesSection() {
       { icon: MapPin, text: "Prime Locations" },
     ]}
     onEnquiry={() =>
-      openEnquiry("I want to enquire about Office Address and Mailing.")
+      openEnquiry("I want to enquire about GST And Company Registration")
     }
   />
 
