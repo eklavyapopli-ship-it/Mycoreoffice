@@ -76,7 +76,7 @@ export default function Hero() {
           Virtual Offices For Everyone
         </h1>
 
-        <p className="mt-6 text-lg text-justify font-bold  max-w-2xl">
+        <p className="mt-6 text-lg text-justify lg:font-bold  max-w-2xl">
 MyCoreOffice provides reliable and affordable virtual office solutions designed to help businesses establish a professional presence without the cost of a physical workspace.
         </p>
 
