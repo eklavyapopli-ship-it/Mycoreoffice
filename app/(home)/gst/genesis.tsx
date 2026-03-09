@@ -8,27 +8,14 @@ export default function Genesis() {
     <section className=" ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-end">
-            <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <Image height={80} width={80}
-                src="/gst.webp"
-                alt="GST Services"
-                className="w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-md shadow-2xl "
-              />
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-emerald-100 rounded-full opacity-60 blur-2xl"></div>
-              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-blue-100 rounded-full opacity-60 blur-2xl"></div>
-              
-            
-            </div>
-          </div>
+         
           {/* Left side content */}
           <div className="space-y-8">
             <div className="space-y-6">
           
               
-              <h2 className="text-4xl  font-bold text-gray-900">
-                <span className="text-sky-900">Top GST Registration Consultant</span>
+              <h2 className="text-3xl  bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text">
+             <span className="text-black">Top GST Registration</span> Consultant
               </h2>
             </div>
 
@@ -43,7 +30,20 @@ export default function Genesis() {
           </div>
 
           {/* Right side image */}
-        
+           <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <Image height={80} width={80}
+                src="/gst.webp"
+                alt="GST Services"
+                className="w-full max-w-md lg:max-w-lg xl:max-w-xl rounded-md shadow-2xl "
+              />
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-emerald-100 rounded-full opacity-60 blur-2xl"></div>
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-blue-100 rounded-full opacity-60 blur-2xl"></div>
+              
+            
+            </div>
+          </div>
         </div>
       </div>
     </section>

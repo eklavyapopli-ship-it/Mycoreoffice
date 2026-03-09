@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Review = {
@@ -46,12 +46,6 @@ export default function Reviews() {
   const reviewsPerPage = 3;
   const totalPages = Math.ceil(reviews.length / reviewsPerPage);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPage((prev) => (prev + 1) % totalPages);
-    }, 7000); // Slightly longer for better readability
-    return () => clearInterval(interval);
-  }, [totalPages]);
 
   const startIndex = page * reviewsPerPage;
   const currentReviews = reviews.slice(startIndex, startIndex + reviewsPerPage);
@@ -59,7 +53,7 @@ export default function Reviews() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-900">
+        <h2 className="text-3xl md:text-4xl text-center mb-12 bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text ">
           Hear from Our Clients
         </h2>
 

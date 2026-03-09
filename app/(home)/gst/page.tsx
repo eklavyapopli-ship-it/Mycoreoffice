@@ -1,5 +1,6 @@
 import Helpdesk from "../About-Us/helpdesk"
 import Categories from "../components/Categories"
+import { GST } from "../components/gst"
 import About from "./about"
 import FAQSection from "./faq"
 import Genesis from "./genesis"
@@ -9,6 +10,7 @@ const page = () => {
   return (
     <>
     <Hero/>
+    <GST/>
     <Genesis/>
     <About/>
     <FAQSection/>
