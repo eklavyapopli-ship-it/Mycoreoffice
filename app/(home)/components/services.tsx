@@ -1,7 +1,7 @@
 "use client";
 
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { toast, Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
@@ -49,9 +49,7 @@ export default function ServicesSection() {
         } catch {}
         throw new Error(msg);
       }
- if(data.message=="suspect"){
-    router.push("/thank-you");
-  }else{
+
     toast.success("Enquiry sent successfully");
     setOpen(false);
     setLoading(false)
@@ -61,7 +59,7 @@ export default function ServicesSection() {
       phone: "",
       message: "I am interested in your office space services.",
     });
-      router.push("/thankyou");}
+    
   } catch (err) {
     toast.error("Something went wrong. Try again.");
   }
@@ -174,7 +172,7 @@ export default function ServicesSection() {
 
 
       {/* ENQUIRY TOAST */}
-      <AnimatePresence>
+
         {open && (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -236,17 +234,18 @@ export default function ServicesSection() {
                  WhatsApp  <MessageCircle className="h-4 w-5"/>
                 </button>
 
-                <button
-                  className="flex-1 border py-2 rounded-md border-black text-black"
+               
+              </div>
+               <button
+                  className="flex-1 w-full mt-2 border py-2 rounded-md border-black text-black"
                   onClick={() => setOpen(false)}
                 >
                   Close
                 </button>
-              </div>
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+
       
     </section>
   );
@@ -266,7 +265,7 @@ function ProductBlock({
   const router = useRouter();
 
   return (
-    <div className="bg-white border border-gray-200 rounded-md p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-h-[560px]">
+    <div className="bg-white  rounded-md p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col min-h-[560px]">
       
       {/* HEADER */}
       <div className="mb-4 ">

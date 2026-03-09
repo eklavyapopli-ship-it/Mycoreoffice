@@ -13,6 +13,7 @@ import { GST } from './components/gst'
 import ServicesSection from './components/services'
 import GetStarted from './components/GetStarted'
 import VirtualOfficeBenefits from './components/benefits'
+import AddOnServices from './components/Addon'
 const page = () => {
   return (
     <>
@@ -29,6 +30,7 @@ const page = () => {
         <FAQSection />
         <Categories />
         <Reviews/>
+        <AddOnServices/>
         <Hero2 />
       </LazyMotion>
     </>

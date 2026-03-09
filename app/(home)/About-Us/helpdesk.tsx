@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Helpdesk() {
   return (
     <div
-      className="text-center mt-16 max-w-7xl  mx-auto mb-10"
+      className="text-center bg-linear-to-r from-cyan-100 via-blue-300 to-blue-400 rounded-xl mt-16 max-w-7xl  mx-auto mb-10"
     >
       <div className=" rounded-xl p-8 lg:p-12 shadow-xl ">
         <h1 className={`text-3xl lg:text-4xl font-bold mb-4   text-black`}>

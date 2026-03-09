@@ -134,15 +134,15 @@ export default function WhoAreWe() {
             </div>
 
             {/* Vision Section */}
-            <div className="bg-blue-900 p-6 rounded-lg border border-green-100">
+            <div className="bg-linear-to-r from-cyan-100 via-blue-300 to-blue-400 p-6 rounded-lg border  border-green-100">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
                   <Target className="w-5 h-5 text-black" />
                 </div>
-                <h1 className="text-2xl font-bold text-white">Our Vision</h1>
+                <h1 className="text-2xl font-bold">Our Vision</h1>
               </div>
 
-              <p className="text-gray-50 leading-relaxed">
+              <p className=" leading-relaxed">
                 We aim to serve as a vibrant and sustainable resource catalyst to support
                 and nurture creativity, innovation and entrepreneurship among students.
                 Our goal is to become a center of excellence that fosters synergy between

@@ -10,16 +10,17 @@ const benefits = [
 
 export function GST() {
   return (
-    <section className="w-full  py-16">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
+    <section className="w-full pt-10 pb-26">
+      <div className="max-w-7xl mx-auto px-4 ">
 
         {/* Heading */}
         <h1 className="text-sm text-center mb-2"><span className="py-1 px-2 rounded-full  bg-gray-100 ">GST Registration</span></h1>
         <h1
-          className={`text-2xl md:text-5xl  text-center mb-12`}
+          className={`text-2xl md:text-5xl mb-3 text-center `}
         >
           From Weeks to <span className="text-sky-900">Days</span>
         </h1>
+        <p className="mb-10 text-center">Faster approvals. Cleaner onboarding. Built for serious businesses.</p>
 <div className="flex md:flex-row flex-col gap-10">
      <div className="items-center text-white flex flex-col p-5 rounded-md justify-center bg-slate-900">
             <div className="w-sm text-center flex flex-col gap-3">

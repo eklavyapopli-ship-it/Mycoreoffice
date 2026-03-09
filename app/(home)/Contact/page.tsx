@@ -4,7 +4,6 @@ const page = () => {
   return (
     
     <main>
-    <Contact/>
     <ContactForm/>
     </main>
   )
