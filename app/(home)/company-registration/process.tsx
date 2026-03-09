@@ -136,9 +136,9 @@ export function Process() {
     <div className="w-full bg-white">
       <div className="max-w-7xl mx-auto pt-16 pb-6 px-4 md:px-8 lg:px-10 text-center">
         <h2
-          className={`text-2xl md:text-4xl font-extrabold tracking-wide text-black ${montserrat.className}`}
+          className={`text-2xl md:text-4xl tracking-wide text-black ${montserrat.className}`}
         >
-          Company Registration <span className="text-sky-900">PROCESS</span>
+          Company Registration <span className="bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text">PROCESS</span>
         </h2>
         <p className="mt-3 text-black/70 text-sm md:text-base">
           A simple step-by-step guide to registering your company with

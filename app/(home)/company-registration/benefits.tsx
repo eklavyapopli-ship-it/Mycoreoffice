@@ -17,9 +17,9 @@ export function PvtCompanyBenefits() {
 
         {/* Heading */}
         <h2
-          className={`text-2xl md:text-4xl font-extrabold text-center mb-12 ${montserrat.className}`}
+          className={`text-2xl md:text-4xl text-center mb-12 ${montserrat.className}`}
         >
-          Benefits of Registering <span className="text-sky-900">Pvt Company</span>
+          Benefits of Registering <span className="bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text">Pvt Company</span>
         </h2>
 
         {/* Grid */}

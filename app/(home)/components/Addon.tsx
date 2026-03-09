@@ -26,7 +26,7 @@ export default function AddOnServices() {
   ]
 
   return (
-    <section className="bg-linear-to-r m-2 mb-0 from-cyan-100 via-blue-300 to-blue-300 py-16 px-6 rounded-3xl">
+    <section className="bg-linear-to-r m-2 mb-0 from-cyan-100 via-blue-300 to-blue-300 py-16 px-6 rounded-tl-3xl rounded-tr-3xl">
       <div className="max-w-6xl mx-auto">
 
         {/* Top Section */}

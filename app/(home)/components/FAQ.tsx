@@ -30,7 +30,7 @@ export default function FAQSection() {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">
-      <h1 className="text-3xl font-semibold text-center text-sky-900 mb-12">
+      <h1 className="text-4xl text-center  bg-linear-to-r from-cyan-100 via-blue-400 to-blue-400  text-transparent bg-clip-text mb-12">
         Frequently Asked Questions
       </h1>
 

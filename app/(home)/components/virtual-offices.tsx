@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
  
 import { toast, Toaster } from "react-hot-toast";
 import * as motion from "framer-motion"
@@ -109,7 +108,7 @@ setOpen(false);
       viewport={{ once: false }}
       className={`  h-fit pb-20 mt-2 max-w-7xl mx-auto p-4 md:py-10"`}  id="virtual-office">
               <Toaster position="top-right" />
-        <h1 className="text-3xl mb-12 text-center text-sky-900 font-bold">
+        <h1 className="text-4xl mb-12 text-center bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text ">
           Virtual Office Across India
         </h1>
 

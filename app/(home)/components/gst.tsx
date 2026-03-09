@@ -14,18 +14,18 @@ export function GST() {
       <div className="max-w-7xl mx-auto px-4 ">
 
         {/* Heading */}
-        <h1 className="text-sm text-center mb-2"><span className="py-1 px-2 rounded-full  bg-gray-100 ">GST Registration</span></h1>
+        <h1 className="text-sm text-center mb-2"><span className="py-1 px-2 rounded-full  bg-linear-to-r from-cyan-100 via-blue-300 to-blue-300   ">GST Registration</span></h1>
         <h1
           className={`text-2xl md:text-5xl mb-3 text-center `}
         >
-          From Weeks to <span className="text-sky-900">Days</span>
+          From Weeks <span className="bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text ">to Days</span>
         </h1>
         <p className="mb-10 text-center">Faster approvals. Cleaner onboarding. Built for serious businesses.</p>
 <div className="flex md:flex-row flex-col gap-10">
      <div className="items-center text-white flex flex-col p-5 rounded-md justify-center bg-slate-900">
             <div className="w-sm text-center flex flex-col gap-3">
             <h1 className=" text-center text-2xl font-bold">Ready on the Same Day</h1>
-            <p className="text-xs">Get Your GST Registration  approved from GST Department in 3 Days under rule 14A.</p>
+            <p className="text-xs">Get Your GST Registration  approved from GST Department on the same day.</p>
             <button className="bg-white mt-5 text-black px-5 py-3 rounded-md">Start Registration</button>
             <p className="text-sm">Secure • Verified • Trusted by Businesses</p>
             </div>
