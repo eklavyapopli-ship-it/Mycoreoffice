@@ -34,11 +34,11 @@ await resend.emails.send({
         from: "onboarding@resend.dev",
         subject: `New Enquiry from ${body.name}`,
         html: `<p>Hey MyCoreOffice, You have a new enquiry</p></br>:
-        Name: ${body.name}</br>
-        Email: ${body.email}</br>
-        Phone:${body.phone}</br>
-        Query:${body.queryType}</br>
-        Message: ${body.message}</br>
+       <p> Name: ${body.name}</p>
+       <p> Email: ${body.email}</p>
+        <p>Phone:${body.phone}</p>
+       <p> Query:${body.queryType}</p>
+      <p>  Message: ${body.message}</p>
         `,
     })
 
