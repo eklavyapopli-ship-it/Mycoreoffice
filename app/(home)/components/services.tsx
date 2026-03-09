@@ -33,7 +33,7 @@ export default function ServicesSection() {
 
   try {
     setLoading(true);
-    const res = await fetch("/api/email", {
+    const res = await fetch("/api/form", {
 
       method: "POST",
       headers: { "Content-Type": "application/json" },
