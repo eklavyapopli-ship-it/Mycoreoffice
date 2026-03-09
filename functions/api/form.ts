@@ -1,26 +1,8 @@
 import { QodeMLClient } from "email-sdk";
 export async function onRequestPost({ request, env }: any) {
-const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-
-const key = `rate:${ip}`;
-const current = await env.RATE_LIMIT.get(key);
-
-if (current && Number(current) >= 5) {
-  return new Response(
-    JSON.stringify({ message: "Too many requests" }),
-    { status: 429 }
-  );
-}
-
-await env.RATE_LIMIT.put(
-  key,
-  String((Number(current) || 0) + 1),
-  { expirationTtl: 60 } // 1 minute
-);
-if (Number(request.headers.get("content-length") || 0) > 1000) {
+if (request.headers.get("content-length") > 1000) {
   return new Response(JSON.stringify({ message: "Details too large" }), { status: 413 });
 }
-
 if (!request.headers.get("content-type")?.includes("application/json")) {
     return new Response(JSON.stringify({ message: "Invalid content type" }), { status: 415 });
   }
