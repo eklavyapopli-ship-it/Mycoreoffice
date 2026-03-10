@@ -72,7 +72,7 @@ export function GST() {
             <div className="w-sm text-center flex flex-col gap-3">
             <h1 className=" text-center md:text-2xl text-xl font-bold">Ready on the Same Day</h1>
             <p className="text-xs md:p-0 p-5">Get Your GST Registration  approved from GST Department on the same day.</p>
-            <button  aria-label="registration"  onClick={() => setOpenForm(true)} className="bg-white mt-5 text-black md:px-5 mx-5 py-3 rounded-md">Start Registration</button>
+            <button  aria-label="registration"  onClick={() => setOpenForm(true)} className="bg-white mt-5 text-black md:px-5 mx-15 md:mx-0 py-3 rounded-md">Start Registration</button>
             <p className="text-sm">Secure • Verified • Trusted by Businesses</p>
             </div>
 
