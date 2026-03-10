@@ -139,7 +139,7 @@ export default function Hero2() {
   type="submit"
   disabled={loading}
   className="w-full mt-4 bg-white text-black py-3 rounded-md text-sm font-medium 
-             hover:bg-red-950 hover:text-white border transition flex items-center justify-center gap-2
+           cursor-pointer border transition flex items-center justify-center gap-2
              disabled:opacity-70 disabled:cursor-not-allowed"
 >
   {loading && <Loader2 className="h-4 w-4 animate-spin text-white " />}

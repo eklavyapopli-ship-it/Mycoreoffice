@@ -50,7 +50,6 @@ export default function ProductsPage({ limit }: any) {
     setOpen(false);
   };
 
-  /* ---------------- DATABASE ---------------- */
   const sendToDatabase = async () => {
     setLoading(true);
     setError("");
@@ -153,7 +152,7 @@ setOpen(false);
                   onClick={() =>
                     openEnquiry(`I want to enquire about Virtual Office in ${product.name}`)
                   }
-                  className="md:hidden w-full bg-red-950  text-white py-2.5 rounded-sm transition"
+                  className="md:hidden w-full border   text-black py-2.5 rounded-sm transition"
                 >
                   Send Enquiry
                 </button>
@@ -165,7 +164,7 @@ setOpen(false);
 
         <div className="flex justify-center mt-12">
           <div
-            className="text-md p-3  rounded-md hover:bg-blue-900 hover:text-white text-black border cursor-pointer relative group"
+            className="text-md p-3  rounded-md  text-black border cursor-pointer relative group"
             onClick={() => setShowAll(!showAll)}
           >
             {toggleText}
@@ -174,7 +173,7 @@ setOpen(false);
         </div>
       </motion.motion.div>
 
-      {/* POPUP FORM */}
+
       {open && (
         <div className="fixed inset-0 flex items-end md:items-center justify-center bg-black/40 z-50 px-4">
           <div className="bg-white text-black w-full md:w-[420px] p-5  rounded-md shadow-lg">

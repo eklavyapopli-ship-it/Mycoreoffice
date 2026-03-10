@@ -190,26 +190,26 @@ export default function ServicesSection() {
               <div className="space-y-3 text-black">
                 <input
                   placeholder="Name"
-                  className="w-full border px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
                    value={data.name}
   onChange={(e) => setData({ ...data, name: e.target.value })}
                 />
                 <input
                   placeholder="Email"
                   type="email"
-                  className="w-full border px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
                    value={data.email}
   onChange={(e) => setData({ ...data, email: e.target.value })}
                   
                 />
                 <input
                   placeholder="Phone" minLength={10}
-                  className="w-full border px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
                  value={data.phone}
   onChange={(e) => setData({ ...data, phone: e.target.value })}
                 />
                 <textarea maxLength={50} minLength={5}
-                  className="w-full border px-4 py-2 rounded-md"
+                  className="w-full border border-gray-300 px-4 py-2 rounded-md"
                   rows={3}
                   value={data.message}
                   onChange={(e) =>
@@ -291,21 +291,16 @@ function ProductBlock({
         <p>✔ Pan-India address availability</p>
       </div>
       {/* CTA */}
-      <div className="mt-8 grid grid-cols-2 gap-3">
+      
         <button
           onClick={onEnquiry}
-          className="bg-black text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-900 transition"
+          className="bg-black mt-8 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-900 transition"
         >
           Send Enquiry
         </button>
 
-        <button
-          onClick={() => router.push(`/${link}`)}
-          className="border border-gray-300 text-gray-900 py-2.5 rounded-lg text-sm font-medium hover:border-black transition"
-        >
-          View Details
-        </button>
-      </div>
+        
+    
     </div>
   );
 }
