@@ -204,11 +204,11 @@ export default function Footer() {
               © {new Date().getFullYear()} MyCoreOffice | All Rights Reserved.
             </div>
             <div className="flex gap-6 text-sm">
-              <Link href="/privacy" className="text-white hover:text-white transition-colors">
+              <Link href="/privacy-policy" className="text-white hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-white hover:text-white transition-colors">
-                Terms of Service
+              <Link href="/terms-and-conditions" className="text-white hover:text-white transition-colors">
+                Terms and Conditions
               </Link>
               <Link href="/sitemap.xml" className="text-white hover:text-white transition-colors">
                 Sitemap

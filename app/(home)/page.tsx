@@ -14,6 +14,7 @@ import ServicesSection from './components/services'
 import GetStarted from './components/GetStarted'
 import VirtualOfficeBenefits from './components/benefits'
 import AddOnServices from './components/Addon'
+import { OurBenefits } from './components/OurBenefits'
 const page = () => {
   return (
     <>
@@ -27,6 +28,7 @@ const page = () => {
         <GetStarted/>
         <ProductsPage limit={8} />
         <Objective />
+        <OurBenefits/>
         <FAQSection />
         <Categories />
         <Reviews/>
