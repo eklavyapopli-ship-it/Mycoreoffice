@@ -253,7 +253,7 @@ Our Terms and Conditions (“Terms”) govern all use of our Service and togethe
     <p>
       If you have any questions about this Privacy Policy, contact us at:
       <br />
-      <strong>Email:</strong> info@MyCoreOffice.com
+      <strong>Email:</strong> info@mycoreoffice.com
     </p>
   </div>
 </section>
