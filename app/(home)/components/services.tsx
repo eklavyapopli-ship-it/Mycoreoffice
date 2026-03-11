@@ -90,17 +90,20 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className=" py-15">
+    <section className="  pb-15">
+<h1 className="md:text-5xl text-4xl mb-12 font-bold text-center bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text ">
+           <span className="text-black">Our</span> Services
+        </h1>
       <Toaster position="top-right" />
 
       {/* PRODUCT 1 */}
      <div className="grid grid-cols-1 max-w-7xl mx-auto md:grid-cols-4 gap-2">
   <ProductBlock
-    title="Virtual Offices"
+    title="Virtual Office Addresses in Delhi, Noida and Gurugram"
     link="#virtual-office"
-  image="/desk-address.avif"
+    price="899"
     per = "Per Month"
-    description="We provide professional office spaces for GST registration at prime location across pan India."
+    description="We provide professional office spaces for GST registration across pan India."
     question="Do you need office space for GST registration?"
     icons={[
       { icon: FileClock, text: "Fast Documentation" },
@@ -114,9 +117,9 @@ export default function ServicesSection() {
   />
 
   <ProductBlock
-    title="Prime Office Locations"
+    title="Registered Addresses"
     link="#product"
-    image="/mailing-address.avif"
+    price="900"
     per = "Per Month"
     description="Professional office spaces for Company registration across India."
     question="Office space for Company registration?"
@@ -132,11 +135,11 @@ export default function ServicesSection() {
   />
 
   <ProductBlock
-    title="Meeting Rooms"
+    title="Virtual Offices in Mumbai"
+    price ="999"
     link="#coworking"
-    image="/professional-handshakes.avif"
     per = "Per Month"
-    description="Modern Meeting Rooms and Mailing at prime locations pan India."
+    description="Premium Virtual Offices in Mumbai and many other areas"
     question="Co-working space for your business?"
     icons={[
       { icon: Wifi, text: "High Speed Internet" },
@@ -149,11 +152,10 @@ export default function ServicesSection() {
     }
   />
   <ProductBlock
-    title="GST and Company Registration"
+    title="Virtual Offices in Banglore"
     link="#coworking"
-    image="/tax-preparation.avif"
-    per = "Per Month"
-    description="Modern Office Address and Mailing at prime locations pan India."
+    price="999"
+    description="Premium Virtual Offices in Mumbai and many other areas"
     question="Co-working space for your business?"
     icons={[
       { icon: Wifi, text: "High Speed Internet" },
@@ -254,43 +256,42 @@ export default function ServicesSection() {
 /* PRODUCT BLOCK */
 function ProductBlock({
   title,
- image,
-  per,
+ price,
+ per,
   description,
-  question,
-  link,
-  icons,
   onEnquiry,
 }: any) {
-  const router = useRouter();
+
 
   return (
-    <div className="bg-white  rounded-md p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col min-h-[560px]">
+    <div className="bg-white  rounded-md p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col min-h-[300px]">
       
-      {/* HEADER */}
-      <div className="mb-4 ">
-        <h2 className="text-xl font-semibold text-gray-900 leading-snug">
+
+      <div className="mb-4 h-full flex flex-col justify-end">
+        <h1 className="text-lg font-semibold text-slate-800 leading-snug">
           {title}
-        </h2>
+        </h1>
       </div>
-
-  <img src={image} alt={title} />
-
-      {/* VALUE PROPOSITION */}
+<div className="h-full flex justify-end flex-col">
+<h1 className="text-4xl font-bold">₹ {price}<span className="text-sm font-light"> {per}</span></h1>
+</div>
+   
       <div className="flex-1">
-        <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+        <p className="mt-2 h-full justify-end flex flex-col text-sm text-gray-600 leading-relaxed">
           {description}
         </p>
 
     
       </div>
- {/* EXTRA DETAILS */}
+
       <div className="border-t mt-6 pt-6 space-y-1 text-xs text-gray-600">
         <p>✔ Valid for GST, MCA & Banking</p>
+        <p>✔ Round the clock customer support</p>
+        <p>✔ Premium Business Address</p>
         <p>✔ Instant documentation support</p>
         <p>✔ Pan-India address availability</p>
       </div>
-      {/* CTA */}
+
       
         <button
           onClick={onEnquiry}
