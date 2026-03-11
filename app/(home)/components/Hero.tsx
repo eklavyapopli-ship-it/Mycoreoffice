@@ -51,7 +51,7 @@ export default function Hero() {
   };
 
   return (
-    <main className="relative w-full md:h-screen h-[70vh] pt-5 flex items-center justify-center">
+    <main className="relative w-full md:h-screen p-5 h-[70vh] pt-5 flex items-center justify-center">
       <Toaster position="top-right" />
 
       <Image
@@ -60,8 +60,7 @@ export default function Hero() {
         fill
         fetchPriority="high"
             loading="eager"
-        sizes="100vw"
-        className="object-cover"
+        className=" rounded-3xl "
       />
 
   

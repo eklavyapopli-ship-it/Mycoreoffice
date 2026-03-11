@@ -100,11 +100,9 @@ export default function ServicesSection() {
      <div className="grid grid-cols-1 max-w-7xl mx-auto md:grid-cols-4 gap-2">
   <ProductBlock
     title="Virtual Office Addresses in Delhi, Noida and Gurugram"
-    link="#virtual-office"
     price="899"
     per = "Per Month"
     description="We provide professional office spaces for GST registration across pan India."
-    question="Do you need office space for GST registration?"
     icons={[
       { icon: FileClock, text: "Fast Documentation" },
       { icon: BadgeIndianRupee, text: "Lowest Price" },
@@ -118,11 +116,9 @@ export default function ServicesSection() {
 
   <ProductBlock
     title="Registered Addresses"
-    link="#product"
     price="900"
     per = "Per Month"
     description="Professional office spaces for Company registration across India."
-    question="Office space for Company registration?"
     icons={[
       { icon: FileClock, text: "Fast Documentation" },
       { icon: BadgeIndianRupee, text: "Lowest Price" },
@@ -137,10 +133,8 @@ export default function ServicesSection() {
   <ProductBlock
     title="Virtual Offices in Mumbai"
     price ="999"
-    link="#coworking"
     per = "Per Month"
     description="Premium Virtual Offices in Mumbai and many other areas"
-    question="Co-working space for your business?"
     icons={[
       { icon: Wifi, text: "High Speed Internet" },
       { icon: BadgeIndianRupee, text: "Affordable Pricing" },
@@ -153,10 +147,8 @@ export default function ServicesSection() {
   />
   <ProductBlock
     title="Virtual Offices in Banglore"
-    link="#coworking"
     price="999"
     description="Premium Virtual Offices in Mumbai and many other areas"
-    question="Co-working space for your business?"
     icons={[
       { icon: Wifi, text: "High Speed Internet" },
       { icon: BadgeIndianRupee, text: "Affordable Pricing" },
@@ -286,10 +278,12 @@ function ProductBlock({
 
       <div className="border-t mt-6 pt-6 space-y-1 text-xs text-gray-600">
         <p>✔ Valid for GST, MCA & Banking</p>
+        <p>✔ Fastest Documentation</p>
+        <p>✔ Lowest Price Guaranteed</p>
         <p>✔ Round the clock customer support</p>
         <p>✔ Premium Business Address</p>
         <p>✔ Instant documentation support</p>
-        <p>✔ Pan-India address availability</p>
+        <p>✔ Pan India address availability</p>
       </div>
 
       
