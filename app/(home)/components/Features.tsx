@@ -1,20 +1,24 @@
 
 const features = [
   {
-    title: "Support Team",
-    desc: "Dedicated support staff to assist you and your guests, from reception services to back-office functions such as IT.",
+    title: "Virtual Offices",
+    desc: "Premium Virtual Offices in Delhi, Noida and Gurugram",
+    price:899
   },
   {
-    title: "Carbon Neutral Offices",
-    desc: "Our offices are designed with sustainability in mind and are carbon neutral, maintaining high environmental standards.",
+    title: "Registered Addresses",
+    desc: "Registered Addresses in Delhi, Noida and Gurugram",
+    price:900
   },
   {
-    title: "Join Our Community",
-    desc: "By joining MyCoreOffice, you gain access to a vibrant business community including networking opportunities.",
+    title: "Virtual Offices in Mumbai",
+    desc: "Premium Virtual Offices in Mumbai and many other areas",
+    price:999
   },
   {
-    title: "World Class Facility",
-    desc: "Premium workspace infrastructure designed to provide comfort, productivity, and a professional environment.",
+    title: "Virtual Offices in Banglore",
+    desc: "Premium Virtual Offices in Mumbai and many other areas",
+    price:999
   },
 ]
 
@@ -48,6 +52,10 @@ const Features = () => {
               <p className="text-sm text-justify text-gray-600 leading-relaxed">
                 {item.desc}
               </p>
+              <p className="text-sm text-justify text-gray-800 leading-relaxed">
+                Starting From
+              </p>
+              <p className="text-2xl text-justify text-black font-bold leading-relaxed">₹ {item.price}<span className="text-sm text-justify text-gray-800 leading-relaxed font-light">/ month</span></p>
             </div>
           ))}
         </div>

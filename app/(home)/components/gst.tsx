@@ -1,13 +1,20 @@
 "use client";
 import { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
-import { Loader2 } from "lucide-react";
+import {
+  Loader2,
+  Zap,
+  Rocket,
+  Building2,
+  Handshake,
+  ShieldCheck,
+} from "lucide-react";
 
 const benefits = [
-  { name: "GSTIN on the Same Day, Not Weeks", img: "⚡️",description:"Rule 14A simplifies registration in just 3 working days. No inspector visits. No waiting."},
-  { name: "Built for Small, Serious Businesses", img: "🚀",description:"Designed for proprietors, freelancers, MSMEs, and startups with modest tax liability simple structure, single registration." },
-  { name: "Virtual Office Makes It Smoother", img: "🏢",description:"Instaspaces provides trusted GST ready documentation supporting fast registrations consistently over the years." },
-  { name: "Faster Onboarding, Quicker Revenue", img: "🤝",description:"With a virtual office, registration and supplier onboarding move faster." },
+  { name: "GSTIN on the Same Day, Not Weeks", img: Zap,description:"Simplified GST registration on the same day. No inspector visits. No waiting."},
+  { name: "Built for Small, Serious Businesses", img: Rocket ,description:"Specially for proprietors, freelancers, MSMEs, and startups with modest tax liability, simple structure, single registration." },
+  { name: "Virtual Office Makes It Smoother", img: Building2,description:"Instaspaces provides trusted GST ready documentation supporting fast registrations consistently over the years." },
+  { name: "Faster Onboarding, Quicker Revenue", img: Handshake,description:"With a virtual office, registration and supplier onboarding move faster." },
 ];
 
 export function GST() {
@@ -55,7 +62,7 @@ export function GST() {
     }
   };
   return (
-    <section className="w-full pt-10 pb-26">
+    <section className="w-full pt-10 pb-20">
        <Toaster position="top-right" />
       <div className="max-w-7xl mx-auto px-4 ">
 
@@ -67,8 +74,30 @@ export function GST() {
           From Weeks <span className="bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text ">to Days</span>
         </h1>
         <p className="mb-10 text-center">Faster approvals. Cleaner onboarding. Built for serious businesses.</p>
-<div className="flex lg:flex-row flex-col gap-10">
-     <div className="items-center text-white flex flex-col p-10 rounded-md justify-center bg-slate-900">
+<div className="flex flex-col gap-10">
+
+       
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+          {benefits.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white  rounded-xl p-6 flex flex-col  shadow-sm hover:shadow-md transition"
+            >
+              <item.img className="w-8 h-8 p-2 bg-slate-900 text-white rounded-md text-center text-2xl relative mb-4"/>
+              
+              
+
+              <h1 className="text-sm md:text-base font-semibold  text-black">
+                {item.name}
+              </h1>
+              <p className="text-justify">{item.description}</p>
+            </div>
+          ))}
+
+        </div>
+            <div className="items-center text-white flex flex-col p-10 rounded-md justify-center bg-slate-900">
             <div className="w-sm text-center flex flex-col gap-3">
             <h1 className=" text-center md:text-2xl text-xl font-bold">Ready on the Same Day</h1>
             <p className="text-xs md:p-0 p-5">Get Your GST Registration  approved from GST Department on the same day.</p>
@@ -145,29 +174,7 @@ export function GST() {
           </div>
 
         </div>
-      )}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-
-          {benefits.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white  rounded-xl p-6 flex flex-col  shadow-sm hover:shadow-md transition"
-            >
-              <div className="w-10 h-10 p-1 bg-slate-900 rounded-md text-center text-2xl relative mb-4">
-               {item.img}
-              </div>
-
-              <h1 className="text-sm md:text-base font-semibold  text-black">
-                {item.name}
-              </h1>
-              <p className="text-justify">{item.description}</p>
-            </div>
-          ))}
-
-        </div>
-       
+      )}</div>
         </div>
       </div>
     </section>

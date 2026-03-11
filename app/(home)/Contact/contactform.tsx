@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
-
+import { Mail } from "lucide-react"
+import Link from "next/link"
 type FormData = {
   name: string
   email: string
@@ -84,8 +85,11 @@ export default function ContactUs() {
             together
           </h1>
 
-          <div className="space-y-4 text-lg">
-            <p>📞 +918920743180=</p>
+          <div className="space-y-2 text-lg">
+            <p>📞 +918920743180</p>
+          </div>
+          <div className="space-y-4 flex place-items-center text-lg">
+  <Link  href="mailto:info@mycoreoffice.com">info@mycoreoffice.com</Link>
           </div>
 
           <div className="flex gap-4 text-white">

@@ -7,20 +7,20 @@ export default function AddOnServices() {
       title: "Permanent Sticker Signage",
       desc: "Improve your business presence with a permanent sticker signage displayed within the premises, helping visitors easily recognize your brand.",
       note: "Basic Plan",
-      price: "Free",
+      price: "Rs. 499/ month",
     },
     {
       id: 2,
       title: "Business Application Support",
       desc: "Get professional assistance for GST consultation or simplify your company registration process with support from experienced CA partners.",
-      price: "Rs. 4000 + GST (Per Year)",
+      price: "Rs. 3500/ month",
       note: "Recommended Option"
     },
     {
       id: 3,
       title: "Premium Framed Signage",
       desc: "Highlight your brand with an elegant framed signage displayed prominently at your virtual office or coworking location.",
-      price: "Rs. 6000 (Per Year)",
+      price: "Rs. 5000/ month",
       note: "Premium Plan"
     },
   ]

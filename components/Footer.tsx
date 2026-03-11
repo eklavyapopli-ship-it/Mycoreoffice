@@ -119,7 +119,7 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-white">
                   <p className="text-white font-medium mb-1">Address</p>
-                  
+                  <p className="text-white font-medium mb-1 text-justify"> Unit No. - 111, Aggarwal City Square, Plot No. 10, District Centre Manglam Place, Sector-3, Rohini, New Delhi – 110085</p>
                 </div>
               </div>
               
@@ -137,8 +137,8 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-blue-500" />
                 <div className="text-sm">
                   <p className="text-white font-medium">Email</p>
-                  <Link href="mailto:shivanirajput2711@gmail.com" className="text-white hover:text-white transition-colors">
-                  shivanirajput2711@gmail.com
+                  <Link href="mailto:info@mycoreoffice.com" className="text-white hover:text-white transition-colors">
+                  info@mycoreoffice.com
                   </Link>
                 </div>
               </div>
