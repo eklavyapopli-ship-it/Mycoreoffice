@@ -2,12 +2,12 @@ import Image from "next/image";
 import { montserrat } from "@/lib/fontS";
 
 const documents = [
-  { name: "PAN Card of Directors", img: "/documents/PANCARD.webp" },
-  { name: "Passport Size Photograph", img: "/documents/CAMERA.webp" },
-  { name: "Identity Proof", img: "/documents/IDCARD.webp" },
-  { name: "Director's Address Proof", img: "/documents/dir-add.webp" },
-  { name: "Business Address Proof", img: "/documents/map.webp" },
-  { name: "Digital Signature Certificate", img: "/documents/notes.webp" },
+  { name: "PAN Card of Directors", img: "/documents/PANCARD.svg" },
+  { name: "Passport Size Photograph", img: "/documents/CAMERA.svg" },
+  { name: "Identity Proof", img: "/documents/IDCARD.svg" },
+  { name: "Director's Address Proof", img: "/documents/dir-add.svg" },
+  { name: "Business Address Proof", img: "/documents/map.svg" },
+  { name: "Digital Signature Certificate", img: "/documents/notes.svg" },
 ];
 
 export function DocumentsRequired() {
@@ -17,9 +17,9 @@ export function DocumentsRequired() {
 
         {/* Heading */}
         <h2
-          className={`text-2xl md:text-4xl font-extrabold text-center mb-12 ${montserrat.className}`}
+          className={`text-2xl md:text-4xl  text-center mb-12 ${montserrat.className}`}
         >
-          Documents Required for <span className="text-sky-900">Registration</span>
+          Documents Required for <span className="bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400 text-transparent bg-clip-text">Registration</span>
         </h2>
 
         {/* Grid */}
@@ -30,17 +30,18 @@ export function DocumentsRequired() {
               key={index}
               className="bg-white  rounded-md p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition"
             >
-              <div className="h-30 w-30 relative mb-4">
+              <div className=" w-20 h-full flex flex-col justify-end relative mb-4">
                 <img
                   src={doc.img}
                   alt={doc.name}
                   className="object-contain"
                 />
               </div>
-
-              <h3 className="text-sm md:text-base font-semibold text-black">
+<div className="h-full flex flex-col justify-end">
+              <h1 className="text-sm md:text-base font-semibold text-black">
                 {doc.name}
-              </h3>
+              </h1>
+              </div>
             </div>
           ))}
 

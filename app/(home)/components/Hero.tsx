@@ -60,7 +60,7 @@ export default function Hero() {
         fill
         fetchPriority="high"
             loading="eager"
-        className=" rounded-3xl "
+        className=" rounded-b-3xl object-cover"
       />
 
   

@@ -15,6 +15,10 @@ import GetStarted from './components/GetStarted'
 import VirtualOfficeBenefits from './components/benefits'
 import AddOnServices from './components/Addon'
 import { OurBenefits } from './components/OurBenefits'
+import { PvtCompanyBenefits } from './company-registration/benefits'
+import { Process } from './company-registration/process'
+import { DocumentsRequired } from './company-registration/documents'
+import Helpdesk from './About-Us/helpdesk'
 const page = () => {
   return (
     <>
@@ -27,6 +31,9 @@ const page = () => {
         <VirtualOfficeBenefits/>
         <GetStarted/>
         <ProductsPage limit={8} />
+        <Process/>
+        <DocumentsRequired/>
+        <Helpdesk/>
         <Objective />
         <OurBenefits/>
         <FAQSection />
