@@ -2,12 +2,12 @@ import Image from "next/image";
 import { montserrat } from "@/lib/fontS";
 
 const benefits = [
-  { name: "Limited Liability Protection", img: "/documents/PANCARD.webp"},
-  { name: "Separate Legal Identity", img: "/documents/CAMERA.webp" },
-  { name: "Easy Fund Raising", img: "/documents/IDCARD.webp" },
-  { name: "Higher Credibility", img: "/documents/dir-add.webp" },
-  { name: "Perpetual Succession", img: "/documents/map.webp" },
-  { name: "Better Business Opportunities", img: "/documents/notes.webp"  },
+  { name: "Limited Liability Protection", img: "/documents/PANCARD.svg"},
+  { name: "Separate Legal Identity", img: "/documents/CAMERA.svg" },
+  { name: "Easy Fund Raising", img: "/documents/IDCARD.svg" },
+  { name: "Higher Credibility", img: "/documents/dir-add.svg" },
+  { name: "Perpetual Succession", img: "/documents/map.svg" },
+  { name: "Better Business Opportunities", img: "/documents/notes.svg"  },
 ];
 
 export function PvtCompanyBenefits() {
@@ -30,7 +30,7 @@ export function PvtCompanyBenefits() {
               key={index}
               className="bg-white  rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition"
             >
-              <div className="w-30 h-30 relative mb-4">
+              <div className="w-25 h-30 relative mb-4">
                 <Image
                   src={item.img}
                   alt={item.name}

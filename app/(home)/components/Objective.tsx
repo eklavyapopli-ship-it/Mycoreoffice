@@ -29,24 +29,11 @@ const Objective = () => {
             MyCoreOffice: Business Objective
           </h1>
           <p className="text-sm md:text-base leading-relaxed text-justify">
-            For businesses requiring flexibility, <strong>MyCoreOffice</strong> offers
-            meeting rooms and virtual offices across India. Our meeting rooms are
-            available in strategic locations, providing professional settings for
-            presentations, interviews, and team meetings. Whether you need a
-            meeting room in Mumbai's Bandra Kurla Complex or Bangalore's Whitefield,
-            <strong> MyCoreOffice</strong> ensures that you have access to top-notch
-            facilities. Additionally, our virtual offices provide a prestigious
-            business address and mail handling services, allowing you to establish
-            a local presence without the need for physical office space. This
-            solution is ideal for businesses looking to expand into new markets or
-            maintain remote operations. <strong>MyCoreOffice</strong> is committed
-            to providing accessible and comfortable workspaces that support your
-            business growth. With our extensive network across India's key cities
-            and districts, you can find the perfect solution tailored to your needs.
-            Connect with us to explore our office space for rent, serviced offices,
-            coworking spaces, meeting rooms, and virtual offices. Let
-            <strong> MyCoreOffice</strong> be your partner in creating a healthier,
-            happier, and more productive work environment.
+Businesses today require flexible workspace solutions, and MyCoreOffice provides professionally managed meeting rooms and virtual offices across India. Our meeting rooms are located in prime business hubs, offering the perfect environment for client presentations, interviews, training sessions, and team meetings. Whether you are looking for a meeting room in Mumbai’s Bandra Kurla Complex or a professional meeting space in Bangalore’s Whitefield, MyCoreOffice offers modern facilities designed for productivity and convenience.
+
+Our virtual office services also help businesses establish a credible presence without the need for a physical office. With a prestigious business address, mail handling, and professional support services, companies can operate remotely while maintaining a strong local identity. A virtual office is an ideal solution for startups, remote teams, and businesses expanding into new markets.
+
+MyCoreOffice is dedicated to providing flexible and comfortable workspaces that support business growth. With an extensive network across major cities and business districts in India, we make it easy to find the right workspace solution for your needs. Explore our wide range of services, including office space for rent, serviced offices, coworking spaces, meeting rooms, and virtual offices. Partner with MyCoreOffice to create a professional, productive, and scalable work environment for your business.
           </p>
           <p className={`text-sm md:text-base mt-5 leading-relaxed text-justify ${visible}`}>
 MyCoreOffice offers serviced offices and coworking spaces designed to enhance productivity and collaboration. In Hyderabad, HITEC City and Gachibowli are prime locations for businesses in the IT sector. Our serviced offices in these areas provide a professional environment with all the amenities you need to succeed. For those looking for coworking spaces, Bangalore's vibrant districts of Whitefield and Electronic City are perfect for networking and innovation. These spaces are equipped with high-speed internet, meeting rooms, and communal areas to foster collaboration. Monthly networking events offer opportunities to connect with local business communities and explore new opportunities
@@ -60,7 +47,7 @@ MyCoreOffice offers serviced offices and coworking spaces designed to enhance pr
       whileInView={{ opacity: 1}}
       transition={{ duration: 1 }}
       viewport={{ once: false}}
-        className="md:w-1/2 w-full relative h-72 md:h-[520px]  rounded-md overflow-hidden shadow-lg">
+        className="md:w-1/2 w-full relative h-72 md:h-[580px]  rounded-md overflow-hidden shadow-lg">
           <Image
             src="https://media.humkind.in/images/office2.webp" 
             alt="Business Objective"

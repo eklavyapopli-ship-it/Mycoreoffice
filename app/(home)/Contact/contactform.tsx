@@ -73,7 +73,7 @@ export default function ContactUs() {
   }
 
   return (
-    <section className="bg-gray-100 py-20 px-6">
+    <section className=" py-20 px-6" id="contact">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
 
         {/* LEFT SECTION */}

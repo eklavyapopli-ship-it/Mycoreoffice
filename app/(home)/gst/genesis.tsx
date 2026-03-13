@@ -20,9 +20,9 @@ export default function Genesis() {
             </div>
 
             <div className="prose prose-lg text-gray-600 space-y-6 leading-relaxed text-justify">
-              <p>
-               With the pace of the new world business age, GST compliance is no longer optional it's obligatory. For Noida-based businesses, whether startups, SMEs, or large business houses, professional advice is the order of the day to sail through the complexities of GST compliance. That's where a GST Registration Consultant in Noida enters the picture with simple solutions for GST registration, audit, and return filing. MyCoreOffice is providing corporate GST Registration & GST Audit Consultant services for companies across India. Right from GST registration compliance to filing returns within time and compliance with audit, our professional consultants provide you with a hassle-free experience.
-              </p>
+<p>
+In today’s rapidly evolving business environment, <strong>GST compliance in India</strong> has become essential for businesses of all sizes. For companies operating in <strong>Noida</strong>, including startups, SMEs, and large enterprises, managing GST regulations can be challenging without expert support. This is where a professional <strong>GST Registration Consultant in Noida</strong> plays an important role by simplifying the process of GST registration, compliance, return filing, and audit preparation. With the help of experienced consultants, businesses can ensure accurate documentation, timely GST return filing, and adherence to the latest tax regulations while focusing on their core operations. <strong>MyCoreOffice</strong> offers reliable <strong>GST registration and GST audit consulting services</strong> for businesses in Noida and across India. From assisting with new GST registrations to ensuring ongoing compliance, managing return filings, and preparing businesses for GST audits, our expert team provides end-to-end support for a smooth and hassle-free experience. Whether you are launching a new venture or looking for professional GST compliance assistance, MyCoreOffice helps businesses stay compliant, organized, and confident in today’s competitive market.
+</p>
      
             </div>
 
@@ -31,7 +31,7 @@ export default function Genesis() {
 
           {/* Right side image */}
            <div className="flex justify-center lg:justify-end">
-            <div className="relative">
+            <div className="relative md:h-[450px]">
               <Image height={80} width={80}
                 src="/gst.webp"
                 alt="GST Services"

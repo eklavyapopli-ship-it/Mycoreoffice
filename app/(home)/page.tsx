@@ -19,6 +19,7 @@ import { PvtCompanyBenefits } from './company-registration/benefits'
 import { Process } from './company-registration/process'
 import { DocumentsRequired } from './company-registration/documents'
 import Helpdesk from './About-Us/helpdesk'
+import ContactUs from './Contact/contactform'
 const page = () => {
   return (
     <>
@@ -40,7 +41,8 @@ const page = () => {
         <Categories />
         <Reviews/>
         <AddOnServices/>
-        <Hero2 />
+        {/* <Hero2 /> */}
+        <ContactUs/>
       </LazyMotion>
     </>
   )

@@ -17,7 +17,7 @@ export const SmoothScrollerProvider = ({ children }: { children: ReactNode }) =>
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2,
+      duration: 2.5,
       smoothWheel: true,
       wheelMultiplier: 0.7,
       lerp: 0.2

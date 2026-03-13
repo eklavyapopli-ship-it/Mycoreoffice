@@ -30,7 +30,7 @@ export function OurBenefits() {
           {benefits.map((item, index) => (
             <div
               key={index}
-              className="bg-linear-to-r from-white via-sky-50 to-sky-50 rounded-xl p-6 flex flex-col items-center text-center shadow-md hover:shadow-md transition"
+              className=" rounded-xl p-6 flex flex-col items-center text-center shadow-md hover:shadow-md transition"
             >
               <div className="w-30 h-30 relative mb-4">
                 <Image
