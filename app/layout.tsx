@@ -14,8 +14,12 @@ template:" %s "  },
   description:
     "MyCoreOffice provides virtual office services, GST registration addresses, business addresses, mail handling, and office solutions across all Indian states and cities.",
   keywords: [
-
-    "virtual office",
+"MyCoreOffice",
+"MyCoreOffice Virtual Office",
+"MyCoreOffice GST Registration",
+"My Core Office",
+"My Core Office Virtual Office",
+   "virtual office",
     "virtual office in india",
     "virtual office for gst",
     "virtual office address",
