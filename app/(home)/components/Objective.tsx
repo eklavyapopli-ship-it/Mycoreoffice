@@ -49,7 +49,7 @@ MyCoreOffice offers serviced offices and coworking spaces designed to enhance pr
       viewport={{ once: false}}
         className="md:w-1/2 w-full relative h-72 md:h-[580px]  rounded-md overflow-hidden shadow-lg">
           <Image
-            src="https://media.humkind.in/images/office2.webp" 
+            src="/office2.webp" 
             alt="Business Objective"
             fill
             className="object-cover"

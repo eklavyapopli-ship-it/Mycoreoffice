@@ -132,7 +132,7 @@ export default function About() {
         price="Starting from Just Rs. 899/- Per Month"
         description="We provide professional office spaces for Company registration at prime location across pan India at affordable prices."
         question="Do you need office space for Company registration?"
-        image="https://media.humkind.in/images/office4.webp"
+        image="/.webp"
         icons={[
           { icon: FileClock, text: "Fastest Documentation" },
           { icon: BadgeIndianRupee, text: "Lowest Price Guaranteed" },
@@ -151,7 +151,7 @@ export default function About() {
         id="coworking"
         description="We provide professional co-working spaces for your business at prime location across pan India at affordable prices."
         question="Do you need co-working space for your business?"
-        image="https://media.humkind.in/images/office2.webp"
+        image="/office2.webp"
         icons={[
           { icon: Wifi, text: "High Speed Internet" },
           { icon: BadgeIndianRupee, text: "Lowest Price Guaranteed" },
