@@ -84,7 +84,7 @@ export default function ServicesSection() {
   const sendWhatsapp = () => {
     const text = `${data.message}`;
     window.open(
-      `https://wa.me/+918920743180?text=${encodeURIComponent(text)}`,
+      `https://wa.me/+919990720722?text=${encodeURIComponent(text)}`,
       "_blank"
     );
   };

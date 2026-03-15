@@ -45,7 +45,7 @@ export default function ProductsPage({ limit }: any) {
 
 
   const sendToWhatsApp = () => {
-    const url = `https://wa.me/+918920743180?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/+919990720722?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
     setOpen(false);
   };

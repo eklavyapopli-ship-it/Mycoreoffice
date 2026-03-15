@@ -86,7 +86,7 @@ export default function ContactUs() {
           </h1>
 
           <div className="space-y-2 text-lg">
-            <p>📞 +918920743180</p>
+            <p>📞 +919990720722</p>
           </div>
           <div className="space-y-4 flex place-items-center text-lg">
   <Link  href="mailto:info@mycoreoffice.com">info@mycoreoffice.com</Link>

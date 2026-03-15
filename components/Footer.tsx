@@ -96,7 +96,7 @@ export default function Footer() {
             </nav>
  {/* WhatsApp CTA */}
             <Link
-              href="https://wa.me/918920743180"
+              href="https://wa.me/919990720722"
               target="_blank"
               className="inline-flex items-center justify-center gap-2 bg-green-700  px-4 py-3 rounded-lg text-white font-medium text-sm transition-colors w-full"
             >
@@ -127,8 +127,8 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-blue-500" />
                 <div className="text-sm">
                   <p className="text-white font-medium">Contact</p>
-                  <Link href="tel:+918920743180" className="text-white hover:text-white transition-colors">
-                    +91 89207 43180
+                  <Link href="tel:+919990720722" className="text-white hover:text-white transition-colors">
+                    +91 9990720722
                   </Link>
                 </div>
               </div>

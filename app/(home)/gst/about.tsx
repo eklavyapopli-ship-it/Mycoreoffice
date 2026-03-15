@@ -89,7 +89,7 @@ export default function About() {
   const sendWhatsapp = () => {
     const text = `Hey I am ${data.name}, I want to enquire abt office space.`;
     window.open(
-      `https://wa.me/+918920743180?text=${encodeURIComponent(text)}`,
+      `https://wa.me/+919990720722?text=${encodeURIComponent(text)}`,
       "_blank"
     );
   };

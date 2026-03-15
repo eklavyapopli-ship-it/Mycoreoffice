@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
       </p>
 
       <section className="space-y-8 text-gray-700 leading-relaxed">
-        <h1 className="">Welcome to <span className="font-bold"> MyCoreOffice Services Private Limited.</span></h1>
+        <h1 className="">Welcome to <span className="font-bold"> MyCoreOffice</span></h1>
         <p>
          MyCoreOffice Services Private Limited (“us”, “we”, or “our”) operates https://mycoreoffice.com (hereinafter referred to as “Service”).
         </p>
