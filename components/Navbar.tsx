@@ -45,11 +45,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
         {/* Logo */}
 <Link href="/">
-  <h1
+  {/* <h1
     className={`   text-3xl tracking-wide  text-sky-900`}
   >
     MyCoreOffice
-  </h1>
+  </h1> */}
+  <img src="/logo2.jpeg" className="h-13 w-30 "/>
 </Link>
 
         {/* Desktop Nav */}
