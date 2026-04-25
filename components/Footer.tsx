@@ -83,10 +83,10 @@ export default function Footer() {
               <Link href="/About-Us" className="block text-white hover:text-white transition-colors text-sm">
                 Life at  MyCoreOffice
               </Link>
-                <Link href="/" className="block text-white hover:text-white transition-colors text-sm">
+                <Link href="/gst" className="block text-white hover:text-white transition-colors text-sm">
                 GST Related Services
               </Link>
-              <Link href="/" className="block text-white hover:text-white transition-colors text-sm">
+              <Link href="/company-registration" className="block text-white hover:text-white transition-colors text-sm">
                 Company Registration
               </Link>
               <Link href="/" className="block text-white hover:text-white transition-colors text-sm">

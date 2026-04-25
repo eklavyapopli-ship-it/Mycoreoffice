@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.css"
+import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import { SmoothScrollerProvider } from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
@@ -102,6 +103,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${montserrat.className}`}>
+       <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18035036782"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18035036782');
+          `}
+        </Script>
         <SmoothScrollerProvider>
  
         <Navbar/>
