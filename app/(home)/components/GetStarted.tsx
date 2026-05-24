@@ -1,75 +1,108 @@
-"use client"
-import { useState } from "react";
- 
-import Image from "next/image";
+"use client";
 
+import Image from "next/image";
+import { CheckCircle2, Star } from "lucide-react";
+import { motion, useInView, Variants } from "framer-motion";
+import { useRef } from "react";
+import { useTheme } from "@/lib/ThemeContext";
+
+const points = [
+  "Instant professional business address",
+  "Networking opportunities and community events",
+  "Special discounts on services from GST and Company legal help",
+  "Meeting and conference rooms available for bookings",
+  "Professional receptionist to welcome visitors",
+  "Round the clock customer support",
+];
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as any },
+  }),
+};
 
 const GetStarted = () => {
-
- 
+  const { theme } = useTheme();
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
+  const isDark = theme === "dark";
 
   return (
-    <section className={`  w-full bg-white py-25`} id="objective">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 px-6">
-        
-     
-        <div
-        className="md:w-1/2 text-black">
-          <h1 className="text-3xl mb-6">
-            Everything You Need To Get Started
-          </h1>
-      <div className="text-justify">
-        <h1 className="font-bold">Everything is ready to use, adjustable, and taken care of for you, so you can focus on growing your business.</h1> <br />
-  <p>
-    Everything is prepared and ready for you to start right away. Our services are designed to simplify your operations so you can dedicate your time and energy to expanding your business. Along with a professional address, our experienced team manages your mail and welcomes visitors at the front desk. You can also easily reserve a desk or meeting space through our website whenever required.
-  </p><br />
+    <section 
+      ref={sectionRef}
+      id="objective"
+      className={`relative mx-auto mt-24 w-[calc(100%-40px)] overflow-hidden rounded-[3.5rem] py-24 transition-colors duration-1000 md:w-[calc(100%-80px)] ${
+        isDark ? "text-white" : "text-slate-900"
+      }`}
+    >
+      <div className="section-shell relative z-10">
+        <div className="grid items-center gap-16 md:grid-cols-[1.1fr_0.9fr]">
+          
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={0}
+          >
+            <div className={`mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-widest ${
+              !isDark ? "border-slate-200 bg-white/50 text-indigo-600" : "border-white/10 bg-black/20 text-indigo-300"
+            }`}>
+              <Star className="h-3 w-3 fill-current" />
+              Your Mission
+            </div>
+            
+            <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] font-bold uppercase leading-[0.95] tracking-tighter">
+              Everything You Need <br />
+              <span className={!isDark ? "text-indigo-600" : "text-indigo-400"}>To Get Started.</span>
+            </h2>
 
-<ul className="space-y-3 mt-4">
-  {[
-    "Instant professional business address",
-    "Networking opportunities and community events",
-    "Special discounts on services from global partners",
-    "Meeting and conference rooms available for bookings",
-    "Professional receptionist to welcome visitors",
-    "Round the clock customer support",
-  ].map((item, index) => (
-    <li key={index} className="flex items-start gap-3">
-      
-      {/* Blue Tick */}
-      <span className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-3 w-3"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M16.707 5.293a1 1 0 010 1.414l-7.5 7.5a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 111.414-1.414L8.5 12.086l6.793-6.793a1 1 0 011.414 0z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </span>
+            <div className="mt-10 space-y-6">
+              <h3 className="font-display text-xl font-bold leading-tight tracking-tight opacity-90">
+                Everything is ready to use, adjustable, and taken care of for you, so you can focus on growing your business.
+              </h3>
+              <p className={`font-clean text-base leading-relaxed opacity-60 ${!isDark ? "text-slate-700" : "text-white/70"}`}>
+                Everything is prepared and ready for you to start right away. Our services are designed to simplify your operations so you can dedicate your time and energy to expanding your business. Along with a professional address, our experienced team manages your mail and welcomes visitors at the front desk.
+              </p>
 
-      <span>{item}</span>
-    </li>
-  ))}
-</ul>
-</div>
-      
-        </div>
+              <div className="mt-10 grid gap-3 sm:grid-cols-2">
+                {points.map((item, index) => (
+                  <motion.div 
+                    key={item} 
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    custom={index + 1}
+                    className={`flex items-start gap-3 rounded-[1.5rem] border p-4 transition-all duration-300 hover:scale-[1.02] ${
+                      !isDark ? "border-slate-100 bg-white shadow-sm" : "border-white/5 bg-white/5"
+                    }`}
+                  >
+                    <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 ${!isDark ? "text-indigo-600" : "text-indigo-400"}`} />
+                    <span className="text-[13px] font-bold leading-tight opacity-70">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
 
-
-        <div 
-        className="md:w-1/2 w-full relative h-72 md:h-[520px]  rounded-md overflow-hidden shadow-lg">
-          <Image
-            src="/s5.jpg" 
-            alt="Business Objective"
-            fill
-            className="object-cover"
-            fetchPriority="high"
-            loading="lazy"
-          />
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={2}
+            className="group relative h-[300px] w-full overflow-hidden rounded-[3rem] shadow-2xl md:h-[600px]"
+          >
+            <Image
+              src="/s5.jpg"
+              alt="Business Objective"
+              fill
+              className="object-cover transition duration-1000 group-hover:scale-105"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent" />
+          </motion.div>
         </div>
       </div>
     </section>

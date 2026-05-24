@@ -1,3 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { Stagger, StaggerItem } from "@/components/SectionReveal";
 
 type Product = {
   id: number;
@@ -5,72 +9,64 @@ type Product = {
   image: string;
   link: string;
 };
+
 const Products: Product[] = [
-  { id: 1, name: "Virtual Offices", image: "/locations/delhi.jpg", link: "delhi" },
-  { id: 2, name: "Coworking Space", image: "/locations/noida.jpg", link: "noida" },
-  { id: 3, name: "Meeting Rooms", image: "/locations/mumbai.jpg", link: "mumbai" },
+  { id: 1, name: "Virtual Offices", image: "/locations/delhi.jpg", link: "/#virtual-office" },
+  { id: 2, name: "Coworking Space", image: "/locations/noida.jpg", link: "/coworking-space" },
+  { id: 3, name: "Meeting Rooms", image: "/locations/mumbai.jpg", link: "/Contact" },
 ];
 
 const Categories = () => {
   return (
-    <section className={`relative pb-20 bg-sky-50  `} id="browse">
-     
-      {/* Top Section */}
-      <div className=" text-black max-w-7xl flex flex-col mx-auto items-center h-fit justify-center px-6 pt-10 ">
-     <h1 className="w-full text-3xl py-5">Browse By Categories</h1>
-        <div className="grid  grid-cols-1 md:grid-cols-3  gap-6">
-            
-          {Products.map((product) => (
-                <div
-                  key={product.id}
-                  className="group relative  overflow-hidden flex flex-col shadow-md  text-white bg-black/80  hover:shadow-2xl transition duration-500"
-                >
-                  <div className="relative h-fit overflow-hidden">
-                    <img
-                     fetchPriority="high"
-            loading="lazy"
-                      src={product.image}
-                      alt={product.name}
-                      
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-           
-                    <button
-                     
-                      className="hidden md:flex absolute bottom-4 rounded-full left-1/2 -translate-x-1/2 bg-white text-black px-5 py-2.5   transition-opacity opacity-0 group-hover:opacity-100"
-                    >
-                      Browse
-                    </button>
-                  </div>
-    
-          
-                  <div className="py-6 px-2 flex flex-col flex-1 justify-between ">
-                    <h1 className="text-lg font-semibold mb-2">
-                 {product.name}
-                    </h1>
-                    <p className="text-xs text-gray-300 mb-4">
-                      Premium virtual office with excellent connectivity and modern amenities.
-                    </p>
-    
-                  
-                    <button
-                      
-                      className="md:hidden w-full bg-white  text-black py-2.5 rounded-sm transition"
-                    >
-                      Browse
-                    </button>
-                  </div>
-                </div>
-              ))}
+    <section className="relative bg-slate-50 py-20" id="browse">
+      <div className="section-shell">
+        <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <h1 className="section-title text-4xl md:text-5xl">Browse By Categories</h1>
+          <p className="max-w-xl text-sm leading-7 text-slate-600">
+            Choose the setup that matches your current business requirement.
+          </p>
         </div>
 
+        <Stagger className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {Products.map((product) => (
+            <StaggerItem key={product.id} className="group bento-card bg-slate-950 text-white">
+              <div className="relative h-72 overflow-hidden">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  fetchPriority="high"
+                  loading="lazy"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent" />
+                <Link
+                  href={product.link}
+                  className="absolute bottom-4 left-4 right-4 hidden items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-slate-950 opacity-0 transition group-hover:opacity-100 md:flex"
+                >
+                  Browse
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </div>
+
+              <div className="p-6">
+                <h1 className="font-display text-xl font-bold">{product.name}</h1>
+                <p className="mt-3 text-sm leading-7 text-white/70">
+                  Premium virtual office with excellent connectivity and modern amenities.
+                </p>
+
+                <Link href={product.link} className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-white py-3 text-sm font-bold text-slate-950 md:hidden">
+                  Browse
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </div>
-
-
-
     </section>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { toast, Toaster } from "react-hot-toast";
 import { Loader2 } from "lucide-react";
- 
+ import { useTheme } from "@/lib/ThemeContext";
 import * as motion from "framer-motion"
 
 import {
@@ -15,6 +15,7 @@ import {
   Wifi,
   Coffee, MessageCircle
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { useState } from "react";
 
 type EnquiryData = {
@@ -65,7 +66,7 @@ export default function About() {
         message: "I am interested in your office space services.",
       });
 
-    } catch (err) {
+    } catch {
       toast.error("Something went wrong. Try again.");
     }
   };
@@ -244,34 +245,47 @@ export default function About() {
 }
 
 /* PRODUCT BLOCK */
+type ProductBlockProps = {
+  title: string;
+  description: string;
+  question: string;
+  image: string;
+  id: string;
+  icons: { icon: LucideIcon; text: string }[];
+  reverse?: boolean;
+  onEnquiry: () => void;
+  price?: string;
+  link?: string;
+};
+
 function ProductBlock({
   title,
-  price,
   description,
   question,
   image,
   id,
-  link,
   icons,
   reverse,
   onEnquiry,
-}: any) {
+}: ProductBlockProps) {
+    const { theme } = useTheme();
+      const isDark = theme === "dark";
   return (
     <div
       className="grid md:grid-cols-2 gap-10 items-center mb-20"
       id={id}
     >
       <div className={reverse ? "md:order-2" : ""}>
-        <h2 className="text-3xl  text-black text-center md:text-start">{title}</h2>
+        <h2 className={`text-3xl   text-center md:text-start ${isDark?"text-white":"text-black"}`}>{title}</h2>
 
-        <p className="mt-4 text-gray-600 text-center md:text-justify">{question}</p>
-        <p className="mt-3 text-gray-600 text-justify">{description}</p>
+        <p className="mt-4 text-white text-center md:text-justify">{question}</p>
+        <p className={`mt-3 text-justify ${isDark?"text-white":"text-black"}`}>{description}</p>
 
         <div className="grid grid-cols-2 gap-4 mt-6">
-          {icons.map((item: any, i: number) => (
+          {icons.map((item, i) => (
             <div key={i} className="flex items-center gap-2">
               <item.icon className="w-5 h-5 text-sky-900" />
-              <span className="text-sm text-black">{item.text}</span>
+              <span className={`text-sm ${isDark?"text-white":"text-black"}`}>{item.text}</span>
             </div>
           ))}
         </div>

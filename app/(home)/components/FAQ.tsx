@@ -1,6 +1,8 @@
-"use client"
+"use client";
+
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown, HelpCircle } from "lucide-react";
 
 const faqs = [
   {
@@ -26,51 +28,65 @@ const faqs = [
 ];
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20">
-      <h1 className="text-4xl text-center  bg-linear-to-r from-cyan-100 via-blue-400 to-blue-400  text-transparent bg-clip-text mb-12">
-        Frequently Asked Questions
-      </h1>
+    <section className="section-shell py-20">
+      <div className="mx-auto mb-12 max-w-3xl text-center">
+        <div className="eyebrow-pill mx-auto mb-4">
+          <HelpCircle className="h-4 w-4" />
+          FAQ
+        </div>
+        <h1 className="section-title text-4xl md:text-5xl">
+          Frequently Asked <span className="gradient-text">Questions</span>
+        </h1>
+      </div>
 
-      <div className="space-y-5">
+      <div className="mx-auto max-w-4xl space-y-4">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
 
           return (
-            <div
-              key={index}
-              className="border border-black/10 rounded-xl overflow-hidden w-full bg-white"
+            <motion.div
+              key={faq.question}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.55, delay: index * 0.04 }}
+              className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg shadow-slate-900/5"
             >
               <button
-                onClick={() =>
-                  setOpenIndex(isOpen ? null : index)
-                }
-                className="w-full flex items-center justify-between px-6 py-5 text-left"
+                type="button"
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+                className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left"
               >
-                <span className="text-base md:text-lg font-medium text-sky-900">
+                <span className="font-display text-base font-bold text-slate-950 md:text-lg">
                   {faq.question}
                 </span>
 
-                <span
-                >
-                  {openIndex!=null? <ChevronUp className="w-5 h-5 text-sky-900" />:<ChevronDown className="w-5 h-5 text-sky-900" />}
-                </span>
+                <ChevronDown
+                  className={`h-5 w-5 shrink-0 text-sky-800 transition-transform ${
+                    isOpen ? "rotate-180" : ""
+                  }`}
+                />
               </button>
 
-
+              <AnimatePresence initial={false}>
                 {isOpen && (
-                  <div
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.24 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-5 text-black/80 text-sm md:text-base leading-relaxed">
+                    <div className="px-6 pb-6 text-sm leading-7 text-slate-600 md:text-base">
                       {faq.answer}
                     </div>
-                  </div>
+                  </motion.div>
                 )}
-       
-            </div>
+              </AnimatePresence>
+            </motion.div>
           );
         })}
       </div>

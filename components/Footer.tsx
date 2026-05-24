@@ -1,222 +1,193 @@
 "use client";
- 
-import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Building2, Users, Lightbulb, UserPlus } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
 
+import Link from "next/link";
+import {
+  ArrowUpRight,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  Twitter,
+  Star,
+  MapPin
+} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import type { ReactNode } from "react";
+import { useTheme } from "@/lib/ThemeContext";
 
 export default function Footer() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
-    <footer className=" text-white bg-black" id="contact">
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
-          <div className="lg:col-span-1 space-y-6">
-            <div className="place-items-center">
-            
-              <Link href="/">
-  <h1
-    className={`   text-3xl tracking-wide  text-white`}
-  >
-    MyCoreOffice
-  </h1>
-</Link>
-              <p className="text-gray-200 text-sm mt-2 text-justify md:leading-relaxed">
-                Empowering Innovation, Nurturing Startups.  MyCoreOffice is a virtual office provider
-                fostering entrepreneurial excellence and driving technological advancement.
-              </p>
-            </div>
-            
-      
-                     {/* Working Hours */}
-            <div className=" rounded-lg p-4 bg-white">
-              <h1 className="text-black font-semibold mb-2 text-sm">Working Hours</h1>
-              <p className="text-black text-sm">Monday – Friday</p>
-              <p className="text-black text-sm">9:00 AM – 6:00 PM</p>
-            </div>
-    
-            
-          </div>
-
-          {/* For Entrepreneurs */}
-          <div className="space-y-6">
-            <h1 className="text-white font-semibold text-lg flex items-center gap-2">
-              <Lightbulb className="w-5 h-5 text-blue-500" />
-              For Entrepreneurs
+    <footer 
+      className={`relative mt-24 overflow-hidden border-t transition-colors duration-1000 ${
+        isDark ? "border-white/5 text-white" : "border-slate-100 text-slate-900"
+      }`} 
+      id="contact"
+    >
+      <div className="section-shell relative py-24">
+        
+        {/* Top Branding Section */}
+        <div className={`mb-16 grid gap-8 rounded-[3rem] border p-10 md:grid-cols-[1.2fr_0.8fr] md:p-12 shadow-2xl ${
+          isDark ? "border-white/5 bg-black/40 shadow-black/50" : "border-slate-100 bg-white shadow-slate-900/5"
+        }`}>
+          <div>
+            <h1 className="font-display text-[clamp(1.5rem,4vw,2.5rem)] font-bold tracking-tighter uppercase leading-[0.95]">
+              MyCoreOffice<span className="text-indigo-500">.</span>
             </h1>
-            <nav className="space-y-3">
-              <Link href="/#virtual-office" className="block text-white hover:text-white transition-colors text-sm">
-               Virtual Offices
-              </Link>
-              <Link href="/#virtual-office" className="block text-white hover:text-white transition-colors text-sm">
-               Co-Working Spaces
-              </Link>
-              <Link href="/#virtual-office" className="block text-white hover:text-white transition-colors text-sm">
-               Meeting Rooms
-              </Link>
-              <Link href="/#browse" className="block text-white hover:text-white transition-colors text-sm">
-                Browse
-              </Link>
-              <Link href="/#objective" className="block text-white hover:text-white transition-colors text-sm">
-                Objective
-              </Link>
-            </nav>
-            <Link
-              href="/#virtual-office"
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-900 hover:text-white px-4 py-3 rounded-lg text-black font-medium text-sm transition-colors w-full"
-            >
-              <span>Explore Virtual Offices</span>
-            </Link>
+            <p className={`mt-6 max-w-2xl font-clean text-sm leading-relaxed opacity-60`}>
+              Empowering Innovation, Nurturing Startups. MyCoreOffice is a premium virtual office provider
+              fostering entrepreneurial excellence across India.
+            </p>
           </div>
-
-          {/* Community & Network */}
-          <div className="space-y-6">
-            <h1 className="text-white font-bold text-lg flex items-center gap-2">
-              <Users className="w-5 h-5 text-blue-500" />
-              Community
-            </h1>
-            <nav className="space-y-3">
-              <Link href="/About-Us" className="block text-white hover:text-white transition-colors text-sm">
-                About  MyCoreOffice
-              </Link>
-              <Link href="/About-Us" className="block text-white hover:text-white transition-colors text-sm">
-                Life at  MyCoreOffice
-              </Link>
-                <Link href="/gst" className="block text-white hover:text-white transition-colors text-sm">
-                GST Related Services
-              </Link>
-              <Link href="/company-registration" className="block text-white hover:text-white transition-colors text-sm">
-                Company Registration
-              </Link>
-              <Link href="/" className="block text-white hover:text-white transition-colors text-sm">
-                Job Portal
-              </Link>
-            
-            </nav>
- {/* WhatsApp CTA */}
-            <Link
-              href="https://wa.me/919990720722"
-              target="_blank"
-              className="inline-flex items-center justify-center gap-2 bg-green-700  px-4 py-3 rounded-lg text-white font-medium text-sm transition-colors w-full"
-            >
-              <FaWhatsapp size={18} />
-              <span>Connect on WhatsApp</span>
-            </Link>
-   
-          </div>
-
-          {/* Contact & Location */}
-          <div className="space-y-6">
-            <h1 className="text-white font-bold text-lg flex items-center gap-2">
-              <Building2 className="w-5 h-5 text-blue-500" />
-              Get in Touch
-            </h1>
-            
-            {/* Contact Info */}
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
-                <div className="text-sm text-white">
-                  <p className="text-white font-medium mb-1">Address</p>
-                  <p className="text-white font-medium mb-1 text-justify"> Unit No. - 111, Aggarwal City Square, Plot No. 10, District Centre Manglam Place, Sector-3, Rohini, New Delhi – 110085</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-blue-500" />
-                <div className="text-sm">
-                  <p className="text-white font-medium">Contact</p>
-                  <Link href="tel:+919990720722" className="text-white hover:text-white transition-colors">
-                    +91 9990720722
-                  </Link>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-blue-500" />
-                <div className="text-sm">
-                  <p className="text-white font-medium">Email</p>
-                  <Link href="mailto:info@mycoreoffice.com" className="text-white hover:text-white transition-colors">
-                  info@mycoreoffice.com
-                  </Link>
-                </div>
-              </div>
+          <div className={`flex flex-col justify-center rounded-3xl border p-8 transition-colors duration-500 ${
+            isDark ? "border-white/5 bg-white/5" : "border-indigo-50 bg-indigo-50/50"
+          }`}>
+            <div className="flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest text-indigo-500 mb-2">
+                <Star className="h-3 w-3 fill-current" />
+                Working Hours
             </div>
-
-
-
-            {/* Social Media */}
-            <div>
-              <h1 className="text-white place-items-end   text-sm  text-center"> Follow Us </h1>
-              <div className="flex gap-3 place-content-center">
-                <Link
-                  href="https://facebook.com" aria-label="Twitter"
-                  target="_blank"
-                  className="p-2 rounded-lg   hover:bg-blue-600 transition-colors"
-                >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-facebook" viewBox="0 0 16 16">
-  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-</svg>
-                </Link>
-                <Link
-                  href="https://twitter.com" aria-label="Twitter"
-                  target="_blank"
-                  className="p-2 rounded-lg   hover:bg-sky-500 transition-colors"
-                >
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
-  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
-</svg>
-                </Link>
-                <Link
-                  href="/"
-                  target="_blank" aria-label="Twitter"
-                  className="p-2 rounded-lg   hover:bg-blue-500 transition-colors"
-                >
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-linkedin" viewBox="0 0 16 16">
-  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-</svg>
-                </Link>
-                <Link
-                  href="/"
-                  target="_blank" aria-label="Twitter"
-                  className="p-2 rounded-lg   hover:bg-pink-500 transition-colors"
-                >
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-instagram" viewBox="0 0 16 16">
-  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-</svg>
-                </Link>
-         
-              </div>
-            </div>
-
-           
+            <p className="font-display text-lg font-bold">Monday – Friday</p>
+            <p className="font-mono text-sm opacity-60">9:00 AM – 6:00 PM</p>
           </div>
         </div>
 
+        {/* Links Grid */}
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+          
+          <div className="space-y-8">
+            <h4 className="font-display text-xs font-bold uppercase tracking-[0.2em] opacity-40">
+              For Entrepreneurs
+            </h4>
+            <nav className="flex flex-col gap-4">
+              <FooterLink href="/#virtual-office">Virtual Offices</FooterLink>
+              <FooterLink href="/#virtual-office">Co-Working Spaces</FooterLink>
+              <FooterLink href="/#virtual-office">Meeting Rooms</FooterLink>
+              <FooterLink href="/#objective">Business Objective</FooterLink>
+            </nav>
+          </div>
+
+          <div className="space-y-8">
+            <h4 className="font-display text-xs font-bold uppercase tracking-[0.2em] opacity-40">
+              Community
+            </h4>
+            <nav className="flex flex-col gap-4">
+              <FooterLink href="/About-Us">About Company</FooterLink>
+              <FooterLink href="/gst">GST Services</FooterLink>
+              <FooterLink href="/company-registration">Registration</FooterLink>
+              <FooterLink href="/coworking-space">Spaces</FooterLink>
+              <FooterLink href="/business-services">Services</FooterLink>
+            </nav>
+          </div>
+
+          <div className="space-y-8 lg:col-span-2">
+            <h4 className="font-display text-xs font-bold uppercase tracking-[0.2em] opacity-40">
+              Get in Touch
+            </h4>
+            
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className={`rounded-3xl border p-6 transition-all duration-500 ${
+                isDark ? "border-white/5 bg-white/5" : "border-slate-100 bg-slate-50"
+              }`}>
+                <MapPin className="mb-4 h-5 w-5 text-indigo-500" />
+                <p className="mb-2 font-display text-sm font-bold uppercase tracking-tight">Delhi HQ</p>
+                <p className="font-clean text-[13px] leading-relaxed opacity-60">
+                  Aggarwal City Square, Sector-3, Rohini, New Delhi – 110085
+                </p>
+              </div>
+
+              <div className="grid gap-4">
+                <div className={`flex items-center gap-4 rounded-2xl border p-4 transition-all duration-500 ${
+                  isDark ? "border-white/5 bg-white/5" : "border-slate-100 bg-slate-50"
+                }`}>
+                  <Phone className="h-4 w-4 text-indigo-500" />
+                  <Link href="tel:+919990720722" className="font-mono text-xs font-bold tracking-tight hover:text-indigo-500">
+                    +91 99907 20722
+                  </Link>
+                </div>
+
+                <div className={`flex items-center gap-4 rounded-2xl border p-4 transition-all duration-500 ${
+                  isDark ? "border-white/5 bg-white/5" : "border-slate-100 bg-slate-50"
+                }`}>
+                  <Mail className="h-4 w-4 text-indigo-500" />
+                  <Link href="mailto:info@mycoreoffice.com" className="font-mono text-xs font-bold tracking-tight hover:text-indigo-500">
+                    info@mycoreoffice.com
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-6">
+                <div className="flex gap-3">
+                    <SocialLink href="https://facebook.com" label="Facebook"><Facebook className="h-4 w-4" /></SocialLink>
+                    <SocialLink href="https://twitter.com" label="Twitter"><Twitter className="h-4 w-4" /></SocialLink>
+                    <SocialLink href="/" label="Linkedin"><Linkedin className="h-4 w-4" /></SocialLink>
+                    <SocialLink href="/" label="Instagram"><Instagram className="h-4 w-4" /></SocialLink>
+                </div>
+                <Link
+                    href="https://wa.me/919990720722"
+                    target="_blank"
+                    className="flex items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-white shadow-xl shadow-emerald-500/20 transition-all hover:scale-105 hover:bg-emerald-600"
+                >
+                    <FaWhatsapp size={16} />
+                    WhatsApp
+                </Link>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className=" border-gray-200 ">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-center text-white">
-              © {new Date().getFullYear()} MyCoreOffice | All Rights Reserved.
-            </div>
-            <div className="flex gap-6 text-sm">
-              <Link href="/privacy-policy" className="text-white hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms-and-conditions" className="text-white hover:text-white transition-colors">
-                Terms and Conditions
-              </Link>
-              <Link href="/sitemap.xml" className="text-white hover:text-white transition-colors">
-                Sitemap
-              </Link>
-            </div>
+      <div className={`relative border-t transition-colors duration-500 ${isDark ? "border-white/5" : "border-slate-100"}`}>
+        <div className="section-shell flex flex-col items-center justify-between gap-6 py-10 font-mono text-[10px] font-bold uppercase tracking-widest opacity-40 md:flex-row">
+          <div>
+            © {new Date().getFullYear()} MyCoreOffice | All Rights Reserved.
+          </div>
+          <div className="flex flex-wrap justify-center gap-8">
+            <Link href="/privacy-policy" className="hover:text-indigo-500">Privacy</Link>
+            <Link href="/terms-and-conditions" className="hover:text-indigo-500">Terms</Link>
+            <Link href="/sitemap.xml" className="hover:text-indigo-500">Sitemap</Link>
           </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: ReactNode }) {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  return (
+    <Link
+      href={href}
+      className={`group flex items-center justify-between font-display text-sm font-bold tracking-tight transition-all duration-300 ${
+        isDark ? "text-white/60 hover:text-white" : "text-slate-600 hover:text-slate-900"
+      }`}
+    >
+      {children}
+      <ArrowUpRight className="h-3 w-3 translate-y-1 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100" />
+    </Link>
+  );
+}
+
+function SocialLink({ href, label, children }: { href: string; label: string; children: ReactNode }) {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      aria-label={label}
+      className={`grid h-11 w-11 place-items-center rounded-2xl border transition-all duration-300 hover:scale-110 active:scale-95 ${
+        isDark 
+          ? "border-white/5 bg-white/5 text-white/60 hover:border-indigo-500/50 hover:text-indigo-400" 
+          : "border-slate-100 bg-slate-50 text-slate-500 hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-600"
+      }`}
+    >
+      {children}
+    </Link>
   );
 }

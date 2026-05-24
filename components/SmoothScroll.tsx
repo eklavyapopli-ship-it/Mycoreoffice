@@ -34,6 +34,7 @@ export const SmoothScrollerProvider = ({ children }: { children: ReactNode }) =>
 
     return () => {
       lenis.destroy()
+      lenisRef.current = null
     }
   }, [])
 
@@ -45,7 +46,7 @@ export const SmoothScrollerProvider = ({ children }: { children: ReactNode }) =>
   }, [pathname])
 
   return (
-    <SmoothScrollerContext.Provider value={lenisRef.current}>
+    <SmoothScrollerContext.Provider value={null}>
       {children}
     </SmoothScrollerContext.Provider>
   )

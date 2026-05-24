@@ -1,7 +1,6 @@
 // components/genesis.tsx
 "use client";
 
-import { Rocket, Target, Users, Building } from "lucide-react";
 import Image from "next/image";
 export default function Genesis() {
   return (
@@ -15,7 +14,7 @@ export default function Genesis() {
           
               
               <h2 className="text-3xl  bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text">
-             <span className="text-black">Top GST Registration</span> Consultant
+             <span className="text-white">Top GST Registration</span> Consultant
               </h2>
             </div>
 

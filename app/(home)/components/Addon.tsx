@@ -1,4 +1,7 @@
-"use client"
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowUpRight, BadgeCheck, FileText, Frame, Sparkles } from "lucide-react";
 
 export default function AddOnServices() {
   const services = [
@@ -8,90 +11,90 @@ export default function AddOnServices() {
       desc: "Improve your business presence with a permanent sticker signage displayed within the premises, helping visitors easily recognize your brand.",
       note: "Basic Plan",
       price: "Rs. 499/ month",
+      icon: BadgeCheck,
     },
     {
       id: 2,
       title: "Business Application Support",
       desc: "Get professional assistance for GST consultation or simplify your company registration process with support from experienced CA partners.",
       price: "Rs. 3500/ month",
-      note: "Recommended Option"
+      note: "Recommended Option",
+      icon: FileText,
     },
     {
       id: 3,
       title: "Premium Framed Signage",
       desc: "Highlight your brand with an elegant framed signage displayed prominently at your virtual office or coworking location.",
       price: "Rs. 5000/ month",
-      note: "Premium Plan"
+      note: "Premium Plan",
+      icon: Frame,
     },
-  ]
+  ];
 
   return (
-    <section className="bg-linear-to-r m-2 mb-0 from-cyan-100 via-blue-300 to-blue-300 py-16 px-6 rounded-tl-3xl rounded-tr-3xl">
-      <div className="max-w-6xl mx-auto">
-
-        {/* Top Section */}
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
-          
+    <section className="relative overflow-hidden bg-slate-950 py-20 text-white">
+      <div className="soft-grid-bg absolute inset-0 opacity-20" />
+      <div className="section-shell relative">
+        <div className="mb-12 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-end">
           <div>
-            <p className="text-blue-700 font-medium mb-2">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold">
+              <Sparkles className="h-4 w-4" />
               Additional Business Solutions
-            </p>
+            </div>
 
-            <h2 className="text-3xl font-semibold text-gray-900">
+            <h2 className="font-display text-4xl font-bold md:text-6xl">
               Business Add-On Services
             </h2>
-
-            <div className="w-48 h-1 bg-black mt-4"></div>
           </div>
 
-          <div className="border-l-2  border-blue-700 pl-6 text-gray-900 leading-relaxed">
+          <div className="rounded-lg border border-white/10 bg-white/10 p-6 leading-8 text-white/75">
             Our team understands that every company operates differently.
             For this reason we offer several optional services that can help
             support your operations and make managing your business easier.
           </div>
-
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-4 ">
-
-          {services.map((service) => (
-            <div
+        <div className="grid gap-4 md:grid-cols-3">
+          {services.map((service, index) => (
+            <motion.div
               key={service.id}
-              className="relative bg-white rounded-xl   p-6 shadow-lg"
+              initial={{ opacity: 0, y: 34 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.62, delay: index * 0.06 }}
+              className="group relative overflow-hidden rounded-lg border border-white/10 bg-white p-6 text-slate-950 shadow-xl shadow-black/15"
             >
-              
-              {/* Number Circle */}
-              <div className="absolute -top-6 right-6 bg-blue-800 text-white w-12 h-12 flex items-center justify-center rounded-full text-lg font-semibold shadow-md">
-                {service.id}
+              <div className="mb-8 flex items-center justify-between">
+                <service.icon className="h-12 w-12 rounded-lg bg-sky-50 p-3 text-sky-800" />
+                <span className="grid h-12 w-12 place-items-center rounded-full bg-slate-950 font-display text-lg font-bold text-white">
+                  {service.id}
+                </span>
               </div>
 
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="font-display text-xl font-bold text-gray-900">
                 {service.title}
               </h3>
 
-              <p className="text-gray-600 text-justify mb-4">
+              <p className="mt-3 text-justify leading-7 text-gray-600">
                 {service.desc}
               </p>
 
               {service.note && (
-                <p className="text-red-500 text-sm mb-4">
+                <p className="mt-4 text-sm font-bold text-sky-700">
                   ({service.note})
                 </p>
               )}
 
-              <p className="text-gray-500 text-sm">Starts from</p>
+              <p className="mt-6 text-sm text-gray-500">Starts from</p>
 
-              <p className="text-blue-600 font-semibold">
+              <p className="flex items-center gap-2 font-display text-xl font-bold text-slate-950">
                 {service.price}
+                <ArrowUpRight className="h-4 w-4 text-slate-400 transition group-hover:translate-x-1 group-hover:-translate-y-1" />
               </p>
-
-            </div>
+            </motion.div>
           ))}
-
         </div>
-
       </div>
     </section>
-  )
+  );
 }

@@ -1,155 +1,76 @@
 "use client";
-import { useState } from "react";
+
 import Image from "next/image";
-import { Loader2 } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Star } from "lucide-react";
+import { useTheme } from "@/lib/ThemeContext";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Hero2() {
- 
-    const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-  name: "",
-  email: "",
-  phone: "",
-  message: "",
-});
- const handleSubmit = async (e: React.FormEvent) => {
-
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (!res.ok) {
-        let msg = "Failed";
-        try {
-          const data = await res.json();
-          msg = data?.error || data?.message || msg;
-        } catch {}
-        throw new Error(msg);
-      }
-      const data = await res.json();
-
-    setForm({ name: "", email: "", phone: "", message: "" });
- 
-
-    } catch (error) {
-      alert(error instanceof Error ? error.message : "Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <main className="relative z-999 w-full h-full text-black md:h-[70vh] pt-5">
-
-      <Image
-        src="/office4.webp"
-        alt="Office Space"
-        fill
-        fetchPriority="high"
-        loading="lazy"
-        className="object-cover"
-      />
-
-
-      /* <div className="absolute inset-0 bg-black/30" />
-
-
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-6 flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full items-center">
+    <section 
+      ref={ref}
+      className={`relative py-16 transition-colors duration-1000 ${
+        isDark ? "text-white" : "text-slate-900"
+      }`}
+    >
+      <div className="section-shell">
+        <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className={`relative overflow-hidden rounded-[3.5rem] border shadow-2xl transition-all duration-500 ${
+                isDark ? "border-white/5 bg-black/60 shadow-black/50" : "border-slate-100 bg-slate-900 shadow-slate-900/10"
+            }`}
+        >
+          <Image
+            src="/office4.webp"
+            alt="Office Space"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-20 transition-transform duration-1000 group-hover:scale-105"
+          />
           
+          <div className="relative z-10 grid gap-10 p-10 md:grid-cols-[1fr_auto] md:items-center md:p-16">
+            <div className="space-y-6">
+                <div className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 font-mono text-[10px] font-bold uppercase tracking-widest ${
+                isDark ? "border-white/10 bg-white/5 text-indigo-300" : "border-white/20 bg-white/10 text-white/80"
+                }`}>
+                <Star className="h-3 w-3 fill-current" />
+                Network Expansion
+                </div>
+              <h2 className="font-display text-[clamp(2rem,5vw,3.8rem)] font-bold uppercase leading-[0.95] tracking-tighter text-white">
+                Know More About <br />
+                <span className="text-indigo-400">Virtual Offices</span> in India.
+              </h2>
 
-          <div className="text-white">
-            <h1 className="text-4xl  md:text-5xl font-semibold text-center md:text-start leading-tight">
-              Know More About Virtual Offices in India
-            </h1>
+              <p className="font-clean max-w-2xl text-base leading-relaxed text-white/60 md:text-lg">
+                Virtual Offices For GST & Company Registration,
+                Coworking Spaces, Pan India Availability.
+              </p>
+            </div>
 
-            <p className="mt-6 lg:text-lg text-center md:text-start text-sm  leading-relaxed">
-              Virtual Offices For GST & Company Registration,
-              <br />
-              Coworking Spaces, Pan India Availability
-            </p>
+            <Link href="/Contact">
+                <button className={`flex items-center gap-3 rounded-full px-10 py-5 font-mono text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:scale-105 active:scale-95 ${
+                    !isDark ? "bg-white text-slate-900 shadow-xl" : "bg-white text-slate-900 shadow-2xl shadow-indigo-500/10"
+                }`}>
+                    Request Callback
+                    <ArrowRight className="h-4 w-4" />
+                </button>
+            </Link>
           </div>
 
-
-          <div className="bg-white rounded-xl shadow-xl p-8 w-full max-w-md mb-2 ml-auto">
-            <h1 className="text-2xl font-semibold text-gray-900">
-              Request a callback
-            </h1>
-
-           <form onSubmit={handleSubmit} className="mt-6 space-y-4 text-black">
-
-              <div>
-                <label className="block text-sm font-medium ">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="Your full name"
-                  className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Email ID
-                </label>
-                <input
-                  type="email"
-                  value={form.email}
-  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="you@example.com"
-                  className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Phone No.
-                </label>
-                <input
-                  type="tel" maxLength={10} min={10}
-                   value={form.phone}
-  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  placeholder="+91  "
-                  className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Message (optional)
-                </label>
-                <textarea maxLength={50} minLength={5}
-                  rows={2}
-                  value={form.message}
-  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  placeholder="Tell us your requirement"
-                  className="mt-1 w-full rounded-md border border-gray-300 px-4 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-black"
-                />
-              </div>
-<button
-  type="submit"
-  disabled={loading}
-  className="w-full mt-4 bg-white text-black py-3 rounded-md text-sm font-medium 
-           cursor-pointer border transition flex items-center justify-center gap-2
-             disabled:opacity-70 disabled:cursor-not-allowed"
->
-  {loading && <Loader2 className="h-4 w-4 animate-spin text-white " />}
-  {loading ? "Sending..." : "Request Callback"}
-</button>
-
-            </form>
-          </div>
-        </div>
+          {/* Decorative gradients */}
+          <div className="absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl" />
+        </motion.div>
       </div>
-    </main>
+    </section>
   );
 }
