@@ -5,7 +5,19 @@ import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import { SmoothScrollerProvider } from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
-import { montserrat } from "@/lib/fontS";
+import { ThemeProvider } from "@/lib/ThemeContext";
+import SiteBackground from "@/components/SiteBackground";
+import {
+  dmSans,
+  inter,
+  jetbrainsMono,
+  manrope,
+  montserrat,
+  outfit,
+  playfair,
+  sora,
+  spaceGrotesk,
+} from "@/lib/fontS";
 
 export const metadata: Metadata = {
    title:{
@@ -101,8 +113,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={` ${montserrat.className}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${manrope.variable} ${montserrat.variable} ${spaceGrotesk.variable} ${sora.variable} ${outfit.variable} ${dmSans.variable} ${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      >
        <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18035036782"
           strategy="afterInteractive"
@@ -116,13 +130,14 @@ export default function RootLayout({
             gtag('config', 'AW-18035036782');
           `}
         </Script>
+        <ThemeProvider>
+        <SiteBackground />
         <SmoothScrollerProvider>
- 
         <Navbar/>
         {children}
         <Footer/>
-  
-</SmoothScrollerProvider>
+        </SmoothScrollerProvider>
+        </ThemeProvider>
 
       </body>
       
