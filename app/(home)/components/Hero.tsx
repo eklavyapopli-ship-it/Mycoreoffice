@@ -8,7 +8,7 @@ import { ArrowRight, ArrowUpRight, Loader2, MessageCircle } from "lucide-react";
 import { toast, Toaster } from "react-hot-toast";
 
 const heroImage = {
-  src: "/1000350308.jpg",
+  src: "/1000350308.webp",
   alt: "Business professional working on a laptop",
 };
 

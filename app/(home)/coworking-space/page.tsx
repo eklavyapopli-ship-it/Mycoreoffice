@@ -16,7 +16,7 @@ export default function CoworkingSpacePage() {
       eyebrow="Flexible Workspaces"
       title="Coworking Space"
       intro="Choose a workspace that fits how your team works today, from open shared areas to dedicated desks, meeting access, and fully supported collaborative offices."
-      image="https://images.unsplash.com/photo-1760611656615-db3fad24a314?auto=format&fit=crop&fm=jpg&q=80&w=3000"
+      image="/1000350311.jpg"
       imageAlt="Modern coworking space with people working at desks"
       imageCredit={{
         name: "David Kristianto",

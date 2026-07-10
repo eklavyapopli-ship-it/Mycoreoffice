@@ -16,7 +16,7 @@ export default function BusinessServicesPage() {
       eyebrow="Business Support"
       title="Business Services"
       intro="We help businesses access relevant support services at different stages of growth, while creating collaboration opportunities with capable professional service providers."
-      image="https://images.unsplash.com/photo-1770048532712-4fde5ef7eb90?auto=format&fit=crop&fm=jpg&q=80&w=3000"
+      image="/1000350308.webp"
       imageAlt="Professional working on laptop in modern office meeting room"
       imageCredit={{
         name: "Blake Wisz",
