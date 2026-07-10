@@ -6,8 +6,11 @@ import Hero from "./hero"
 import { Process } from "./process"
 
 export const metadata: Metadata = {
-  title: "Office Space for Company Registration | MyCoreOffice",
-  description: "Register your Private Limited company with a professional office address. Fast documentation, lowest prices, and 100% legal compliance for your business setup.",
+  title: "Virtual Office for Company Registration India",
+  description: "Register your Pvt Ltd company with a verified virtual office address. Fast documentation, lowest prices, 100% legal compliance. Get started now!",
+  alternates:{
+    canonical:"https://mycoreoffice.com/company-registration"
+  }
 };
 
 const page = () => {

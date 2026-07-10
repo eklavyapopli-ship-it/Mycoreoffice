@@ -21,11 +21,12 @@ import {
 
 export const metadata: Metadata = {
    title:{
-    default: "MyCoreOffice – Virtual Office & Business Address Across India"
+    default: "MyCoreOffice | Premium Virtual Offices & GST Registration Across India"
 ,
 template:" %s "  },
   description:
-    "MyCoreOffice provides virtual office services, GST registration addresses, business addresses, mail handling, and office solutions across all Indian states and cities.",
+    "Establish your business with MyCoreOffice. Trusted virtual office addresses for GST & company registration in Delhi, Mumbai, Gurgaon, Noida, Bangalore.",
+    alternates:{canonical:"https://mycoreoffice.com/"},
   keywords: [
 "MyCoreOffice",
 "MyCoreOffice Virtual Office",
@@ -117,6 +118,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${montserrat.variable} ${spaceGrotesk.variable} ${sora.variable} ${outfit.variable} ${dmSans.variable} ${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       >
+        <meta name="google-site-verification" content="mGDI7yKGaI4dMyHFLqFHLYV8oGh2LSzOu46hpAfNn7w" />
        <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18035036782"
           strategy="afterInteractive"

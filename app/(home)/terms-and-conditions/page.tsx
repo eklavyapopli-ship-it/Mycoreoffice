@@ -5,7 +5,10 @@ import React from "react";
 export const metadata = {
   title: "Terms and Conditions | MyCoreOffice",
   description:
-    "Terms and Conditions of MyCoreOffice Services Private Limited",
+    "Terms and Conditions of MyCoreOffice Services Private Limited – read our policies before using our services.",
+    alternates: {
+    canonical: 'https://mycoreoffice.com/terms-and-conditions', // Resolves to https://example.com/
+  },
 };
 
 export default function TermsAndConditionsPage() {
@@ -55,7 +58,7 @@ export default function TermsAndConditionsPage() {
 
       {/* Communications */}
       <section className="mt-10 space-y-3">
-        <h2 className="text-2xl font-semibold">Communications</h2>
+        <h3 className="text-2xl font-semibold">Communications</h3>
         <p>
           By using our Service, you agree to subscribe to newsletters, marketing
           or promotional materials. You may opt out at any time by following the
@@ -124,7 +127,7 @@ Any contests, sweepstakes or other promotions (collectively, “Promotions”) m
           <li> To impersonate or attempt to impersonate Company, a Company employee, another user, or any other person or entity.</li>
           <li> In any way that infringes upon the rights of others, or in any way is illegal, threatening, fraudulent, or harmful, or in connection with any unlawful, illegal, fraudulent, or harmful purpose or activity.</li>
           <li> To engage in any other conduct that restricts or inhibits anyone’s use or enjoyment of Service, or which, as determined by us, may harm or offend Company or users of Service or expose them to liability.</li>
-          <h1 className="text-md text-black font-bold">Additionally, you agree not to:</h1>
+          <li className="text-md text-black font-bold">Additionally, you agree not to:</li>
           <li> Use Service in any manner that could disable, overburden, damage, or impair Service or interfere with any other party’s use of Service, including their ability to engage in real time activities through Service.</li>
           <li> Use any robot, spider, or other automatic device, process, or means to access Service for any purpose, including monitoring or copying any of the material on Service.</li>
           <li> Use any manual process to monitor or copy any of the material on Service or for any other unauthorized purpose without our prior written consent.

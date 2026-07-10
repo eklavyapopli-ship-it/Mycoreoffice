@@ -13,9 +13,9 @@ export default function Genesis() {
             <div className="space-y-6">
           
               
-              <h2 className="text-3xl  bg-linear-to-r from-cyan-200 via-blue-400 to-blue-400  text-transparent bg-clip-text">
-             <span className="text-white">Top GST Registration</span> Consultant
-              </h2>
+              <h3 className="text-3xl">
+             <span>Top GST Registration</span> Consultant
+              </h3>
             </div>
 
             <div className="prose prose-lg text-gray-600 space-y-6 leading-relaxed text-justify">

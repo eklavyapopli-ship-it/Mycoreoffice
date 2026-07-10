@@ -7,8 +7,11 @@ import Helpdesk from "./helpdesk"
 import WhoAreWe from "./whoAreWe"
 
 export const metadata: Metadata = {
-  title: "About Us | MyCoreOffice",
-  description: "Learn more about MyCoreOffice, our mission to support entrepreneurs with professional office spaces, and our nationwide network of business solutions.",
+  title: "About MyCoreOffice – Leading Virtual Office Provider",
+  description: "Discover MyCoreOffice's mission to empower entrepreneurs with trusted, professional virtual office solutions across India's leading business hubs.",
+  alternates:{
+    canonical:"https://mycoreoffice.com/About-Us"
+  }
 };
 
 const page = () => {

@@ -221,10 +221,10 @@ export default function OfficeSpaceContent() {
               <Star className="h-3.5 w-3.5 fill-current" />
               Standard Inclusion
             </div>
-            <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tighter">
+            <div className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tighter">
               The space your <br />
               <span className={!isDark ? "text-indigo-600" : "text-indigo-400"}>people deserve.</span>
-            </h2>
+            </div>
           </motion.div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

@@ -154,7 +154,7 @@ export function Process() {
             Step-by-Step
           </motion.div>
 
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
@@ -163,7 +163,7 @@ export function Process() {
           }`}
         >
           Registration <span className={!isDark ? "text-indigo-600" : "text-indigo-400"}>Process.</span>
-        </motion.h2>
+        </motion.div>
         <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}

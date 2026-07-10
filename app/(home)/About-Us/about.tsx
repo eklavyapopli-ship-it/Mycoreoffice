@@ -276,9 +276,9 @@ function ProductBlock({
           {title}
         </div>
         
-        <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold uppercase leading-[0.95] tracking-tighter mb-8">
+        <div className="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold uppercase leading-[0.95] tracking-tighter mb-8">
             {question}
-        </h2>
+        </div>
         
         <p className={`font-clean text-lg leading-relaxed opacity-70 mb-10 text-justify ${isDark ? "text-white" : "text-slate-700"}`}>
             {description}

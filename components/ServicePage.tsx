@@ -188,9 +188,9 @@ export default function ServicePage({
                   !isDark ? "border-slate-100 bg-white shadow-sm hover:shadow-xl" : "border-white/5 bg-black/40 hover:border-indigo-500/20 shadow-2xl shadow-black/20"
                 }`}
               >
-                <h2 className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-bold uppercase leading-tight tracking-tighter">
+                <div className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-bold uppercase leading-tight tracking-tighter">
                   {section.heading}
-                </h2>
+                </div>
                 <div className={`mt-8 h-1 w-12 rounded-full transition-all duration-500 group-hover:w-24 ${
                     !isDark ? "bg-indigo-600" : "bg-indigo-400"
                 }`} />

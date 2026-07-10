@@ -34,9 +34,9 @@ export default function Footer() {
           isDark ? "border-white/5 bg-black/40 shadow-black/50" : "border-slate-100 bg-white shadow-slate-900/5"
         }`}>
           <div>
-            <h1 className="font-display text-[clamp(1.5rem,4vw,2.5rem)] font-bold tracking-tighter uppercase leading-[0.95]">
+            <div className="font-display text-[clamp(1.5rem,4vw,2.5rem)] font-bold tracking-tighter uppercase leading-[0.95]">
               MyCoreOffice<span className="text-indigo-500">.</span>
-            </h1>
+            </div>
             <p className={`mt-6 max-w-2xl font-clean text-sm leading-relaxed opacity-60`}>
               Empowering Innovation, Nurturing Startups. MyCoreOffice is a premium virtual office provider
               fostering entrepreneurial excellence across India.

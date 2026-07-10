@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
 
 export const metadata: Metadata = {
-  title: "Business Services | MyCoreOffice",
+  title: "Expert Business & Compliance Services | MyCoreOffice",
   description:
-    "Business support services and partnership opportunities for companies looking for relevant professional solutions and customer access.",
+    "Explore trusted business support services and partnership opportunities designed to help your company access the right professional solutions.",
+    alternates:{
+      canonical:"https://mycoreoffice.com/business-services"
+    }
 };
 
 export default function BusinessServicesPage() {

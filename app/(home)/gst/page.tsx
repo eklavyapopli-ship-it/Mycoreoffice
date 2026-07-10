@@ -8,8 +8,11 @@ import Genesis from "./genesis"
 import Hero from "./hero"
 
 export const metadata: Metadata = {
-  title: "Virtual Office for GST Registration | MyCoreOffice",
-  description: "Get a professional business address for GST registration across India. Law-compliant documentation, prime locations, and affordable pricing with MyCoreOffice.",
+  title: "Virtual Office for GST Registration – Fast & Easy",
+  description: "Get a verified virtual office address for GST registration across India. Law-compliant, prime locations, affordable pricing. Apply now!",
+  alternates:{
+    canonical:"https://mycoreoffice.com/gst"
+  }
 };
 
 const page = () => {

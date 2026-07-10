@@ -161,9 +161,9 @@ export function GST() {
                   <Star className="h-3 w-3 fill-current" />
                   Same Day Delivery
                 </div>
-                <h1 className="font-display text-4xl font-bold uppercase leading-[0.9] tracking-tighter">
+                <div className="font-display text-4xl font-bold uppercase leading-[0.9] tracking-tighter">
                   Ready on the <br /> Same Day
-                </h1>
+                </div>
                 <p className={`font-clean mt-6 text-base leading-relaxed ${!isDark ? "text-white/70" : "text-slate-600"}`}>
                   Get your GST Registration approved by the department on the same day. 
                   Skip the long waits and inspector visits.

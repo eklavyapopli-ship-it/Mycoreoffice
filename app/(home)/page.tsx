@@ -3,7 +3,7 @@ import Hero from './components/Hero'
 
 export const metadata: Metadata = {
   title: "MyCoreOffice | Premium Virtual Offices & GST Registration Across India",
-  description: "Establish your business with MyCoreOffice. We provide professional virtual office addresses for GST registration and company formation in 100+ locations nationwide.",
+  description: "Establish your business with MyCoreOffice. Trusted virtual office addresses for GST & company registration in Delhi, Mumbai, Gurgaon, Noida, Bangalore.",
 };
 import AboutPage from './components/About'
 import Features from './components/Features'

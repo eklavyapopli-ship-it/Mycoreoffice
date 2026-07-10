@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import ServicePage from "@/components/ServicePage";
 
 export const metadata: Metadata = {
-  title: "Coworking Space | MyCoreOffice",
+  title: "Premium Coworking Spaces Across India | MyCoreOffice",
   description:
-    "Flexible coworking spaces with shared offices, dedicated desks, meeting rooms, high-speed WiFi, receptionist support, and collaborative work environments.",
+    "Flexible coworking spaces with shared offices, dedicated desks & meeting rooms. High-speed WiFi, receptionist support. Book your desk today!",
+    alternates:{
+      canonical:"https://mycoreoffice.com/coworking-space"
+    }
 };
 
 export default function CoworkingSpacePage() {

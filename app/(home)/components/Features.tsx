@@ -83,9 +83,9 @@ const Features = () => {
               <Star className="h-2.5 w-2.5 fill-current" />
               Features & Benefits
             </div>
-            <h2 className="font-display text-[clamp(1.5rem,4vw,2.8rem)] font-bold uppercase leading-[1.1] tracking-tighter">
+            <div className="font-display text-[clamp(1.5rem,4vw,2.8rem)] font-bold uppercase leading-[1.1] tracking-tighter">
               All Office locations come with great facilities and support teams, <span className="opacity-40">ensuring happiness.</span>
-            </h2>
+            </div>
           </motion.div>
           <div className={`hidden h-px flex-1 md:block mb-3 ${!isDark ? "bg-slate-200" : "bg-white/10"}`} />
         </div>

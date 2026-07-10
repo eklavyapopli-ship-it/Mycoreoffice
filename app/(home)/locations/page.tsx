@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import LocationsClient from "./locations-client";
 
 export const metadata: Metadata = {
-  title: "Virtual Office Locations across India | MyCoreOffice",
-  description: "Get a professional business address for GST registration, company formation, and mailing address across all major cities in India, including Delhi, Noida, Gurgaon, Mumbai, and Bangalore.",
+  title: "Prime Virtual Office Locations Across India | MyCoreOffice",
+  description: "Get a professional business address for GST registration & company formation across Delhi, Noida, Gurgaon, Mumbai, Bangalore & more. Enquire now!",
+  alternates:{
+    canonical:"https://mycoreoffice.com/locations"
+  },
   keywords: [
     "virtual office address for gst registration",
     "virtual office address for company registration",
