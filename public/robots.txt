@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.mycoreoffice.com
+Host: https://mycoreoffice.com
 
 # Sitemaps
-Sitemap: https://www.mycoreoffice.com/sitemap.xml
+Sitemap: https://mycoreoffice.com/sitemap.xml
